@@ -26,7 +26,7 @@ var EventBus = /** @class */ (function () {
                 var _funList = _emit._events[n];
                 //if(_funList){
                 var _stringList = _funList ? _funList.map(function (f) {
-                    return f.toString();
+                    return f ? f.toString() : "";
                 }).join("|") : "";
                 // }
                 _res.push({

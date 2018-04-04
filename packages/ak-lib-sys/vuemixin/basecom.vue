@@ -15,20 +15,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 import UniIdMixin from "./uniidmixin.vue";
 import tipmixin from "./tipmixin.vue";
 import * as $ from "jquery";
 import * as util from "./../Util";
-import * as basecom from "./../com/BaseCom"
+import * as basecom from "./../com/BaseCom";
 export default {
   props: ["vm"],
-  mixins: [UniIdMixin  as any , tipmixin   as any ],
+  mixins: [UniIdMixin as any, tipmixin as any],
 
-  data(){
-       return {
-             vmEvent:[]
-       }
+  data() {
+    return {
+      vmEvent: []
+    };
   },
   renderError: (h, err) => {
     return h("pre", { title: err.stack, style: { color: "red" } }, err.stack);
@@ -38,8 +38,6 @@ export default {
     this.vm.$store = this.$store;
   },
 
-
-  
   beforeUpdate: function() {
     this.vm.$store = this.$store;
   },
@@ -54,12 +52,11 @@ export default {
 
   mounted: function() {
     if (this.$props.vm.getEvent) {
-       const _vm :  basecom.BaseCom   = this.$props.vm;
-       const me = this ;
-       this.listenVmEvent(_vm,function(){
-          me.$forceUpdate();
-       });
-
+      const _vm: basecom.BaseCom = this.$props.vm;
+      const me = this;
+      this.listenVmEvent(_vm, function() {
+        me.$forceUpdate();
+      });
     }
   },
 
@@ -82,32 +79,31 @@ export default {
           // alert(123);
           this.$el["div"].remove();
         }
-         const me = this ;
+        const me = this;
         this.clearVmEvent(oldVm);
-         this.listenVmEvent(newVm,function(){
+        this.listenVmEvent(newVm, function() {
           me.$forceUpdate();
-       });
-
-
+        });
       }
     }
   },
 
-  methods:{
-    listenVmEvent(vm: basecom.BaseCom, name:string ,fun: Function ){
-        this.vmEvent.push({name,fun});
-        //const _vm :  basecom.BaseCom   = this.$props.vm;
-        vm.getEvent().on(name,fun);
+  methods: {
+    listenVmEvent(vm: basecom.BaseCom, name: string, fun: Function) {
+      this.vmEvent.push({ name, fun });
+      //const _vm :  basecom.BaseCom   = this.$props.vm;
+      vm.getEvent().on(name, fun);
+    },
 
-  },
+    clearVmEvent(vm: basecom.BaseCom) {
 
-  clearVmEvent(vm: basecom.BaseCom){
-           this.vmEvent.foreach(e=>{
-                vm.getEvent().off(e.name,e.fun);
-           });
-           this.vmEvent = [] ;
-  },
-
+    //  const ff = [];
+     // ff.forEach
+      this.vmEvent.forEach(e => {
+        vm.getEvent().off(e.name, e.fun);
+      });
+      this.vmEvent = [];
+    }
   }
 };
 </script>

@@ -26,7 +26,7 @@ export class EventBus {
                 const _funList: Function[] = _emit._events[n];
                 //if(_funList){
                 const _stringList = _funList? _funList.map((f) => {
-                    return f.toString();
+                    return f?f.toString():"";
                 }).join("|"):"";
                // }
 

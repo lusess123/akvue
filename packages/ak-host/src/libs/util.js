@@ -80,10 +80,10 @@ util.handleTitle = function (vm, item) {
 util.setCurrentPath = (vm,name,rootTitle = "当前集群")=>{
     //debugger;
     //alert(domFile.getCookie("orgid"));
-    console.log('当前组织机构是： '+ dwhcore.getOrg());
-    console.log(dwhcore.getOrg());
+   // console.log('当前组织机构是： '+ dwhcore.getOrg());
+    //console.log(dwhcore.getOrg());
    // if
-    rootTitle = dwhcore.getOrg() ?dwhcore.getOrg().cnname:"";
+   // rootTitle = dwhcore.getOrg() ?dwhcore.getOrg().cnname:"";
     let title = '';
     let leafObj ;
     let rootObj ;
@@ -155,7 +155,9 @@ const _getVmStoreRouterPath = function (vm ,obj){
    let _res = _getChildrenData(
         vm.$store.state.app.routers,
         function(m){
+            if(m && obj){
             return m.name == obj.name
+            }
         }
     );
     if(_res) return _res.path ; else return "";
@@ -174,7 +176,7 @@ const _getChildrenData  = function (list ,fun)
                      res = item ;
                      return false ;
                  }else{
-                     if(item.children ){
+                     if(item &&item.children ){
                          res = _getChildrenData(item.children,fun);
                          //if(res) return false;
                          return !res ;

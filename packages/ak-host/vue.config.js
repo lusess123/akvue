@@ -8,7 +8,7 @@ module.exports = {
         config.resolve.alias = {
             ...config.resolve.alias,
             ...{
-                apps: "@/framework/apps",
+               // apps: "@/framework/apps",
                // biz: "@/framework/biz",
                // comp: "@/framework/comp",
               //  web: "akweb",

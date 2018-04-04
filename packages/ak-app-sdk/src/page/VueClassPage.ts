@@ -83,7 +83,7 @@ VueClassPage{{vm.d}} === {{vm.Pro}}
 <br/>
 {{vm.StoreObj}}
 <br/>
-<testcom :a="vm.A"   :b="vm.B" :change="vm.change.bind(vm)" ></testcom>
+
 <Button  @click="vm.submit()">更新</Button>
 <VuePage   propMessage="xxxxx" />
 </div>`, {
@@ -108,7 +108,7 @@ export class VueClassPage extends BasePage {
 
     constructor() {
         super();
-        this.submit = this.submit.bind(this);
+       // this.submit = this.submit.bind(this);
     }
 
     protected loadPage() {

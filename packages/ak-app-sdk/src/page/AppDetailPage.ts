@@ -5,7 +5,7 @@ import { BasePage } from "ak-lib-web/basepage";
 import { IApp } from "ak-lib-web/app/IApp";
 import { IMenu } from "ak-lib-web/app/IMenu";
 //import { IAPP } from "../../../../mock/management/app";
-import  event from "ak-lib-sys/event";
+import event from "ak-lib-sys/event";
 import vuerouter from "vue-router"
 import Vue from "vue";
 
@@ -19,7 +19,7 @@ import Vue from "vue";
 <router-link  :to="{path:'/web/appdetailpagepage/'+vm.AppInfo.Name}" ><Icon :type="vm.AppInfo.Icon" size="100"></Icon></router-link >
 
 
-<Form :model="formItem" :label-width="80" style="max-width:15rem">
+<Form  :label-width="80" style="max-width:15rem">
         <FormItem label="名称:">
             {{vm.AppInfo.Name}}
         </FormItem>
@@ -62,12 +62,12 @@ export class AppDetailPagePage extends BasePage {
     public Title: string = "应用详细信息";
 
 
-    constructor(){
+    constructor() {
         super();
         this.setRx("AppInfo");
     }
 
-    public AppInfo: IApp ;
+    public AppInfo: IApp;
 
     public reset(pagename, p1, p2, p3) {
         super.reset(pagename, p1, p2, p3);
@@ -82,7 +82,7 @@ export class AppDetailPagePage extends BasePage {
         const _app: IApp[] = this.getAppInfo();
         if (_app && _app.length > 0) {
             // this.setRx("AppInfo",_app[0]);
-             this.AppInfo = _app[0];
+            this.AppInfo = _app[0];
             return _app[0];
         }
         return null;
@@ -109,24 +109,23 @@ export class AppDetailPagePage extends BasePage {
     }
 
 
-    public enterApp()
-    {
+    public enterApp() {
         const _menus = this.AppInfo.getMenus();
-        event.GetAppEvent().emit("global-main-mounted",_menus,this.getFirstUrl(_menus));       
+        event.GetAppEvent().emit("global-main-mounted", _menus, this.getFirstUrl(_menus));
         const _first = this.getFirstUrl(_menus);
-       // vuerouter.
+        // vuerouter.
 
     }
 
-    getFirstUrl(menus : IMenu[]){
-        if(menus && menus.length > 0){
-             const _a =  menus [0];
-             if(_a.children && _a.children.length > 0 ){
-                  return this.getFirstUrl(_a.children);
-             }
-             else {
-                 return _a.name ;
-             }
+    getFirstUrl(menus: IMenu[]) {
+        if (menus && menus.length > 0) {
+            const _a = menus[0];
+            if (_a.children && _a.children.length > 0) {
+                return this.getFirstUrl(_a.children);
+            }
+            else {
+                return _a.name;
+            }
         }
         return "";
     }

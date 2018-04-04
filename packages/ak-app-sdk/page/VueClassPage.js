@@ -96,8 +96,8 @@ var VueClassPage = /** @class */ (function (_super) {
         _this.e = "cderer";
         _this.f = "666";
         _this.g = "ggggg";
-        _this.submit = _this.submit.bind(_this);
         return _this;
+        // this.submit = this.submit.bind(this);
     }
     VueClassPage.prototype.loadPage = function () {
         window["xxx"] = this;
@@ -194,7 +194,7 @@ var VueClassPage = /** @class */ (function (_super) {
     ], VueClassPage.prototype, "RR", null);
     VueClassPage = __decorate([
         ioc.PlugIn({ RegName: "VueClassPage", BaseType: "IPage", CreateDate: "2018-02-01", Doc: "VueClass页面插件" }),
-        vue.com("<div>{{vm.$_aa}}   ---------------\n{{vm.g}}\n<br/>\n\n<br/>\nRR:{{RR}}\n<br/>\nVueClassPage{{vm.d}} === {{vm.Pro}}\n<br/>\n\u4E8B\u4EF6\u8BBF\u95EE\u5668\uFF1A\n{{vm.DatePro}}---- {{DatePro}}\n<br/>\n\u53CC\u500D\u70B9\u51FB: {{vm.listk}}\n<br/>\n{{vm.StoreObj}}\n<br/>\n<testcom :a=\"vm.A\"   :b=\"vm.B\" :change=\"vm.change.bind(vm)\" ></testcom>\n<Button  @click=\"vm.submit()\">\u66F4\u65B0</Button>\n<VuePage   propMessage=\"xxxxx\" />\n</div>", {
+        vue.com("<div>{{vm.$_aa}}   ---------------\n{{vm.g}}\n<br/>\n\n<br/>\nRR:{{RR}}\n<br/>\nVueClassPage{{vm.d}} === {{vm.Pro}}\n<br/>\n\u4E8B\u4EF6\u8BBF\u95EE\u5668\uFF1A\n{{vm.DatePro}}---- {{DatePro}}\n<br/>\n\u53CC\u500D\u70B9\u51FB: {{vm.listk}}\n<br/>\n{{vm.StoreObj}}\n<br/>\n\n<Button  @click=\"vm.submit()\">\u66F4\u65B0</Button>\n<VuePage   propMessage=\"xxxxx\" />\n</div>", {
             components: { VuePage: _getType("VuePage") },
             beforeUpdate: function () {
                 //alert(" vueclass 更新了");

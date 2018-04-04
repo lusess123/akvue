@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": " tsc",
-    "clean_js": " find .  -name  \"*.js\"  -o -name \"*.d.ts\" -o -name \"com\"  -o -name \"event\"  -o -name \"net\" -o -name \"js\"   |grep -v \"src/\" |grep -v \"node_modules/\" | xargs rm -rf",
+    "clean_js": " find .  -name  \"*.js\"  -o -name \"*.d.ts\" -o -name \"com\"  -o -name \"event\"  -o -name \"net\" -o -name \"js\" -o -name \"vuemixin\"  |grep -v \"src/\" |grep -v \"node_modules/\" | xargs rm -rf",
     "deljs": "shx rm -rf js",
     "copy": "shx mv  ./js/*  .",
     "copyvue": "cd src;find ./  -name \"*.vue\" | xargs -I{} rsync -R \"{}\" ../js/;cd ..;",

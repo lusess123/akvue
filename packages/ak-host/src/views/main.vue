@@ -191,6 +191,7 @@
         watch: {
             '$route' (to) {
                // alert("'$route' (to) ");
+               debugger;
                 this.$store.commit('setCurrentPageName', to.path);
                 let pathArr = util.setCurrentPath(this, to.path);
                 if (pathArr.length > 2) {
