@@ -17,7 +17,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 ### 项目列表
 
 
-![img](https://lusess123.github.io/akvue/img/sdklist.jpg)
+![img](https://lusess123.github.io/akvue/img/applist.jpg)
 
 
 
