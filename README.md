@@ -10,7 +10,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 -  平台内核+插件，项目作为平台的插件
 -  由于所有模块全部typescript开发，类型推导更为完善
 -  使用 继承BaseClass/interface 来作为插件定义方式
--  以UI框架无关的状态对象为中心来构建对象
+-  以UI框架无关的状态对象为中心来构建组件
 -  统一集成IOC，EventBus 等常用基础设施
 -  使用lerna 管理多模块
 
