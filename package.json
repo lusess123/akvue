@@ -2,7 +2,7 @@
 	"private": true,
 	"scripts": {
 		"buildlib":"npm-run-all build-sys build-comp build-web build-col build-biz  ",
-		"build-sys":"cd packages/ak-lib-sys;npm run build ;cd ..",
+		"build-sys":"cd packages/ak-lib-sys;npm run build ;cd ..;echo 'sys库生成成功'",
 		"build-comp":"cd packages/ak-lib-comp;npm run build ;cd ..",
 		"build-web":"cd packages/ak-lib-web;npm run build ;cd ..",
 		"build-col":"cd packages/ak-lib-col;npm run build ;cd ..",

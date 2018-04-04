@@ -9,7 +9,7 @@ import { BasePage } from "ak-lib-web/basepage";
 let BizPage = class BizPage extends BasePage {
     constructor() {
         super(...arguments);
-        this.Title = "Biz";
+        this.Title = "ak-lib-biz";
         this.Source = null;
     }
     loadPage() {
@@ -33,7 +33,7 @@ let BizPage = class BizPage extends BasePage {
 };
 BizPage = __decorate([
     vue.com(`<div>BizPage</div>`),
-    ioc.PlugIn({ RegName: "BizPage", BaseType: "IPage", CreateDate: "2018-02-05", Doc: "Biz页面插件" })
+    ioc.PlugIn({ RegName: "ak-lib-bizPage", BaseType: "IPage", CreateDate: "2018-02-05", Doc: "ak-lib-biz页面插件" })
 ], BizPage);
 export { BizPage };
 const _getNewModule = (source) => {

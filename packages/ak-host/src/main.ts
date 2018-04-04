@@ -15,7 +15,7 @@ import  event from "ak-lib-sys/event";
 
 import  * as a1 from "ak-lib-biz"; a1 ;
 import  * as a2 from "apps/sdk"; a2 ;
-
+import  * as dwh from "apps/dwh"; dwh ;
 
 Vue.use(VueI18n);
 Vue.use(iView);
@@ -62,7 +62,7 @@ new Vue({
 
          const _p:any =  new Promise((a, b) => {
                     //require.ensure([],function (require) {
-                         // let ff =  require("biz");
+                         // let ff =  require("ak-lib-biz");
                           //let dwh = require("apps/dwh");
                           //let sdk = require("apps/sdk");
                         //let gg = require("app/listpage/ListForm");

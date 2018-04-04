@@ -5,10 +5,10 @@ import { BasePage } from "ak-lib-web/basepage";
 import { ISource } from "./source/ISource";
 
 @vue.com(`<div>BizPage</div>`)
-@ioc.PlugIn({ RegName: "BizPage", BaseType: "IPage", CreateDate: "2018-02-05", Doc: "Biz页面插件" })
+@ioc.PlugIn({ RegName: "ak-lib-bizPage", BaseType: "IPage", CreateDate: "2018-02-05", Doc: "ak-lib-biz页面插件" })
 export class BizPage extends BasePage {
 
-    public Title: string = "Biz";
+    public Title: string = "ak-lib-biz";
     protected Source: ISource  = null;
     
     protected loadPage() {
