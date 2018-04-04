@@ -12,15 +12,20 @@ Most of the planned features are in place but there may still be bugs. API may s
   
   npm run serve-host
 
-  ## screenshot
+## screenshot
 
-   ### 项目列表
+### 项目列表
 
-    ![img](https://lusess123.github.io/akvue/img/sdklist.jpg)
 
-  ### 项目详细信息
+![img](https://lusess123.github.io/akvue/img/sdklist.jpg)
 
-  ![img](https://lusess123.github.io/akvue/img/sdkapp.jpg)
+
+
+
+ ### 项目详细信息
+
+![img](https://lusess123.github.io/akvue/img/sdkapp.jpg)
+
 
   ## 项目插件信息注册
 
