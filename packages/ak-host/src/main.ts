@@ -14,8 +14,8 @@ import {core} from "ak-lib-sys";
 import  event from "ak-lib-sys/event";
 
 import  * as a1 from "ak-lib-biz"; a1 ;
-import  * as a2 from "apps/sdk"; a2 ;
-import  * as dwh from "apps/dwh"; dwh ;
+import  * as a2 from "ak-app-sdk"; a2 ;
+import  * as dwh from "ak-app-dwh"; dwh ;
 
 Vue.use(VueI18n);
 Vue.use(iView);
