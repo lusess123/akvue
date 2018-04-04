@@ -1,4 +1,4 @@
-# 基于vue+typescript,插件式,模块化的前端框架
+# 基于vue+typescript,插件式,模块化，可用于快速开发后台管理系统的前端平台
 
 ## Status: beta
 
@@ -8,9 +8,10 @@ Most of the planned features are in place but there may still be bugs. API may s
 ## feature
 
 -  平台内核+插件，项目作为平台的插件
--  由于所有模块全部typescript开发，类型推导更为完善
+-  所有模块typescript开发，完善的类型推导和注释
 -  使用 继承BaseClass/interface 来作为插件定义方式
 -  以UI框架无关的状态对象为中心来构建组件
+-  页面插件可自动注册路由
 -  统一集成IOC，EventBus 等常用基础设施
 -  使用lerna 管理多模块
 
