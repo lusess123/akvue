@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // 与 Vue 的浏览器支持保持一致
+    "target": "es5",
+    // 这可以对 `this` 上的数据属性进行更严格的推断
+    //"strict": true,
+    "noImplicitAny":false,
+    // 如果使用 webpack 2+ 或 rollup，可以利用 tree-shake:
+    "module": "es2015",
+    "moduleResolution": "node",
+
+    // 启用 vue-class-component 及 vuex-class 需要开启此选项
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata":true ,
+    "lib": [ "es6", "dom" ],
+
+    // 启用 vuex-class 需要开启此选项
+    "strictFunctionTypes": false,
+    "baseUrl":"./src/framework",
+    "allowJs":true,
+    "allowSyntheticDefaultImports":true,
+     
+   
+
+  }
+}

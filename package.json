@@ -1,0 +1,21 @@
+{
+	"private": true,
+	"scripts": {
+		"buildlib":"npm-run-all build-sys build-comp build-web build-col build-biz  ",
+		"build-sys":"cd packages/ak-lib-sys;npm run build ;cd ..",
+		"build-comp":"cd packages/ak-lib-comp;npm run build ;cd ..",
+		"build-web":"cd packages/ak-lib-web;npm run build ;cd ..",
+		"build-col":"cd packages/ak-lib-col;npm run build ;cd ..",
+		"build-biz":"cd packages/ak-lib-biz;npm run build ;cd ..",
+		"serve-host":"cd packages/ak-host;npm run serve ;cd .."
+	},
+	"workspaces": [
+		"packages/*",
+		"packages/libs"
+		
+	  ],
+	"devDependencies": {
+		"lerna": "^2.9.0",
+		"npm-run-all": "^4.1.2"
+	}
+}
