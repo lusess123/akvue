@@ -13,7 +13,11 @@ Most of the planned features are in place but there may still be bugs. API may s
 -  以UI框架无关的状态对象为中心来构建组件
 -  页面插件可自动注册路由
 -  统一集成IOC，EventBus 等常用基础设施
+-  ES6 的模块化方案
+-  自动加载项目模块插件
+-  使用@vue/cli-service构建站点
 -  使用lerna 管理多模块
+
 
 ## Quickstart
 
