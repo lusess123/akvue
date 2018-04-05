@@ -20,3 +20,5 @@ import * as testvmpage from "./page/testvmpage";
 testvmpage;
 import * as eventbuspage from "./page/eventbuspage";
 eventbuspage;
+import * as reactpage from "./page/reactpage";
+reactpage;

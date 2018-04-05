@@ -1,36 +1,40 @@
 {
-  "name": "ak-app-sdk",
+  "name": "ak-lib-react",
   "version": "0.0.1",
-  "description": "平台的sdk项目，作为demo，文档，监控,和测试",
+  "description": "vue与react之前的桥梁",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": " tsc",
-    "clean_js": " find .  -name  \"*.js\"  -o -name \"*.d.ts\" -o -name \"page\"  -o  -name \"js\"   |grep -v \"src/\" |grep -v \"node_modules/\" | xargs rm -rf",
+    "clean_js": " find .  -name  \"*.js\"  -o -name \"*.d.ts\" -o -name \"buttons\"  -o -name \"complex\"  -o -name \"iview\"-o -name \"multi\" -o -name \"inputtag\" -o -name \"js\"   |grep -v \"src/\" |grep -v \"node_modules/\" | xargs rm -rf",
     "deljs": "shx rm -rf js",
     "copy": "shx mv  ./js/*  .",
     "copyvue": "cd src;find ./  -name \"*.vue\" | xargs -I{} rsync -R \"{}\" ../js/;cd ..;",
     "build": "npm-run-all   tsc  copyvue copy deljs ",
-    "rebuild": "npm-run-all clean_js build "
+    "rebuild": "npm-run-all  clean_js build "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lusess123/akvue.git"
+    "url": "git+ https://github.com/lusess123/akvue.git"
   },
   "author": "zyk2003xxx@163.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lusess123/akvue/issues"
   },
-  "homepage": "https://github.com/lusess123/akvue/packages/ak-app-sdk#readme",
+  "homepage": "https://github.com/lusess123/akvue/packages/ak-lib-react#readme",
   "dependencies": {
     "ak-lib-sys":"*",
-    "ak-lib-react":"*"
+    "react":"*",
+    "react-dom":"*",
+    "@types/react":"*",
+     "@types/react-dom":"*"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",
     "shx": "^0.2.2",
-    "typescript": "^2.6.2"
+    "typescript": "*"
   }
 }
+ 

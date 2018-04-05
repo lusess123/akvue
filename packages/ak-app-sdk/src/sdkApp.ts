@@ -32,7 +32,8 @@ const _menus: IMenu[] =
                 { icon: "", name: "/web/vueclasspage", text: "vue Class" },
                 { icon: "", name: "/web/dipage", text: "依赖注入" },
                 { icon: "", name: "/web/vue/VuePage", text: "vue组件" },
-                { icon: "", name: "/web/DymicPage", text: "动态模版页面" }
+                { icon: "", name: "/web/DymicPage", text: "动态模版页面" },
+                { icon: "", name: "/web/reactpage", text: "react集成" }
             ]
         },
         {
