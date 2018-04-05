@@ -18,7 +18,7 @@ let FormPage = class FormPage extends BasePage {
         this.Title = "Form";
         this.DataRowJson = null;
         this.OptionJson = null;
-        this.DataRow = { text: "文本默认值", cascader: {}, apps: {} };
+        this.DataRow = { text: "文本默认值", cascader: [], apps: {} };
         this.FormOpt = [
             {
                 key: "text",
@@ -73,7 +73,7 @@ FormPage = __decorate([
 </Card>
 <Card >
    <h2 slot="title">DataRow</h2>
-   <JsonEditor  :objData="vm.DataRow" v-model="vm.DataRow" ></JsonEditor>
+  
 </Card>
 
 </h2>

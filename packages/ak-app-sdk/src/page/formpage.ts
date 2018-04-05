@@ -25,7 +25,7 @@ import  lvForm from "ak-lib-comp/complex/form.vue";
 </Card>
 <Card >
    <h2 slot="title">DataRow</h2>
-   <JsonEditor  :objData="vm.DataRow" v-model="vm.DataRow" ></JsonEditor>
+  
 </Card>
 
 </h2>
@@ -91,7 +91,7 @@ export class FormPage extends BasePage {
     }
 
 
-    public DataRow : any = {text:"文本默认值",cascader:{},apps:{}};
+    public DataRow : any = {text:"文本默认值",cascader:[],apps:{}};
     public FormOpt :Ioption[] =[
         {
             key:"text",

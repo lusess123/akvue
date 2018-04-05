@@ -1,7 +1,7 @@
 <template>
     <Card>
         <div>Pro:{{getPro}}</div>
-        <div>属性：{{vm}}</div>
+        <div>属性:</div>
         <div>属性getVm：{{getVm}}</div>
         <div>计算属性：{{getProCompute}}</div>
         <div>子类计算属性：{{computedMsg}}</div>
@@ -20,10 +20,10 @@ const name: string = "xxx";
 
 @Component
 export class BaseVueDom<T> extends Vue {
-    @Prop()
+    
     vm: T;
     get computedMsg() {
-        return core.json(this.vm);
+        return core.json("");
     }
 
     f5() {
@@ -42,8 +42,8 @@ export class BaseVueDom<T> extends Vue {
 })
 export default class DemoView extends BaseVueDom<IView>
 {
-     @Prop({default:{Title:"aaa123"}})
-     vm = {Title:"aaa123"};
+    
+     vm :IView = {Title:"123"};
     @Prop()
     Pro: string ;
 

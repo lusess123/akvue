@@ -42,7 +42,7 @@
                 <p class="dashed">注：支持markdown方式。</p>
             </div>
             <div v-else-if="opt.type === 'cascader'">
-                <Cascader :data="opt.cascaderList" :load-data="opt.loadService" v-model="value[opt.key][index]"></Cascader>
+                <Cascader :data="opt.cascaderList" :load-data="opt.loadService" v-model="value[opt.key]"></Cascader>
             </div>
             <div v-else-if="opt.type === 'apps'">
               <div v-for="(val, index) in value[opt.key]" :key="index" class="apps-item">
@@ -62,9 +62,9 @@
                 {{opt[value[opt.key]]}}
               </Tag>
             </div>
-            <div v-else-if="opt.type === 'user'">
+            <!-- <div v-else-if="opt.type === 'user'">
               <user-select v-model="value[opt.key]" :multiple="false" :disabled="opt.disabled"></user-select>
-            </div>
+            </div> -->
             <!-- <div v-else-if="opt.type === 'users'">
               <user-select v-model="value[opt.key]" :multiple="true"></user-select>
             </div>

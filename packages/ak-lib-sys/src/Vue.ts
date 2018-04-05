@@ -37,7 +37,7 @@ export const vm = (objPro: string) => {
 
 
 export const registAndGetVueComName = (vm, vueObj?) => {
-   // debugger ;
+    // debugger ;
     if (!vueObj) {
         if (vm) {
             if (vm._VueObj) {
@@ -54,7 +54,7 @@ export const registAndGetVueComName = (vm, vueObj?) => {
     if (!vueObj) throw { error: "组件不能为空", vm: vm };
     let _name: string = "";
     if (!vueObj.name) {
-         _name = "tempvuecom";
+        _name = "tempvuecom";
     }
     else {
         // debugger;
@@ -65,7 +65,7 @@ export const registAndGetVueComName = (vm, vueObj?) => {
             _name = vueObj.name;
         }
     }
-    _name = _name + core.getUniId();
+    _name = _name + "vue"+core.getUniId();
     //Vue.component('FormType'+name,com);
     Vue.component(_name, vueObj);
     return _name;
@@ -83,7 +83,7 @@ export const vueTpl =
 
                 mixins: [basecomixin],
 
-               
+
                 template: tpl,
                 components: components
             }
@@ -99,7 +99,7 @@ export const vueTpl =
 
 
 
-export const com = function (vue: any|string, comOpt: any = {}) {
+export const com = function (vue: any | string, comOpt: any = {}) {
     return function (constructor: Function) {
         //debugger ;
 
@@ -111,25 +111,36 @@ export const com = function (vue: any|string, comOpt: any = {}) {
         }
         else {
             //如果是string
-           
-            comOpt = {    ...comOpt,  ...{ extends: constructor["_vueObj"] } };
+
+            comOpt = { ...comOpt, ...{ extends: constructor["_vueObj"] } };
 
             if (!constructor["_vueObj"]) {
                 const components = comOpt.components;
-                constructor["_vueObj"] = vueTpl(util.getFunName(constructor) + core.getUniId(), components, comOpt)(vue);
+                constructor["_vueObj"] = vueTpl(util.getFunName(constructor) + "vue"+ core.getUniId() , components, comOpt)(vue);
             }
             else {
                 const components = comOpt.components;
                 //constructor["_vueObj"].template = vue ;
-                constructor["_vueObj"] = { ...{ components:components,render:null,template: vue ,name:util.getFunName(constructor)+ core.getUniId()}, ...{ extends: comOpt } };
+
+                constructor["_vueObj"] = {
+                    ...{
+                        components: components,
+                        render: null,
+                        template: vue,
+                        name: util.getFunName(constructor) + "vue"+ core.getUniId() 
+                    },
+                    ...{
+                        extends: comOpt
+                    }
+                };
             }
 
         }
     }
 }
 
-const _clearRender = function(vueObj){
-         
+const _clearRender = function (vueObj) {
+
 }
 
 

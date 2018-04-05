@@ -140,7 +140,10 @@ export default {
                 // debugger;
                 //  _vm.PageDomObj
                 // alert(_vm.PageDomObj["constructor"]["aa"]);
-                return vue.registAndGetVueComName(pageObj);
+                const _res = vue.registAndGetVueComName(pageObj);
+                //console.log(_res);
+                //alert(_res);
+                return _res ;
             } else {
                 return "div";
             }

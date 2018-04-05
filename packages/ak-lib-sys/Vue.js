@@ -62,7 +62,7 @@ export var registAndGetVueComName = function (vm, vueObj) {
             _name = vueObj.name;
         }
     }
-    _name = _name + core.getUniId();
+    _name = _name + "vue" + core.getUniId();
     //Vue.component('FormType'+name,com);
     Vue.component(_name, vueObj);
     return _name;
@@ -96,12 +96,19 @@ export var com = function (vue, comOpt) {
             comOpt = __assign({}, comOpt, { extends: constructor["_vueObj"] });
             if (!constructor["_vueObj"]) {
                 var components = comOpt.components;
-                constructor["_vueObj"] = vueTpl(util.getFunName(constructor) + core.getUniId(), components, comOpt)(vue);
+                constructor["_vueObj"] = vueTpl(util.getFunName(constructor) + "vue" + core.getUniId(), components, comOpt)(vue);
             }
             else {
                 var components = comOpt.components;
                 //constructor["_vueObj"].template = vue ;
-                constructor["_vueObj"] = __assign({ components: components, render: null, template: vue, name: util.getFunName(constructor) + core.getUniId() }, { extends: comOpt });
+                constructor["_vueObj"] = __assign({
+                    components: components,
+                    render: null,
+                    template: vue,
+                    name: util.getFunName(constructor) + "vue" + core.getUniId()
+                }, {
+                    extends: comOpt
+                });
             }
         }
     };
