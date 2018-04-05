@@ -1,4 +1,4 @@
-# 基于vue+typescript,插件式,模块化，可用于快速开发后台管理系统的前端平台
+# 基于vue+typescript+react,插件式,模块化，可用于快速开发后台管理系统的前端平台
 
 ## Status: beta
 
