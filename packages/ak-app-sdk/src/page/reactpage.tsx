@@ -9,7 +9,7 @@ import { render } from "react-dom";
 import Form from "react-jsonschema-form";
 
 const schema = {
-  "title": "A registration form",
+  "title": "一个注册表单",
   "type": "object",
   "required": [
     "firstName",
@@ -18,23 +18,23 @@ const schema = {
   "properties": {
     "password": {
       "type": "string",
-      "title": "Password"
+      "title": "密码"
     },
     "lastName": {
       "type": "string",
-      "title": "Last name"
+      "title": "名字"
     },
     "bio": {
       "type": "string",
-      "title": "Bio"
+      "title": "性别"
     },
     "firstName": {
       "type": "string",
-      "title": "First name"
+      "title": "姓"
     },
     "age": {
       "type": "integer",
-      "title": "Age"
+      "title": "年龄"
     }
   }
 }
@@ -61,7 +61,7 @@ function getElementsByClass(oParent, target) {
 @vue.com(`<div><Card><div class="act-react" style="padding:auto;margin:auto;"></div></Card></div>`, {
 
   mounted() {
-    // alert("ddddd123");
+    // alert("ddddd123"); 
     //renderTest(this.$el,{compiler:"tsc",framework:"react"});
 
     const _dom = getElementsByClass(this.$el,"act-react");
