@@ -1,13 +1,3 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,30 +11,29 @@ import List from "./testrx/list.vue";
 import event from "ak-lib-sys/event";
 import Vue from "vue";
 //Vue.use(JsonEditor)
-var TestRxPage = /** @class */ (function (_super) {
-    __extends(TestRxPage, _super);
-    function TestRxPage() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.Title = "TestRx";
-        _this.List = { a: [], b: "tttt" };
-        _this.Url = "/web/testrxpage-win";
-        return _this;
+let TestRxPage = class TestRxPage extends BasePage {
+    //Vue.use(JsonEditor)
+    constructor() {
+        super(...arguments);
+        this.Title = "TestRx";
+        this.List = { a: [], b: "tttt" };
+        this.Url = "/web/testrxpage-win";
     }
     //public IsSingle : true ;
-    TestRxPage.prototype.open = function () {
+    open() {
         event.GetAppEvent().emit("openurl", {
             path: this.Url
         });
         //this.$store.state["fff"] = new Date().toString();
         // this.$store.registerModule(new Date().toString(), { state: new TestRxMoule()})
-    };
-    TestRxPage.prototype.open1 = function () {
+    }
+    open1() {
         event.GetAppEvent().emit("openurl", {
             path: this.Url, nourl: true
         });
-    };
-    TestRxPage.prototype.getC = function () {
-        var _vm = new Vue({
+    }
+    getC() {
+        const _vm = new Vue({
             mixins: [{
                     data: {
                         ddd: 123
@@ -56,17 +45,17 @@ var TestRxPage = /** @class */ (function (_super) {
                 }
             },
             methods: {
-                ff: function () {
+                ff() {
                 }
             }
         });
         _vm.ff();
         return _vm.$data.$$data;
-    };
+    }
     //public copyList = [];
-    TestRxPage.prototype.loadPage = function () {
+    loadPage() {
         // alert("load");
-        var _list = [1, 2, 3, 4, 5].map(function (a) {
+        const _list = [1, 2, 3, 4, 5].map(a => {
             return {
                 Index: a,
                 Text: a + "文本"
@@ -79,56 +68,61 @@ var TestRxPage = /** @class */ (function (_super) {
         this.pRegisterModule({
             state: new TestRxMoule()
         });
-    };
-    TestRxPage.prototype.changeJson = function (list) {
+    }
+    changeJson(list) {
         // this.List.a = [];
-        for (var n in list) {
-            var _index = parseInt(n);
-            var _n = list[n];
+        for (const n in list) {
+            const _index = parseInt(n);
+            const _n = list[n];
             this.List.a[_index].Text = _n.Text;
         }
-    };
-    TestRxPage = __decorate([
-        vue.com("<div>\n<Input v-model=\"vm.Url\" placeholder=\"Enter something...\" style=\"width: 300px\"></Input>\n<Button @click=\"vm.open()\">url\u663E\u793A</Button>\n<Button @click=\"vm.open1()\">url\u9690\u85CF</Button>\n<List v-if=\"\"  :List=\"vm.List\" :b=\"vm.List.b\" :c=\"vm.getC()\"></List>\n<h1>{{vm.Title}}===={{vm.IsSingle$}}</h1>\n</div>", {
-            name: "TestRxPage",
-            components: {
-                List: List
-            },
-            provide: {
-                UniId: ""
-            },
-            methods: {
-                getC: function () {
-                    return { a: 123, b: 4456 };
-                }
-            },
-            mounted: function () {
-                window["rxx"] = this;
-            },
-            updated: function () {
-                //  alert("page.vue 更新了");
-            },
-            created: function () {
-                this._provided.UniId = this.vm.UniId;
-            },
-            destroyed: function () {
-                //  alert();
-                //debugger ;
-                if (this.$props.vm && this.$props.vm.IsSingle$) {
-                    if (this.$props.vm.dispose) {
-                        //   alert("销毁数据");
-                        this.$props.vm.dispose();
-                    }
+    }
+};
+TestRxPage = __decorate([
+    vue.com(`<div>
+<Input v-model="vm.Url" placeholder="Enter something..." style="width: 300px"></Input>
+<Button @click="vm.open()">url显示</Button>
+<Button @click="vm.open1()">url隐藏</Button>
+<List v-if=""  :List="vm.List" :b="vm.List.b" :c="vm.getC()"></List>
+<h1>{{vm.Title}}===={{vm.IsSingle$}}</h1>
+</div>`, {
+        name: "TestRxPage",
+        components: {
+            List
+        },
+        provide: {
+            UniId: ""
+        },
+        methods: {
+            getC() {
+                return { a: 123, b: 4456 };
+            }
+        },
+        mounted() {
+            window["rxx"] = this;
+        },
+        updated() {
+            //  alert("page.vue 更新了");
+        },
+        created() {
+            this._provided.UniId = this.vm.UniId;
+        },
+        destroyed: function () {
+            //  alert();
+            //debugger ;
+            if (this.$props.vm && this.$props.vm.IsSingle$) {
+                if (this.$props.vm.dispose) {
+                    //   alert("销毁数据");
+                    this.$props.vm.dispose();
                 }
             }
-        }),
-        ioc.PlugIn({ RegName: "TestRxPage", BaseType: "IPage", CreateDate: "2018-02-23", Doc: "TestRx页面插件" })
-    ], TestRxPage);
-    return TestRxPage;
-}(BasePage));
+        }
+    }),
+    ioc.PlugIn({ RegName: "TestRxPage", BaseType: "IPage", CreateDate: "2018-02-23", Doc: "TestRx页面插件" })
+], TestRxPage);
 export { TestRxPage };
-var TestRxMoule = /** @class */ (function () {
-    function TestRxMoule() {
+export class TestRxMoule {
+    constructor() {
         this.page = {
             form: {
                 row: {
@@ -138,28 +132,22 @@ var TestRxMoule = /** @class */ (function () {
             }
         };
     }
-    TestRxMoule.prototype.changeCol = function (a) {
+    changeCol(a) {
         this.page.form.row.col = a;
-    };
-    TestRxMoule.prototype.changeCol1 = function (a) {
+    }
+    changeCol1(a) {
         this.page.form.row.col1 = a;
-    };
-    TestRxMoule.prototype.getCol = function () {
+    }
+    getCol() {
         return this.page.form.row.col + new Date().toString();
-    };
-    TestRxMoule.prototype.getCol1 = function () {
+    }
+    getCol1() {
         return this.page.form.row.col1 + new Date().toString();
-    };
-    TestRxMoule.prototype.getCol3 = function () {
+    }
+    getCol3() {
         return this.page.form.row["col3"] + new Date().toString();
-    };
-    Object.defineProperty(TestRxMoule.prototype, "colget", {
-        get: function () {
-            return this.getCol();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return TestRxMoule;
-}());
-export { TestRxMoule };
+    }
+    get colget() {
+        return this.getCol();
+    }
+}

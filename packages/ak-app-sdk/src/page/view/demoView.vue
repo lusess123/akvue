@@ -43,7 +43,7 @@ export class BaseVueDom<T> extends Vue {
 export default class DemoView extends BaseVueDom<IView>
 {
      @Prop({default:{Title:"aaa123"}})
-     vm = null;
+     vm = {Title:"aaa123"};
     @Prop()
     Pro: string ;
 

@@ -1,5 +1,5 @@
 export interface IView {
     Title: string;
-    DemoName: String;
+    DemoName?: String;
     change?: Function;
 }

@@ -1,21 +1,3 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,29 +13,28 @@ import Vue from "vue";
 import { VuePage } from "./VuePage";
 VuePage;
 //mport {Container} from "typedi";
-var _getType = function (name) {
+const _getType = (name) => {
     //core.alert(ioc.Ioc.Current().IocModel());
-    var _list = ioc.Ioc.Current().GetTypeList("vue");
-    var _num = _list.findIndex(function (a) { return a.RegName.toLocaleLowerCase() == name.toLocaleLowerCase(); });
+    const _list = ioc.Ioc.Current().GetTypeList("vue");
+    const _num = _list.findIndex(a => a.RegName.toLocaleLowerCase() == name.toLocaleLowerCase());
     //core.alert(_list[_num].InstanceType);
     return _list[_num].InstanceType;
 };
-export var com = function (vuea, comOpt) {
-    if (comOpt === void 0) { comOpt = {}; }
+export const com = function (vuea, comOpt = {}) {
     return function (constructor) {
         //debugger ;
-        comOpt = __assign({}, comOpt, { extends: constructor["_vueObj"] });
-        var components = comOpt.components;
-        var _type = typeof (vuea);
-        var _base = constructor["_vueObj"];
+        comOpt = Object.assign({}, comOpt, { extends: constructor["_vueObj"] });
+        const components = comOpt.components;
+        const _type = typeof (vuea);
+        const _base = constructor["_vueObj"];
         if (_type == "function")
             constructor["_vueObj"] = vuea;
         else {
             if (_type == "string")
                 constructor["_vueObj"] = vue.vueTpl(util.getFunName(constructor) + core.getUniId(), components, comOpt)(vuea);
             else {
-                var _base_1 = { name: "com" + core.getUniId(), props: ["vm"] };
-                constructor["_vueObj"] = Vue.extend(__assign({}, _base_1, vue, comOpt));
+                const _base = { name: "com" + core.getUniId(), props: ["vm"] };
+                constructor["_vueObj"] = Vue.extend(Object.assign({}, _base, vue, comOpt));
             }
         }
         //constructor["_vueObj"] = {extends:};
@@ -65,72 +46,61 @@ export var com = function (vuea, comOpt) {
 function configurable(value) {
     return function (target, propertyKey, descriptor) {
         debugger;
-        var _baseVue = target.constructor["_vueObj"];
+        const _baseVue = target.constructor["_vueObj"];
         if (_baseVue) {
             //constructor["_vueObj"]  = 
             target.constructor["_vueObj"] = {
-                computed: (_a = {},
-                    _a[propertyKey] = function () {
+                computed: {
+                    [propertyKey]: function () {
                         return this.vm[propertyKey];
                     },
-                    _a.CCC = function () {
+                    CCC() {
                         return "123";
-                    },
-                    _a),
+                    }
+                },
                 extends: _baseVue
             };
         }
-        var _a;
     };
 }
-var VueClassPage = /** @class */ (function (_super) {
-    __extends(VueClassPage, _super);
-    function VueClassPage() {
-        var _this = _super.call(this) || this;
-        _this.Title = "vue class";
-        _this.$_aa = "vfr";
-        _this.A = "123";
-        _this.B = "abc";
-        _this.c = "sssss";
-        _this.d = "dfdfdf";
-        _this.e = "cderer";
-        _this.f = "666";
-        _this.g = "ggggg";
-        return _this;
+let VueClassPage = class VueClassPage extends BasePage {
+    constructor() {
+        super();
+        this.Title = "vue class";
+        this.$_aa = "vfr";
+        this.A = "123";
+        this.B = "abc";
+        this.c = "sssss";
+        this.d = "dfdfdf";
+        this.e = "cderer";
+        this.f = "666";
+        this.g = "ggggg";
         // this.submit = this.submit.bind(this);
     }
-    VueClassPage.prototype.loadPage = function () {
+    loadPage() {
         window["xxx"] = this;
         // core.alert(this.UniId);
         this.pRegisterModule(moduleA);
-    };
-    VueClassPage.prototype.update = function () {
+    }
+    update() {
         // this.forceUpdate();
         this.forceUpdate();
-    };
-    VueClassPage.prototype.getModuleX = function () {
+    }
+    getModuleX() {
         // alert("方法执行");
         // alert(this.getModuleState().X);
         return this.getModuleState().X;
-    };
-    Object.defineProperty(VueClassPage.prototype, "X", {
-        get: function () {
-            debugger;
-            //  alert("computer getters X");
-            return this.$store.getters.getX;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(VueClassPage.prototype, "RR", {
-        get: function () {
-            // alert("RR");
-            return this.$store.getters.getX;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    VueClassPage.prototype.submit = function () {
+    }
+    get X() {
+        debugger;
+        //  alert("computer getters X");
+        return this.$store.getters.getX;
+    }
+    get RR() {
+        // alert("RR");
+        return this.$store.getters.getX;
+    }
+    submit() {
         if (this.$store.state[this.UniId]) {
             // this.registerModule();
             // alert("开始更新"+ this.A);
@@ -139,85 +109,92 @@ var VueClassPage = /** @class */ (function (_super) {
             // this.$store.state[this.UniId].add();
             // this.forceUpdate();
         }
-    };
-    VueClassPage.prototype.change = function (a) {
+    }
+    change(a) {
         // alert(a);
         this.A = new Date().toString();
-    };
-    Object.defineProperty(VueClassPage.prototype, "DatePro", {
-        get: function () {
-            //this.fDatePro = new Date().toString();
-            return new Date().toString();
-        },
-        set: function (val) {
-            this.fDatePro = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(VueClassPage.prototype, "Pro", {
-        get: function () {
-            return this.e;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    }
+    get DatePro() {
+        //this.fDatePro = new Date().toString();
+        return new Date().toString();
+    }
+    set DatePro(val) {
+        this.fDatePro = val;
+    }
+    get Pro() {
+        return this.e;
+    }
     ;
-    Object.defineProperty(VueClassPage.prototype, "StoreObj", {
-        get: function () {
-            // alert(this.A);
-            if (this.A == "1")
-                return this.$store.state.user.a;
-            else if (this.$store.state[this.UniId])
-                return this.$store.state[this.UniId].count;
-            else {
-                return new Date().toString();
-            }
+    get StoreObj() {
+        // alert(this.A);
+        if (this.A == "1")
+            return this.$store.state.user.a;
+        else if (this.$store.state[this.UniId])
+            return this.$store.state[this.UniId].count;
+        else {
+            return new Date().toString();
+        }
+    }
+    get listk() {
+        if (this.$store.state[this.UniId])
+            return this.getModuleState().threeCount;
+        else
+            return "不存在";
+    }
+};
+__decorate([
+    vue.compute(),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [])
+], VueClassPage.prototype, "RR", null);
+VueClassPage = __decorate([
+    ioc.PlugIn({ RegName: "VueClassPage", BaseType: "IPage", CreateDate: "2018-02-01", Doc: "VueClass页面插件" }),
+    vue.com(`<div>{{vm.$_aa}}   ---------------
+{{vm.g}}
+<br/>
+
+<br/>
+RR:{{RR}}
+<br/>
+VueClassPage{{vm.d}} === {{vm.Pro}}
+<br/>
+事件访问器：
+{{vm.DatePro}}---- {{DatePro}}
+<br/>
+双倍点击: {{vm.listk}}
+<br/>
+{{vm.StoreObj}}
+<br/>
+
+<Button  @click="vm.submit()">更新</Button>
+<VuePage   propMessage="xxxxx" />
+</div>`, {
+        components: { VuePage: _getType("VuePage") },
+        beforeUpdate() {
+            //alert(" vueclass 更新了");
         },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(VueClassPage.prototype, "listk", {
-        get: function () {
-            if (this.$store.state[this.UniId])
-                return this.getModuleState().threeCount;
-            else
-                return "不存在";
-        },
-        enumerable: true,
-        configurable: true
-    });
-    __decorate([
-        vue.compute(),
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [])
-    ], VueClassPage.prototype, "RR", null);
-    VueClassPage = __decorate([
-        ioc.PlugIn({ RegName: "VueClassPage", BaseType: "IPage", CreateDate: "2018-02-01", Doc: "VueClass页面插件" }),
-        vue.com("<div>{{vm.$_aa}}   ---------------\n{{vm.g}}\n<br/>\n\n<br/>\nRR:{{RR}}\n<br/>\nVueClassPage{{vm.d}} === {{vm.Pro}}\n<br/>\n\u4E8B\u4EF6\u8BBF\u95EE\u5668\uFF1A\n{{vm.DatePro}}---- {{DatePro}}\n<br/>\n\u53CC\u500D\u70B9\u51FB: {{vm.listk}}\n<br/>\n{{vm.StoreObj}}\n<br/>\n\n<Button  @click=\"vm.submit()\">\u66F4\u65B0</Button>\n<VuePage   propMessage=\"xxxxx\" />\n</div>", {
-            components: { VuePage: _getType("VuePage") },
-            beforeUpdate: function () {
-                //alert(" vueclass 更新了");
+        computed: {
+            DatePro() {
+                // alert("计算属性执行");
+                return new Date().toString() + "====" + this.vm.X;
             },
-            computed: {
-                DatePro: function () {
-                    // alert("计算属性执行");
-                    return new Date().toString() + "====" + this.vm.X;
-                },
-                iiii: function () {
-                    //alert("iiii");
-                }
+            iiii() {
+                //alert("iiii");
             }
-        }),
-        __metadata("design:paramtypes", [])
-    ], VueClassPage);
-    return VueClassPage;
-}(BasePage));
+        }
+    }),
+    __metadata("design:paramtypes", [])
+], VueClassPage);
 export { VueClassPage };
-var _vue = Vue.component("testcom", {
-    template: "\n    <div>\n    \u65F6\u95F4\u8BA1\u7B97\u5C5E\u6027\uFF1A{{DatePro}} \u51FD\u6570\u5C5E\u6027\uFF1A{{aa1}}\n    <Button  @click='change(val)'>testcom{{a}}  {{b}} {{change}}</Button>\n    </div>\n    ",
+const _vue = Vue.component("testcom", {
+    template: `
+    <div>
+    时间计算属性：{{DatePro}} 函数属性：{{aa1}}
+    <Button  @click='change(val)'>testcom{{a}}  {{b}} {{change}}</Button>
+    </div>
+    `,
     props: ["a", "b", "change"],
-    data: function () {
+    data() {
         return {
             val: "cc",
             get aa1() {
@@ -225,7 +202,7 @@ var _vue = Vue.component("testcom", {
             }
         };
     },
-    beforeUpdate: function () {
+    beforeUpdate() {
         // alert(" testcom 更新了");
     },
     methods: {
@@ -234,68 +211,58 @@ var _vue = Vue.component("testcom", {
         }
     },
     computed: {
-        DatePro: function () {
+        DatePro() {
             // alert();
             return new Date().toString() + this.b;
         }
     }
 });
-var AppData = /** @class */ (function () {
-    function AppData() {
+class AppData {
+    constructor() {
         this.count = 1;
         this.X = "dddd";
         this.M = "tttt";
     }
-    AppData.prototype.add = function () {
+    add() {
         this.count = this.count + 2;
-    };
-    Object.defineProperty(AppData.prototype, "threeCount", {
-        get: function () {
-            return this.count * 3;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return AppData;
-}());
-var moduleA = {
+    }
+    get threeCount() {
+        return this.count * 3;
+    }
+}
+const moduleA = {
     state: new AppData(),
     mutations: {
-        increment: function (state) {
+        increment(state) {
             // 这里的 `state` 对象是模块的局部状态
             state.count++;
             state.X = state.count;
         }
     },
     getters: {
-        doubleCount: function (state) {
+        doubleCount(state) {
             return state.count * 2;
         },
-        getX: function (s) {
+        getX(s) {
             // alert("x");
             return s.X;
         }
     }
 };
-var AA = /** @class */ (function () {
-    function AA(asd, fff, XXX) {
+export class AA {
+    constructor(asd, fff, XXX) {
         this.asd = asd;
         this.fff = fff;
         this.XXX = XXX;
         this.asd;
         this.XXX;
     }
-    AA.prototype.alert = function () {
+    alert() {
         // alert(this.XXX);
-    };
-    return AA;
-}());
-export { AA };
-new AA("aa", "ccc", "tytyty").alert();
-var SomeClass = /** @class */ (function () {
-    function SomeClass() {
     }
-    SomeClass.prototype.someMethod = function () {
-    };
-    return SomeClass;
-}());
+}
+new AA("aa", "ccc", "tytyty").alert();
+class SomeClass {
+    someMethod() {
+    }
+}
