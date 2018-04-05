@@ -1,5 +1,5 @@
 # 一个插件式,模块化的平台 
-# 可用于快速开发2b后台管理系统  
+# 可用于快速开发2b大型的后台管理系统  
 # 基于vue+typescript+react
 
 ## Status: beta
@@ -20,6 +20,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 -  自动加载项目模块插件
 -  使用@vue/cli-service构建站点
 -  使用lerna 管理多模块
+-  提供针对业务对象(表)高可配置化的CURD组件
 
 
 ## Quickstart
