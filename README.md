@@ -19,7 +19,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    2.class/file   
 
-   3.libarary(比如：Prototype.js，jquery) 
+   3.library(比如：Prototype.js，jquery) 
 
    4.framework(react > vue > angular)
 
