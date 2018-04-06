@@ -21,7 +21,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    3.library/package(比如：Prototype.js，jquery) 
 
-   4.framework(三大框架一个比一个重量级： react < vue < angular)
+   4.framework(三大框架一个比一个重量级: react < vue < angular)
 
    5.platform  , 比如（vscode，Android ， Windows）
 
