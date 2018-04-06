@@ -11,7 +11,7 @@ import Door from './../views/door.vue'
     path: '/',
     name: 'dwh.dash222',
     title: '数仓概况',
-    redirect: '/dwh',
+    redirect: '/nweb',
     meta: {title: '数仓概况'},
     component: Door,
     children:[

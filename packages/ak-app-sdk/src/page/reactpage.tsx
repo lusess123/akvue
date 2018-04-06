@@ -43,47 +43,80 @@ const log = (type) => console.log.bind(console, type);
 
 function getElementsByClass(oParent, target) {
 
-       var aEle = oParent.getElementsByTagName('*');
-       var aResult = [];
-       var reg = new RegExp('\\b' + target + '\\b', 'i');
-       var i = 0;
+  var aEle = oParent.getElementsByTagName('*');
+  var aResult = [];
+  var reg = new RegExp('\\b' + target + '\\b', 'i');
+  var i = 0;
 
-       for(i = 0; i < aEle.length; i++) {
-              if(reg.test(aEle[i].className)) {
-                  aResult.push(aEle[i]);
-              }
-       }
+  for (i = 0; i < aEle.length; i++) {
+    if (reg.test(aEle[i].className)) {
+      aResult.push(aEle[i]);
+    }
+  }
 
-       return aResult;
+  return aResult;
+}
+
+import reactvue from "ak-lib-react/reactvuemixin";
+
+export const testreactvue = {
+  mixins: [reactvue],
+  template: '<div></div>'
 }
 
 
-@vue.com(`<div><Card><div class="act-react" style="padding:auto;margin:auto;"></div></Card></div>`, {
+@vue.com(`<div><Card>
+vue:<h2>{{vm.Title}}</h2>
+react:
+<testreactvue :framework="vm.framework"  :compiler="vm.Title"></testreactvue>
+react:
+<div class="act-react" style="padding:auto;margin:auto;"></div>
+</Card></div>`, {
 
-  mounted() {
-    // alert("ddddd123"); 
-    //renderTest(this.$el,{compiler:"tsc",framework:"react"});
+    components: { testreactvue },
 
-    const _dom = getElementsByClass(this.$el,"act-react");
+    mounted() {
+      // alert("ddddd123"); 
+      //renderTest(this.$el,{compiler:"tsc",framework:"react"});
 
-    render((
-      <Form schema={schema}
-        onChange={log("changed")}
-        onSubmit={log("submitted")}
-        onError={log("errors")} />
-    ), _dom[0]);
-  }
+      const _dom = getElementsByClass(this.$el, "act-react");
 
-})
+      const _node: any = () => {
+        render((
+          <div>
+            <h2>{this.vm.Title}</h2>
+            <Form schema={schema}
+              onChange={log("changed")}
+              onSubmit={log("submitted")}
+              onError={log("errors")} />
+            <button onClick={() => { this.vm.changeTitle(); _node(); }} >修改标题</button>
+          </div>
+        ), _dom[0]);
+      }
+      _node();
+      //console.log(_node);
+    }
+
+  })
 @ioc.PlugIn({ RegName: "ReactPage", BaseType: "IPage", CreateDate: "2018-04-05", Doc: "React页面插件" })
 export class ReactPage extends BasePage {
 
-  public Title: string = "React";
+  public Title: string = "ReactPage页面标题";
+  framework: string = "fff123";
+  compiler: string = "tttt444";
   protected loadPage() {
 
   }
 
+  changeTitle() {
+    this.Title = new Date().toString();
+  }
+ 
+
 }
+
+
+
 
 
 

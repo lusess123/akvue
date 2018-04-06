@@ -52,21 +52,45 @@ function getElementsByClass(oParent, target) {
     }
     return aResult;
 }
+import reactvue from "ak-lib-react/reactvuemixin";
+export const testreactvue = {
+    mixins: [reactvue],
+    template: '<div></div>'
+};
 let ReactPage = class ReactPage extends BasePage {
     constructor() {
         super(...arguments);
-        this.Title = "React";
+        this.Title = "ReactPage页面标题";
+        this.framework = "fff123";
+        this.compiler = "tttt444";
     }
     loadPage() {
     }
+    changeTitle() {
+        this.Title = new Date().toString();
+    }
 };
 ReactPage = __decorate([
-    vue.com(`<div><Card><div class="act-react" style="padding:auto;margin:auto;"></div></Card></div>`, {
+    vue.com(`<div><Card>
+vue:<h2>{{vm.Title}}</h2>
+react:
+<testreactvue :framework="vm.framework"  :compiler="vm.Title"></testreactvue>
+react:
+<div class="act-react" style="padding:auto;margin:auto;"></div>
+</Card></div>`, {
+        components: { testreactvue },
         mounted() {
             // alert("ddddd123"); 
             //renderTest(this.$el,{compiler:"tsc",framework:"react"});
             const _dom = getElementsByClass(this.$el, "act-react");
-            render((React.createElement(Form, { schema: schema, onChange: log("changed"), onSubmit: log("submitted"), onError: log("errors") })), _dom[0]);
+            const _node = () => {
+                render((React.createElement("div", null,
+                    React.createElement("h2", null, this.vm.Title),
+                    React.createElement(Form, { schema: schema, onChange: log("changed"), onSubmit: log("submitted"), onError: log("errors") }),
+                    React.createElement("button", { onClick: () => { this.vm.changeTitle(); _node(); } }, "\u4FEE\u6539\u6807\u9898"))), _dom[0]);
+            };
+            _node();
+            //console.log(_node);
         }
     }),
     ioc.PlugIn({ RegName: "ReactPage", BaseType: "IPage", CreateDate: "2018-04-05", Doc: "React页面插件" })
