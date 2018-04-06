@@ -23,7 +23,7 @@ export default {
                     return <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>;
                 }
                 componentDidMount() {
-                    alert("end");
+                   // alert("end");
                 }
 
             }

@@ -43,7 +43,7 @@ export default {
                         "!");
                 };
                 Hello.prototype.componentDidMount = function () {
-                    alert("end");
+                    // alert("end");
                 };
                 return Hello;
             }(React.Component));
@@ -64,10 +64,10 @@ export default {
     },
     watch: {
         compiler: function (a, b) {
-            debugger;
+            // debugger;
             if (this.reactNode) {
                 // const _createReact = this.reactrender();
-                alert(this.$props.compiler);
+                // alert(this.$props.compiler);
                 ReactDOM.render(React.createElement(this.reactNode, __assign({}, this.$props)), this.$el);
             }
         }
