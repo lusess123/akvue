@@ -29,7 +29,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 +  **所有模块typescript开发**，
 
-   通过静态类型系统提高工程稳定性，完善的类型推导和注释
+   提高工程稳定性，静态类型系统对IDE友好，能提供更好的类型推导和注释，rename，代码分析
 
 +  **使用 继承BaseClass/interface 来作为插件定义方式**
 
