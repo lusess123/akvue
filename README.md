@@ -13,7 +13,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 +  **平台内核+插件，项目作为平台的插件**
 
-   模块化进阶 ： 
+   “封装”的进阶史 ： 
 
    1.function 
 
@@ -33,15 +33,15 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 +  **使用 继承BaseClass/interface 来作为插件定义方式**
 
-   传统的面向对象程序设计方式对大部分码农更友好，还能使用现成的设计模式
+   相对于FP 和 FRP ，OOP虽然笨重，但是门槛低，符合大多数人的理解和思维方式，并且可以复用几十年积累的各种设计模式和经验。对于界面交互大多数场景，OOP是比较好的方式。
 
 +  **以UI框架无关的状态对象(类似angular的controller)为中心来构建组件**
 
-   解藕，以UI框架无关的状态管理更接近实际业务，可在vue/react/anguar三大框架之间复用逻辑
+   解藕，以UI框架无关的状态管理更接近实际业务场景，可在vue/react/anguar三大框架之间复用逻辑
 
 +  **集成react**
 
-    对于后台管理系统，js包大小 和 兼并react的生态 的权衡,选择了后者
+    对于2B后台管理系统，“尽量缩小需要下载的js包大小” 和 “兼并react的生态” 的权衡,选择了后者
 
 + **页面插件可自动注册路由**
 
@@ -53,23 +53,23 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 +  **ES6 的模块化方案**
 
-   tree shark
+   tree shaking 
 
 +  **自动加载项目模块插件**
 
-    可插拔
+    可插拔模块
 
 +  **使用@vue/cli-service构建站点**
 
-   黑盒子化webpack
+   黑盒化webpack
 
 +  **使用lerna 管理多模块**
 
-   monorepro
+   对于大型框架和平台型的方案 来说，适合使用 monorepo 来管理代码
 
 +  **提供针对业务对象(表)高可配置化的CURD组件**
 
-   快速开发后台管理系统大部分的业务场景
+   对业务对象(表)CURD是后台管理系统大部分的业务场景，如果能结合后端进行丰富的元数据配置和强大扩展，能解决很大部分的需求
 
 ## Quickstart
 
