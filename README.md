@@ -13,7 +13,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 +  **平台内核+插件，项目作为平台的插件**
 
-   “封装”的进阶史 ： 
+   “封装”的进化史 ： 
 
    1.function 
 
