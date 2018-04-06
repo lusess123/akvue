@@ -41,7 +41,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 +  **集成react**
 
-    后台管理系统不考虑包大小，集成react是为了兼并react 的生态
+    对于后台管理系统，js包大小 和 兼并react的生态 的权衡,选择了后者
 
 + **页面插件可自动注册路由**
 
