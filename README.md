@@ -2,7 +2,7 @@
 ## 简单介绍
 - 一个插件式,模块化的平台 
 - 可用于快速开发 大型2b后台管理系统  
-- 基于vue+typescript + react
+- 基于vue+typescript 
 
 ## Status: beta
 
