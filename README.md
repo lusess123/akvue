@@ -23,7 +23,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    4.framework(比如，react < vue < angular，三大框架一个比一个重量级)
 
-   5.platform  , 比如（vscode，Android ， Windows）
+   5.platform  , 比如（vscode，Android ， OpenERP,各种Paas平台）
 
    akvue是一个简单的platform，提供SDK和可扩展的内核接口，可用来快速开发大型2b后台管理系统，每个项目是平台的一个插件，运行在这个平台之上
 

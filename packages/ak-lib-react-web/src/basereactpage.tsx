@@ -10,6 +10,7 @@ import { render,unmountComponentAtNode } from "react-dom";
 export class BaseDomReact<T> extends React.Component<IProps<T>, any> {
 
     get Vm ():T{
+        alert(123);
         return this.props.Vm;
     }
 
@@ -33,7 +34,7 @@ export interface IProps<T>{
     },
     mounted() {
         this.reactNode = this.getReactType();
-        render(<this.reactNode  vm={this.vm}></this.reactNode>, this.$el);
+        render(<this.reactNode  Vm={this.vm}></this.reactNode>, this.$el);
     },
     methods:{
          getReactType(){

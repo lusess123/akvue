@@ -25,6 +25,7 @@ var BaseDomReact = /** @class */ (function (_super) {
     }
     Object.defineProperty(BaseDomReact.prototype, "Vm", {
         get: function () {
+            alert(123);
             return this.props.Vm;
         },
         enumerable: true,
@@ -55,7 +56,7 @@ var BaseReactPage = /** @class */ (function (_super) {
             },
             mounted: function () {
                 this.reactNode = this.getReactType();
-                render(React.createElement(this.reactNode, { vm: this.vm }), this.$el);
+                render(React.createElement(this.reactNode, { Vm: this.vm }), this.$el);
             },
             methods: {
                 getReactType: function () {
