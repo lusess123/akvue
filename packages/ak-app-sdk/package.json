@@ -27,6 +27,7 @@
   "dependencies": {
     "ak-lib-sys":"*",
     "ak-lib-react":"*",
+    "ak-lib-react-web":"*",
     "react-jsonschema-form":"*"
   },
   "devDependencies": {

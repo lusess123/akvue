@@ -57,7 +57,7 @@ export const testreactvue = {
     mixins: [reactvue],
     template: '<div></div>'
 };
-let ReactPage = class ReactPage extends BasePage {
+let ReactDemoPage = class ReactDemoPage extends BasePage {
     constructor() {
         super(...arguments);
         this.Title = "ReactPage页面标题";
@@ -70,7 +70,7 @@ let ReactPage = class ReactPage extends BasePage {
         this.Title = new Date().toString();
     }
 };
-ReactPage = __decorate([
+ReactDemoPage = __decorate([
     vue.com(`<div><Card>
 vue:<h2>{{vm.Title}}</h2>
 react:
@@ -93,6 +93,6 @@ react:
             //console.log(_node);
         }
     }),
-    ioc.PlugIn({ RegName: "ReactPage", BaseType: "IPage", CreateDate: "2018-04-05", Doc: "React页面插件" })
-], ReactPage);
-export { ReactPage };
+    ioc.PlugIn({ RegName: "ReactDemoPage", BaseType: "IPage", CreateDate: "2018-04-05", Doc: "React页面插件" })
+], ReactDemoPage);
+export { ReactDemoPage };

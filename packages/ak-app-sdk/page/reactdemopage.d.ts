@@ -12,6 +12,7 @@ export declare const testreactvue: {
         methods: {
             reactrender(): new (props: any, context?: any) => {
                 render(): JSX.Element;
+                componentDidMount(): void;
                 setState<K extends never>(state: {} | Pick<{}, K> | ((prevState: Readonly<{}>, props: any) => {} | Pick<{}, K>), callback?: () => void): void;
                 forceUpdate(callBack?: () => void): void;
                 props: Readonly<{
@@ -22,7 +23,6 @@ export declare const testreactvue: {
                 refs: {
                     [key: string]: React.ReactInstance;
                 };
-                componentDidMount?(): void;
                 shouldComponentUpdate?(nextProps: Readonly<any>, nextState: Readonly<{}>, nextContext: any): boolean;
                 componentWillUnmount?(): void;
                 componentDidCatch?(error: Error, errorInfo: React.ErrorInfo): void;
@@ -39,10 +39,13 @@ export declare const testreactvue: {
         mounted: () => void;
         beforeDestroy(): void;
         updated: () => void;
+        watch: {
+            compiler: (a: any, b: any) => void;
+        };
     }[];
     template: string;
 };
-export declare class ReactPage extends BasePage {
+export declare class ReactDemoPage extends BasePage {
     Title: string;
     framework: string;
     compiler: string;

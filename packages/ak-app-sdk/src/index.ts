@@ -12,5 +12,6 @@ import * as testRxPage from "./page/testrxpage"; testRxPage ;
 import * as mixintestPage from "./page/mixintestpage"; mixintestPage ;
 import * as testvmpage from "./page/testvmpage";testvmpage;
 import * as eventbuspage from "./page/eventbuspage";eventbuspage;
-import * as reactpage from "./page/reactpage";reactpage;
+import * as reactpage from "./page/reactdemopage";reactpage;
+import * as reactpage2 from "./page/reactdemopage2";reactpage2;
 

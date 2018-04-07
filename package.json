@@ -9,6 +9,8 @@
 		"build-biz":"cd packages/ak-lib-biz;npm run build ;cd ..",
 		"build-sdk":"cd packages/ak-app-sdk;npm run build ;cd ..",
 		"build-dwh":"cd packages/ak-app-dwh;npm run build ;cd ..",
+		"build-react":"cd packages/ak-lib-react;npm run build ;cd ..",
+		"build-react-web":"cd packages/ak-lib-react-web;npm run build ;cd ..",
 		"serve-host":"cd packages/ak-host;npm run serve ;cd .."
 	},
 	"workspaces": [

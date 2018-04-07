@@ -98,8 +98,8 @@ react:
     }
 
   })
-@ioc.PlugIn({ RegName: "ReactPage", BaseType: "IPage", CreateDate: "2018-04-05", Doc: "React页面插件" })
-export class ReactPage extends BasePage {
+@ioc.PlugIn({ RegName: "ReactDemoPage", BaseType: "IPage", CreateDate: "2018-04-05", Doc: "React页面插件" })
+export class ReactDemoPage extends BasePage {
 
   public Title: string = "ReactPage页面标题";
   framework: string = "fff123";

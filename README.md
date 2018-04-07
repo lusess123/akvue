@@ -25,7 +25,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    5.platform  , 比如（vscode，Android ， Windows）
 
-   akvue是一个简单的platform，提供SDK和可扩展的内核接口，可用来快速开发大型2b后台管理系统，每个子系统是平台的一个插件
+   akvue是一个简单的platform，提供SDK和可扩展的内核接口，可用来快速开发大型2b后台管理系统，每个项目是平台的一个插件，运行在这个平台之上
 
 +  **所有模块typescript开发**，
 
@@ -38,6 +38,12 @@ Most of the planned features are in place but there may still be bugs. API may s
 +  **以UI框架无关的状态对象(类似angular的controller)为中心来构建组件**
 
    解藕，以UI框架无关的状态管理更接近实际业务场景，可在vue/react/anguar三大框架之间复用逻辑
+
+   那为什么不使用官方的vue-class-component的呢？
+
+   1.由于是模拟的class特性，有些功能不支持，比如super
+
+   2.非class方式，有其优点，这个也是vue的亮点
 
 +  **集成react**
 
