@@ -19,28 +19,24 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 export default {
-    props: ["compiler", "framework"],
     data: function () {
         return {
-            aa: 234,
-            bb: "fff",
             reactNode: null,
         };
     },
+    template: '<div></div>',
     methods: {
-        reactrender: function () {
+        getReactProps: function () {
+            return this.$props;
+        },
+        getReactType: function () {
             return /** @class */ (function (_super) {
                 __extends(Hello, _super);
                 function Hello() {
                     return _super !== null && _super.apply(this, arguments) || this;
                 }
                 Hello.prototype.render = function () {
-                    return React.createElement("h1", null,
-                        "Hello from ",
-                        this.props.compiler,
-                        " and ",
-                        this.props.framework,
-                        "!");
+                    return React.createElement("div", null, "reactvuemixin");
                 };
                 Hello.prototype.componentDidMount = function () {
                     // alert("end");
@@ -48,10 +44,13 @@ export default {
                 return Hello;
             }(React.Component));
         },
+        reactrender: function () {
+            ReactDOM.render(React.createElement(this.reactNode, __assign({}, this.getReactProps())), this.$el);
+        },
     },
     mounted: function () {
-        this.reactNode = this.reactrender();
-        ReactDOM.render(React.createElement(this.reactNode, __assign({}, this.$props)), this.$el);
+        this.reactNode = this.getReactType();
+        this.reactrender();
     },
     beforeDestroy: function () {
         this.reactNode = null;
@@ -59,7 +58,12 @@ export default {
     },
     updated: function () {
         if (this.reactNode) {
-            this.reactNode.forceUpdate();
+            if (this.reactNode.forceUpdate) {
+                this.reactNode.forceUpdate();
+            }
+            else {
+                this.reactrender();
+            }
         }
     },
     watch: {
@@ -68,7 +72,7 @@ export default {
             if (this.reactNode) {
                 // const _createReact = this.reactrender();
                 // alert(this.$props.compiler);
-                ReactDOM.render(React.createElement(this.reactNode, __assign({}, this.$props)), this.$el);
+                this.reactrender();
             }
         }
     }

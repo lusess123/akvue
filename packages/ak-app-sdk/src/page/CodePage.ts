@@ -22,6 +22,10 @@ import { core, ioc, vue, util } from "ak-lib-sys";
          <Icon type="social-windows"></Icon>
          <span>页面</span>
      </Radio>
+     <Radio label="reactpage">
+     <Icon type="social-github"></Icon>
+     <span>React页面</span>
+ </Radio>
  </RadioGroup>
      <Input  v-model="vm.Name"  @on-change="vm.change()"   placeholder="Enter 名称..." ></Input>
      </row>
@@ -36,22 +40,22 @@ export class CodePage extends BasePage {
     public Code: string = "";
     public CodeType: string = "";
     public Title: string = "代码生成";
-    
-        public MesgList = {
-        List :[
-              "code",
-              "分成 分页，表格，按钮"
+
+    public MesgList = {
+        List: [
+            "code",
+            "分成 分页，表格，按钮"
         ]
-  }
+    }
 
     protected loadPage() {
         this.CodeType = this.P1 ? this.P1 : "com";
         this.Name = this.P2 ? this.P2 : "XXX";
         this.change();
-      
+
     }
 
-    change(){
+    change() {
 
         this.Code = codeDict[this.CodeType.toLocaleLowerCase()](this.Name);
     }
@@ -71,7 +75,7 @@ const _comFun = (XXX): string => {
    
     }
 
-    @ioc.PlugIn({RegName:"${XXX}Col",BaseType:"BaseCom",CreateDate:"${util.formatDate(new Date(),"yyyy-MM-dd")}",Doc:"${XXX}组件插件"})
+    @ioc.PlugIn({RegName:"${XXX}Col",BaseType:"BaseCom",CreateDate:"${util.formatDate(new Date(), "yyyy-MM-dd")}",Doc:"${XXX}组件插件"})
 
     @vue.com(\`<div>${XXX}Com</div>\`)
     export   class ${XXX}Com extends BaseCom {
@@ -93,7 +97,7 @@ const _colFun = (XXX): string => {
        
     }
      
-    @ioc.PlugIn({RegName:"${XXX}Col",BaseType:"BaseCol",Author:"zhengyukun",CreateDate:"${util.formatDate(new Date(),"yyyy-MM-dd")}",Doc:"${XXX}Col控件插件"})
+    @ioc.PlugIn({RegName:"${XXX}Col",BaseType:"BaseCol",Author:"zhengyukun",CreateDate:"${util.formatDate(new Date(), "yyyy-MM-dd")}",Doc:"${XXX}Col控件插件"})
     @vue.com(\`<div>${XXX}Col</div>\`)
     export   class ${XXX}Col extends BaseCol {
     
@@ -113,7 +117,7 @@ const _pageFun = (XXX): string => {
     import { BasePage } from "ak-lib-web/BasePage";
 
     @vue.com(\`<div>${XXX}Page</div>\`)
-    @ioc.PlugIn({  RegName: "${XXX}Page", BaseType: "IPage", CreateDate:"${util.formatDate(new Date(),"yyyy-MM-dd")}", Doc: "${XXX}页面插件" })
+    @ioc.PlugIn({  RegName: "${XXX}Page", BaseType: "IPage", CreateDate:"${util.formatDate(new Date(), "yyyy-MM-dd")}", Doc: "${XXX}页面插件" })
     export class ${XXX}Page extends BasePage {
          
         public Title :string = "${XXX}";
@@ -125,11 +129,48 @@ const _pageFun = (XXX): string => {
 `
 }
 
+const _reactPageFun = (XXX): string => {
+    return `
+   
+
+import { core, ioc, vue, util } from "ak-lib-sys";
+import { BasePage } from "ak-lib-web/BasePage";
+import { BaseReactPage, BaseDomReact } from "ak-lib-react-web/basereactpage";
+import React, { Component } from "react";
 
 
+export class ${XXX}PageReact extends BaseDomReact<${XXX}Page>{
+    render() {
+        return <div>
+        ${XXX}React{new Date().toString()}
+           
+            </div>;
+    }
+}
+
+
+
+@ioc.PlugIn({ RegName: "${XXX}Page", BaseType: "IPage", CreateDate: "2018-04-07", Doc: "${XXX}Page页面插件" })
+export class ${XXX}Page extends BaseReactPage {
+
+    public Title: string = "${XXX}Page";
+    $ReactType: any = ${XXX}PageReact;
+   
+    protected loadPage() {
+
+    }
+
+}
+
+   
+   
+   
+   `
+}
 
 const codeDict = {
-    com: _comFun ,
-    col:_colFun ,
-    page:_pageFun 
+    com: _comFun,
+    col: _colFun,
+    page: _pageFun,
+    reactpage: _reactPageFun
 }

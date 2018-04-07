@@ -47,6 +47,10 @@ CodePage = __decorate([
          <Icon type="social-windows"></Icon>
          <span>页面</span>
      </Radio>
+     <Radio label="reactpage">
+     <Icon type="social-github"></Icon>
+     <span>React页面</span>
+ </Radio>
  </RadioGroup>
      <Input  v-model="vm.Name"  @on-change="vm.change()"   placeholder="Enter 名称..." ></Input>
      </row>
@@ -117,8 +121,47 @@ const _pageFun = (XXX) => {
     }
 `;
 };
+const _reactPageFun = (XXX) => {
+    return `
+   
+
+import { core, ioc, vue, util } from "ak-lib-sys";
+import { BasePage } from "ak-lib-web/BasePage";
+import { BaseReactPage, BaseDomReact } from "ak-lib-react-web/basereactpage";
+import React, { Component } from "react";
+
+
+export class ${XXX}PageReact extends BaseDomReact<${XXX}Page>{
+    render() {
+        return <div>
+        ${XXX}React{new Date().toString()}
+           
+            </div>;
+    }
+}
+
+
+
+@ioc.PlugIn({ RegName: "${XXX}Page", BaseType: "IPage", CreateDate: "2018-04-07", Doc: "${XXX}Page页面插件" })
+export class ${XXX}Page extends BaseReactPage {
+
+    public Title: string = "${XXX}Page";
+    $ReactType: any = ${XXX}PageReact;
+   
+    protected loadPage() {
+
+    }
+
+}
+
+   
+   
+   
+   `;
+};
 const codeDict = {
     com: _comFun,
     col: _colFun,
-    page: _pageFun
+    page: _pageFun,
+    reactpage: _reactPageFun
 };

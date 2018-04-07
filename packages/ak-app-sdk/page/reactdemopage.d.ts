@@ -1,16 +1,16 @@
 /// <reference types="react" />
 import { BasePage } from "ak-lib-web/basepage";
 import React from "react";
+import { Hello } from "ak-lib-react/testdom";
 export declare const testreactvue: {
     mixins: {
-        props: string[];
         data: () => {
-            aa: number;
-            bb: string;
             reactNode: any;
         };
+        template: string;
         methods: {
-            reactrender(): new (props: any, context?: any) => {
+            getReactProps(): any;
+            getReactType(): new (props: any, context?: any) => {
                 render(): JSX.Element;
                 componentDidMount(): void;
                 setState<K extends never>(state: {} | Pick<{}, K> | ((prevState: Readonly<{}>, props: any) => {} | Pick<{}, K>), callback?: () => void): void;
@@ -35,6 +35,7 @@ export declare const testreactvue: {
                 componentWillUpdate?(nextProps: Readonly<any>, nextState: Readonly<{}>, nextContext: any): void;
                 UNSAFE_componentWillUpdate?(nextProps: Readonly<any>, nextState: Readonly<{}>, nextContext: any): void;
             };
+            reactrender(): void;
         };
         mounted: () => void;
         beforeDestroy(): void;
@@ -43,7 +44,10 @@ export declare const testreactvue: {
             compiler: (a: any, b: any) => void;
         };
     }[];
-    template: string;
+    props: string[];
+    methods: {
+        getReactType(): typeof Hello;
+    };
 };
 export declare class ReactDemoPage extends BasePage {
     Title: string;

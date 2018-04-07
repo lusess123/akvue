@@ -1,14 +1,13 @@
 /// <reference types="react" />
 import * as React from "react";
 declare const _default: {
-    props: string[];
     data: () => {
-        aa: number;
-        bb: string;
         reactNode: any;
     };
+    template: string;
     methods: {
-        reactrender(): {
+        getReactProps(): any;
+        getReactType(): {
             new (props: any, context?: any): {
                 render(): JSX.Element;
                 componentDidMount(): void;
@@ -35,6 +34,7 @@ declare const _default: {
                 UNSAFE_componentWillUpdate?(nextProps: Readonly<any>, nextState: Readonly<{}>, nextContext: any): void;
             };
         };
+        reactrender(): void;
     };
     mounted: () => void;
     beforeDestroy(): void;

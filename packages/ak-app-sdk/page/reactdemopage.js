@@ -53,9 +53,16 @@ function getElementsByClass(oParent, target) {
     return aResult;
 }
 import reactvue from "ak-lib-react/reactvuemixin";
+import { Hello } from "ak-lib-react/testdom";
+import reactvm from "ak-lib-react/reactvmmixin";
 export const testreactvue = {
     mixins: [reactvue],
-    template: '<div></div>'
+    props: ["compiler", "framework"],
+    methods: {
+        getReactType() {
+            return Hello;
+        }
+    }
 };
 let ReactDemoPage = class ReactDemoPage extends BasePage {
     constructor() {
@@ -75,10 +82,20 @@ ReactDemoPage = __decorate([
 vue:<h2>{{vm.Title}}</h2>
 react:
 <testreactvue :framework="vm.framework"  :compiler="vm.Title"></testreactvue>
+react vm:
+<reactvm  :Vm="{framework:'vm_framework',compiler:vm.Title}"      :ReactType="ReactType"  />
 react:
 <div class="act-react" style="padding:auto;margin:auto;"></div>
+
+
+
 </Card></div>`, {
-        components: { testreactvue },
+        components: { testreactvue, reactvm },
+        data: function () {
+            return {
+                ReactType: Hello
+            };
+        },
         mounted() {
             // alert("ddddd123"); 
             //renderTest(this.$el,{compiler:"tsc",framework:"react"});
