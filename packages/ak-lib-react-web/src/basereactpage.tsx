@@ -10,7 +10,7 @@ import { render,unmountComponentAtNode } from "react-dom";
 export class BaseDomReact<T> extends React.Component<IProps<T>, any> {
 
     get Vm ():T{
-        alert(123);
+       // alert(123);
         return this.props.Vm;
     }
 

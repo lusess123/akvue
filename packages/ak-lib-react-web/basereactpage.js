@@ -25,7 +25,7 @@ var BaseDomReact = /** @class */ (function (_super) {
     }
     Object.defineProperty(BaseDomReact.prototype, "Vm", {
         get: function () {
-            alert(123);
+            // alert(123);
             return this.props.Vm;
         },
         enumerable: true,
