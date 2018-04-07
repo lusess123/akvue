@@ -4,17 +4,23 @@ import { core, ioc, vue, util } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 
 import lvForm from "ak-lib-comp/complex/form.vue";
+import reactvue from "ak-lib-react/reactvmmixin";
+import jsonForm from "react-jsonschema-form";
+
+
+
+
 //import JsonEditor from 'vue-json-edit'
 //Vue.use(JsonEditor)
 @vue.com(`<div>
 <Row>
-<Col span="8">
+<Col span="13">
 <Card style="height:700px;overflow-y: auto;">
 <h2 slot="title">动态表单demo</h2>
 <lvForm :value="vm.DataRow"  :options="vm.FormOpt"  :action="vm.IsAction" ></lvForm>
 </Card>
 </Col>
-<Col span="6" style="height:700px;overflow-y: auto;">
+<Col span="11" style="height:900px;overflow-y: auto;">
 <h2>
 数据
 <Card>
@@ -24,26 +30,19 @@ import lvForm from "ak-lib-comp/complex/form.vue";
 </div>
 </Card>
 <Card >
-   <h2 slot="title">DataRow</h2>
-  
+   <reactvue   :Vm="vm.FormPros"   :ReactType="vm.FormReact"   />
 </Card>
 
 </h2>
 </Col>
-<Col span="10" style="height:700px;overflow-y: auto;">
-<Card>
-   <h2 slot="title">Options</h2>
-   
-  
-</Card>
-</Col>
+
 </Row>
   
 
 </div>`, {
 
         components: {
-            lvForm
+            lvForm,reactvue
         },
         created() {
             this.$watch(function () {
@@ -61,6 +60,21 @@ export class FormPage extends BasePage {
     public Title: string = "Form";
     public DataRowJson: string = null;
     public OptionJson: string = null;
+    public FormReact:any = jsonForm ;
+    public  FormPros= {
+       // return {
+            schema:{
+                title: "DataRow",
+                type: "object",
+                //required: ["title"],
+                properties: {
+                  //title: {type: "string", title: "Title", default: "A new task"},
+                  //done: {type: "boolean", title: "Done?", default: false}
+                }
+              },
+              formData:null
+       // }
+    }
 
     public constructor(a: any) {
         super(a);
@@ -83,11 +97,18 @@ export class FormPage extends BasePage {
                 //default:col[2]?col[2]: undefined
             };
             const _opt2 = { ..._opt, ...col[2] }
+
+            this.FormPros.schema.properties[_opt2.key] = {
+                type :"string",
+                title:_opt2.title
+            }
+
             _opts.push(_opt2);
         }
         // core.alert(_opts);
         this.FormOpt = [..._opts];
         this.OptionJson = core.json(this.FormOpt, null, 2);
+        this.FormPros.formData = this.DataRow;
     }
 
 

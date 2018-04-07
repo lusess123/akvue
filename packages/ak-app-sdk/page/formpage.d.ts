@@ -3,6 +3,15 @@ export declare class FormPage extends BasePage {
     Title: string;
     DataRowJson: string;
     OptionJson: string;
+    FormReact: any;
+    FormPros: {
+        schema: {
+            title: string;
+            type: string;
+            properties: {};
+        };
+        formData: any;
+    };
     constructor(a: any);
     protected loadPage(): void;
     private createOptData();

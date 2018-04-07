@@ -75,6 +75,7 @@ let ReactDemoPage = class ReactDemoPage extends BasePage {
     }
     changeTitle() {
         this.Title = new Date().toString();
+        //this.$refs.reactvm.$forceupdate();
     }
 };
 ReactDemoPage = __decorate([
@@ -83,7 +84,7 @@ vue:<h2>{{vm.Title}}</h2>
 react:
 <testreactvue :framework="vm.framework"  :compiler="vm.Title"></testreactvue>
 react vm:
-<reactvm  :Vm="{framework:'vm_framework',compiler:vm.Title}"      :ReactType="ReactType"  />
+<reactvm  :Vm="{framework:'vm_framework',compiler:vm.Title}"   ref="reactvm"   :ReactType="ReactType"  />
 react:
 <div class="act-react" style="padding:auto;margin:auto;"></div>
 
