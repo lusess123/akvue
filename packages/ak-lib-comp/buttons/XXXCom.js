@@ -1,13 +1,3 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,16 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { BaseCom } from "ak-lib-sys/com/BaseCom";
 import { ioc, vue } from "ak-lib-sys";
-var XXXCom = /** @class */ (function (_super) {
-    __extends(XXXCom, _super);
-    function XXXCom(config) {
-        return _super.call(this, config) || this;
+let XXXCom = class XXXCom extends BaseCom {
+    constructor(config) {
+        super(config);
     }
-    XXXCom = __decorate([
-        ioc.PlugIn({ RegName: "XXXCol", BaseType: "BaseCom", Author: "zhengyukun", CreateDate: "2018-01-26", Doc: "XXX组件插件" }),
-        vue.com('<div>XXXCom</div>'),
-        __metadata("design:paramtypes", [Object])
-    ], XXXCom);
-    return XXXCom;
-}(BaseCom));
+};
+XXXCom = __decorate([
+    ioc.PlugIn({ RegName: "XXXCol", BaseType: "BaseCom", Author: "zhengyukun", CreateDate: "2018-01-26", Doc: "XXX组件插件" }),
+    vue.com('<div>XXXCom</div>'),
+    __metadata("design:paramtypes", [Object])
+], XXXCom);
 export { XXXCom };

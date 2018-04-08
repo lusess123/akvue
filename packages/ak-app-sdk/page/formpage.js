@@ -94,7 +94,6 @@ FormPage = __decorate([
 </div>
 </Card>
 <Card >
-  
    <reactvue   :Vm="vm.FormPros"   :ReactType="vm.FormReact"   />
 </Card>
 
