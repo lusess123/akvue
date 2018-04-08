@@ -45,7 +45,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    解藕
    
-   1. 以UI框架无关的状态管理更接近实际业务场景，适合在交互逻辑有一定复杂度和数据模型足够厚的情况下 
+   1. 以UI框架无关的状态管理更接近实际业务场景，适合 交互逻辑 有一定复杂度和 数据模型 足够厚的场景 
 
    2. 更容易可在vue/react/anguar三大框架之间复用数据和逻辑
 
