@@ -1,15 +1,15 @@
 import * as iView from 'iview';
 import * as Cookies from 'js-cookie';
-export var Notify = function (mesg) {
+export const Notify = (mesg) => {
     iView.Message.error({
         content: mesg,
         closable: true,
         duration: 5
     });
 };
-export var getCookie = function (key) {
+export const getCookie = (key) => {
     return Cookies.get(key);
 };
-export var setCookie = function (key, val) {
+export const setCookie = (key, val) => {
     Cookies.set(key, val);
 };

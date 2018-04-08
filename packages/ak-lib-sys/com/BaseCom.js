@@ -1,11 +1,3 @@
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,8 +11,8 @@ import { core, ioc, vue, util } from "./../index";
 import eventBus, { fetchEvent } from "./../event";
 import Vue from "vue";
 import basecomvue from "./../vuemixin/basecom.vue";
-var BaseCom = /** @class */ (function () {
-    function BaseCom(config) {
+let BaseCom = class BaseCom {
+    constructor(config) {
         this.fIsShow = false;
         this.AppEventFunDic = {};
         this.comEventList = [];
@@ -31,34 +23,34 @@ var BaseCom = /** @class */ (function () {
             }
         }
     }
-    BaseCom.prototype.bindMethod = function () {
-    };
-    BaseCom.prototype.forceUpdate = function () {
+    bindMethod() {
+    }
+    forceUpdate() {
         this.getEvent().emit("forceUpdate");
-    };
-    BaseCom.prototype.getEvent = function () {
+    }
+    getEvent() {
         if (!this.fLoacalEventBus) {
             this.fLoacalEventBus = fetchEvent();
         }
         return this.fLoacalEventBus;
-    };
-    BaseCom.prototype.toogleShow = function () {
+    }
+    toogleShow() {
         this.fIsShow = !this.fIsShow;
-    };
-    BaseCom.prototype.renderString = function () {
-        var _vm = this;
+    }
+    renderString() {
+        const _vm = this;
         // const _ff =  {..._vm}
-        return core.json(__assign({}, _vm, { $store: null }, { fLoacalEventBus: null }));
-    };
-    BaseCom.prototype.getConstructName = function () {
+        return core.json(Object.assign({}, _vm, { $store: null }, { fLoacalEventBus: null }));
+    }
+    getConstructName() {
         // debugger ;
         return util.getFunName(this["constructor"]);
-    };
-    BaseCom.prototype.setRx = function (pro, obj) {
-        var me = this;
+    }
+    setRx(pro, obj) {
+        const me = this;
         Vue.set(me, pro, obj ? obj : {});
-    };
-    BaseCom.prototype.getVueObj = function () {
+    }
+    getVueObj() {
         if (this._VueObj)
             return this._VueObj;
         else {
@@ -69,49 +61,39 @@ var BaseCom = /** @class */ (function () {
                 throw " 没有挂载组件...";
             }
         }
-    };
-    BaseCom.prototype.renderCom = function () {
+    }
+    renderCom() {
         return vue.registAndGetVueComName(this, this.getVueObj());
-    };
-    BaseCom.prototype.listenComEvent = function (name, fun) {
-        this.comEventList.push({ name: name, fun: fun });
+    }
+    listenComEvent(name, fun) {
+        this.comEventList.push({ name, fun });
         this.getEvent().addListener(name, fun);
-    };
-    BaseCom.prototype.emitComEvent = function (name) {
-        var arg = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            arg[_i - 1] = arguments[_i];
-        }
-        (_a = this.getEvent()).emit.apply(_a, [name].concat(arg));
-        var _a;
-    };
-    BaseCom.prototype.clearVueEvent = function () {
-        var _this = this;
-        this.comEventList.forEach(function (a) {
-            _this.getEvent().off(a.name, a.fun);
+    }
+    emitComEvent(name, ...arg) {
+        this.getEvent().emit(name, ...arg);
+    }
+    clearVueEvent() {
+        this.comEventList.forEach(a => {
+            this.getEvent().off(a.name, a.fun);
         });
         this.comEventList = [];
-    };
-    BaseCom.prototype.listenAppEvent = function (name, uniId, fun) {
+    }
+    listenAppEvent(name, uniId, fun) {
         var _fun = eventBus
             // .App
             .GetAppEvent()
             .addListener(name + uniId, fun);
         this.AppEventFunDic[name + uniId] = _fun;
         //eventFile.App.GetAppEvent().removeListener(name + uniId, fun);
-    };
-    BaseCom.prototype.emitAppEvent = function (name, sign) {
-        var args = [];
-        for (var _i = 2; _i < arguments.length; _i++) {
-            args[_i - 2] = arguments[_i];
-        }
+    }
+    emitAppEvent(name, sign, ...args) {
         // eventFile
         // .App
-        (_a = eventBus
-            .GetAppEvent()).emit.apply(_a, [name + sign].concat(args));
-        var _a;
-    };
-    BaseCom.prototype.pRegisterModule = function (module) {
+        eventBus
+            .GetAppEvent()
+            .emit(name + sign, ...args);
+    }
+    pRegisterModule(module) {
         if (this.$store) {
             if (this.$store.state[this.UniId]) {
                 core.alert("该模块${this.UniId}已经注册过了");
@@ -121,8 +103,8 @@ var BaseCom = /** @class */ (function () {
                 this.$store.registerModule(this.UniId, module);
             }
         }
-    };
-    BaseCom.prototype.pUnRegisterModule = function () {
+    }
+    pUnRegisterModule() {
         if (this.$store) {
             //unregisterModule
             if (this.$store.state[this.UniId]) {
@@ -130,25 +112,25 @@ var BaseCom = /** @class */ (function () {
                 this.$store.unregisterModule(this.UniId);
             }
         }
-    };
-    BaseCom.prototype.pDispose = function () {
+    }
+    pDispose() {
         this.pUnRegisterModule();
-    };
-    BaseCom.prototype.dispose = function () {
+    }
+    dispose() {
         this.pDispose();
-    };
+    }
     /**
      * 获取当前页面的模块
      *
      * @returns
      * @memberof BaseCom
      */
-    BaseCom.prototype.getModuleState = function () {
+    getModuleState() {
         //debugger;
         if (this.$store && this.$store.state[this.UniId]) {
             return this.$store.state[this.UniId];
         }
-    };
+    }
     /**
      * 获取计算属性
      *
@@ -156,7 +138,7 @@ var BaseCom = /** @class */ (function () {
      * @returns
      * @memberof BaseCom
      */
-    BaseCom.prototype.getGetters = function (name) {
+    getGetters(name) {
         if (this.$store) {
             if (name)
                 return this.$store.getters[name];
@@ -164,7 +146,7 @@ var BaseCom = /** @class */ (function () {
                 return this.$store.getters;
             }
         }
-    };
+    }
     /**
      * 提交数据
      *
@@ -172,11 +154,11 @@ var BaseCom = /** @class */ (function () {
      * @param {*} obj
      * @memberof BaseCom
      */
-    BaseCom.prototype.commit = function (name, obj) {
+    commit(name, obj) {
         if (this.$store) {
             this.$store.commit(name, obj);
         }
-    };
+    }
     /**
      * 分发数据
      *
@@ -184,26 +166,21 @@ var BaseCom = /** @class */ (function () {
      * @param {*} obj
      * @memberof BaseCom
      */
-    BaseCom.prototype.dispatch = function (name, obj) {
+    dispatch(name, obj) {
         if (this.$store) {
             this.$store.dispatch(name, obj);
         }
-    };
-    Object.defineProperty(BaseCom.prototype, "xxx", {
-        get: function () {
-            return "123";
-        },
-        set: function (val) {
-            this.xxx = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    BaseCom = __decorate([
-        ioc.PlugIn({ BaseType: "ICom", RegName: "BaseCom" }),
-        vue.com(basecomvue),
-        __metadata("design:paramtypes", [Object])
-    ], BaseCom);
-    return BaseCom;
-}());
+    }
+    get xxx() {
+        return "123";
+    }
+    set xxx(val) {
+        this.xxx = val;
+    }
+};
+BaseCom = __decorate([
+    ioc.PlugIn({ BaseType: "ICom", RegName: "BaseCom" }),
+    vue.com(basecomvue),
+    __metadata("design:paramtypes", [Object])
+], BaseCom);
 export { BaseCom };

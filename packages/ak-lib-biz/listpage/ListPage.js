@@ -51,7 +51,10 @@ let ListPage = class ListPage extends BizPage {
     }
     get PageTitle() {
         //if(){
-        return this.Source.PageView.Title;
+        if (this.Source && this.Source.PageView)
+            return this.Source.PageView.Title;
+        else
+            return "";
     }
     get PageButtons() {
         const _pages = this.Source.PageView.PageButtons;
@@ -83,7 +86,7 @@ ListPage = __decorate([
 </p>
 ${vue.vm("SearchFormObj")}
 <Card >
-<div >
+<div v-if="vm.IsLoad" >
 <div class="row" style="padding-bottom:1rem;text-align:right"><Button-group size="small"     shape="circle"  slot="extra"   >
     <i-button  type="primary"  icon="refresh" @click.prevent="vm.refreshBtnClick" >刷新</i-button>
     <template v-for="item  in vm.PageButtons">

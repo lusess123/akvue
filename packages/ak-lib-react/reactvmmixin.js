@@ -4,10 +4,10 @@ export default {
     props: ["Vm", "ReactType"],
     //  template: '<div></div>',
     methods: {
-        getReactProps: function () {
+        getReactProps() {
             return this.$props.Vm;
         },
-        getReactType: function () {
+        getReactType() {
             return this.$props.ReactType;
         }
     },

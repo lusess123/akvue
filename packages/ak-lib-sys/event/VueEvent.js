@@ -1,14 +1,14 @@
 import * as rxjs from "rxjs";
 import Vue from "vue";
-var EventBus = /** @class */ (function () {
-    function EventBus() {
+export class EventBus {
+    constructor() {
         this.fEmit = null;
         this.ReactEvent = new BaseEvent(this, "React");
         this.VmEvent = new BaseEvent(this, "Vm");
         this.HookEvent = new BaseEvent(this, "Hook");
         this.CustomEvent = new BaseEvent(this, "Custom");
     }
-    EventBus.prototype.FetchEmit = function () {
+    FetchEmit() {
         // rxjs.
         if (!this.fEmit) {
             this.fEmit = new Vue();
@@ -16,16 +16,16 @@ var EventBus = /** @class */ (function () {
             // this.fEmit.
         }
         return this.fEmit;
-    };
-    EventBus.prototype.showAllEvent = function () {
+    }
+    showAllEvent() {
         var _res = [];
         var _emit = this.fEmit;
         if (_emit && _emit._events) {
-            var _events = _emit._events;
+            const _events = _emit._events;
             for (var n in _emit._events) {
-                var _funList = _emit._events[n];
+                const _funList = _emit._events[n];
                 //if(_funList){
-                var _stringList = _funList ? _funList.map(function (f) {
+                const _stringList = _funList ? _funList.map((f) => {
                     return f ? f.toString() : "";
                 }).join("|") : "";
                 // }
@@ -39,42 +39,36 @@ var EventBus = /** @class */ (function () {
             return _res;
         }
         return _res;
-    };
-    EventBus.prototype.RemoveReactEvent = function () {
-    };
-    return EventBus;
-}());
-export { EventBus };
-var BaseEvent = /** @class */ (function () {
-    function BaseEvent(eventBus, name) {
+    }
+    RemoveReactEvent() {
+    }
+}
+export class BaseEvent {
+    constructor(eventBus, name) {
         this.fEventBus = eventBus;
         this.fName = name;
     }
-    BaseEvent.prototype.createName = function (name) {
+    createName(name) {
         if (name) {
             return this.fName + "_" + name;
         }
         else
             return name;
-    };
-    BaseEvent.prototype.showAllEvent = function () {
+    }
+    showAllEvent() {
         return this.fEventBus.showAllEvent();
-    };
-    BaseEvent.prototype.removeAllBusListeners = function () {
+    }
+    removeAllBusListeners() {
         this.fEventBus.FetchEmit().$off();
-    };
-    BaseEvent.prototype.getSubjectByName = function (name) {
-        var event = this.createName(name);
+    }
+    getSubjectByName(name) {
+        let event = this.createName(name);
         if (!this.fSubject) {
             this.fSubject = new rxjs.Subject();
         }
-        return this.fSubject.filter(function (a) { return a.Name == event; });
-    };
-    BaseEvent.prototype.emit = function (event) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
+        return this.fSubject.filter(a => { return a.Name == event; });
+    }
+    emit(event, ...args) {
         event = this.createName(event);
         console.log("事件调用： " + event);
         console.log(args);
@@ -82,13 +76,11 @@ var BaseEvent = /** @class */ (function () {
             // this.fSubject = new rxjs.Subject<ISubiectOb>();
             this.fSubject.next({ Name: event, ArgList: args });
         }
-        (_a = this.fEventBus.FetchEmit()).$emit.apply(_a, [event].concat(args));
+        this.fEventBus.FetchEmit().$emit(event, ...args);
         return true;
-        var _a;
-    };
+    }
     ;
-    BaseEvent.prototype.removeAllListeners = function (event) {
-        var _this = this;
+    removeAllListeners(event) {
         if (event) {
             event = this.createName(event);
             this.fEventBus.FetchEmit().$off(event);
@@ -96,36 +88,36 @@ var BaseEvent = /** @class */ (function () {
         }
         else {
             var _events = this.fEventBus.showAllEvent();
-            _events.forEach(function (n) {
-                if (n.EventName.length > _this.fName.length) {
-                    if (n.EventName.substr(0, _this.fName.length) == _this.fName) {
-                        _this.fEventBus.FetchEmit().$off(n.EventName);
+            _events.forEach((n) => {
+                if (n.EventName.length > this.fName.length) {
+                    if (n.EventName.substr(0, this.fName.length) == this.fName) {
+                        this.fEventBus.FetchEmit().$off(n.EventName);
                     }
                 }
             });
             return this;
         }
-    };
+    }
     ;
     //removeAllListeners(events: string[]): IEvent {
     //    return null;
     //};
-    BaseEvent.prototype.listeners = function (event) {
+    listeners(event) {
         event = this.createName(event);
         // return this.fEventBus.FetchEmit().
         alert("该接口未实现");
         return [];
-    };
+    }
     ;
-    BaseEvent.prototype.removeListener = function (event, listener) {
+    removeListener(event, listener) {
         event = this.createName(event);
         var gg = listener;
         //var f: (eventObject: JQueryEventObject) => any = gg;
         this.fEventBus.FetchEmit().$off(event, gg);
         return this;
-    };
+    }
     ;
-    BaseEvent.prototype.addListener = function (event, listener) {
+    addListener(event, listener) {
         console.log("时间注册： " + event);
         event = this.createName(event);
         // var gg: any = listener;
@@ -134,14 +126,12 @@ var BaseEvent = /** @class */ (function () {
         // };
         this.fEventBus.FetchEmit().$on(event, listener);
         return listener;
-    };
-    BaseEvent.prototype.off = function (event, listener) {
+    }
+    off(event, listener) {
         return this.removeListener(event, listener);
-    };
+    }
     ;
-    BaseEvent.prototype.on = function (event, listener) {
+    on(event, listener) {
         return this.addListener(event, listener);
-    };
-    return BaseEvent;
-}());
-export { BaseEvent };
+    }
+}

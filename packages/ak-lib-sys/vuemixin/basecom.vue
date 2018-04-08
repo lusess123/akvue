@@ -23,7 +23,7 @@ import * as util from "./../Util";
 import * as basecom from "./../com/BaseCom";
 export default {
   props: ["vm"],
-   mixins: [UniIdMixin as any, tipmixin as any],
+  mixins: [UniIdMixin as any, tipmixin as any],
 
   data() {
     return {

@@ -1,25 +1,22 @@
 import * as vueEvent from "./VueEvent";
-var App = /** @class */ (function () {
-    function App() {
-    }
-    App.getUniId = function () {
+class App {
+    static getUniId() {
         this.fUniId++;
         return this.fUniId;
-    };
-    App.initAppEvent = function (event) {
+    }
+    static initAppEvent(event) {
         this.fAppEvent = event;
-    };
-    App.GetAppEvent = function () {
+    }
+    static GetAppEvent() {
         if (!this.fAppEvent) {
             this.fAppEvent = new vueEvent.EventBus().HookEvent;
         }
         return this.fAppEvent;
-    };
-    App.fAppEvent = null;
-    App.fUniId = 0;
-    return App;
-}());
-export var fetchEvent = function () {
+    }
+}
+App.fAppEvent = null;
+App.fUniId = 0;
+export const fetchEvent = function () {
     return new vueEvent.EventBus().VmEvent;
 };
 export default App;

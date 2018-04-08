@@ -35,19 +35,29 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    相对于FP 和 FRP ，OOP虽然笨重，但是门槛低，符合大多数人的理解和思维方式，并且可以复用几十年积累的各种设计模式和经验。对于界面交互大多数场景，OOP是比较好的方式。
 
-+  **以UI框架无关的状态对象(类似angular的controller)为中心来构建组件**
-
-   解藕，以UI框架无关的状态管理更接近实际业务场景，可在vue/react/anguar三大框架之间复用逻辑
-
-   那为什么不使用官方的vue-class-component的呢？
+    那为什么不使用官方的vue-class-component的呢？
 
    1.由于是模拟的class特性，有些功能不支持，比如super
 
-   2.非class方式，有其优点，这个也是vue的亮点
+   2.比起extends 非class 的 mixin 方式很灵活，可以在核心库里面使用
+
++  **以UI框架无关的状态对象(类似angular的controller)为中心来构建组件**
+
+   解藕
+   
+   1. 以UI框架无关的状态管理更接近实际业务场景，适合在交互逻辑有一定复杂度和数据模型足够厚的情况下 
+
+   2. 更容易可在vue/react/anguar三大框架之间复用数据和逻辑
 
 +  **集成react**
 
     对于2B后台管理系统，“尽量缩小需要下载的js包大小” 和 “兼并react的生态” 的权衡,选择了后者
+
+    封装支持：
+    
+    vue组件中集成react组件
+    react组件集成vue组件
+
 
 + **页面插件可自动注册路由**
 

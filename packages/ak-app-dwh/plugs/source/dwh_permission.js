@@ -1,13 +1,3 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,18 +8,15 @@ import { ioc } from "ak-lib-sys";
 import { dwhBaseSource } from "./../../base/dwhBaseSource";
 import * as dt from "./../../data/dwh_permission";
 dt;
-var dwh_permissionSource = /** @class */ (function (_super) {
-    __extends(dwh_permissionSource, _super);
-    function dwh_permissionSource() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.Title = "订阅权限";
-        _this.ModelName = "dwh_permission";
-        _this.Url = "/dwh/subscriptions/";
-        return _this;
+let dwh_permissionSource = class dwh_permissionSource extends dwhBaseSource {
+    constructor() {
+        super(...arguments);
+        this.Title = "订阅权限";
+        this.ModelName = "dwh_permission";
+        this.Url = "/dwh/subscriptions/";
     }
-    dwh_permissionSource = __decorate([
-        ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_permissionSource", Author: "zhengyukun", Doc: "订阅权限管理的数据源插件" })
-    ], dwh_permissionSource);
-    return dwh_permissionSource;
-}(dwhBaseSource));
+};
+dwh_permissionSource = __decorate([
+    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_permissionSource", Author: "zhengyukun", Doc: "订阅权限管理的数据源插件" })
+], dwh_permissionSource);
 export { dwh_permissionSource };

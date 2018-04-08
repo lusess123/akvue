@@ -1,5 +1,5 @@
 import * as domFile from "./Dom";
-export var ErrorCode = {
+export const ErrorCode = {
     "-1": "SYS_ERR",
     "0": "NO_ERR",
     "40400": "NOT_FOUND",
@@ -7,7 +7,7 @@ export var ErrorCode = {
     "43002": "REQ_MUST_POST",
     "44000": "PARAMS_INVALID"
 };
-export var ErrorDesc = {
+export const ErrorDesc = {
     SYS_ERR: "系统繁忙，此时请开发者稍候再试",
     NO_ERR: "请求成功",
     NOT_FOUND: "API不存在",
@@ -15,14 +15,14 @@ export var ErrorDesc = {
     REQ_MUST_HTTPS: "需要HTTPS请求",
     PARAMS_INVALID: "参数不合法"
 };
-export var requestHook = function (req, callback) {
-    var _reqData = req.data;
-    var _data = _reqData.data;
-    var _error = _reqData.error;
+export const requestHook = (req, callback) => {
+    const _reqData = req.data;
+    const _data = _reqData.data;
+    const _error = _reqData.error;
     if (_error) {
-        var _errorCode = ErrorCode[_error.toString()];
+        const _errorCode = ErrorCode[_error.toString()];
         if (_errorCode) {
-            var _errorTxt = ErrorDesc[_errorCode];
+            const _errorTxt = ErrorDesc[_errorCode];
             domFile.Notify(_errorTxt);
         }
         else {
@@ -33,41 +33,40 @@ export var requestHook = function (req, callback) {
         callback(_data);
     }
 };
-export var json = function (obj, replacer, space) {
+export const json = (obj, replacer, space) => {
     replacer = replacer ? replacer : null;
     space = space ? space : 2;
     return JSON.stringify(obj, replacer, space);
 };
-export var parseJson = function (str) {
+export const parseJson = (str) => {
     return JSON.parse(str);
 };
-export var alert = function (msg) {
+export const alert = function (msg) {
     if (typeof (msg) == "object") {
         alertObj(msg);
     }
     else
         window["alert"](msg);
 };
-export var notify = function (mesg) {
+export const notify = (mesg) => {
     domFile.Notify(mesg);
 };
-export var alertObj = function (obj) {
+export const alertObj = function (obj) {
     alert(json(obj));
 };
-export var pureObj = function (obj) {
-    var _str = json(obj);
+export const pureObj = function (obj) {
+    const _str = json(obj);
     return parseJson(_str);
 };
-var UniId = 0;
-export var getUniId = function () {
+let UniId = 0;
+export const getUniId = function () {
     return (UniId++).toString();
 };
-export var cast = function (obj) {
-    var _res = obj;
+export const cast = function (obj) {
+    let _res = obj;
     return _res;
 };
-export var log = function (a, _a) {
-    var _b = _a === void 0 ? { sign: "", info: "" } : _a, sign = _b.sign, info = _b.info;
+export const log = (a, { sign, info } = { sign: "", info: "" }) => {
     //let sign = config.sign ;
     //let info = config.sign ;
     info = info + "\r\n" + new Date();
@@ -93,15 +92,15 @@ export var log = function (a, _a) {
         console.log(a);
     }
 };
-export var Options = {
+export let Options = {
     IsDev: true,
     Point: {
     //app :true 
     }
 };
 export function applyMixins(derivedCtor, baseCtors) {
-    baseCtors.forEach(function (baseCtor) {
-        Object.getOwnPropertyNames(baseCtor.prototype).forEach(function (name) {
+    baseCtors.forEach(baseCtor => {
+        Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
             derivedCtor.prototype[name] = baseCtor.prototype[name];
         });
     });

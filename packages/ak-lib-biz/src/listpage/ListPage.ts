@@ -22,7 +22,7 @@ import event from "ak-lib-sys/event";
 </p>
 ${vue.vm("SearchFormObj")}
 <Card >
-<div >
+<div v-if="vm.IsLoad" >
 <div class="row" style="padding-bottom:1rem;text-align:right"><Button-group size="small"     shape="circle"  slot="extra"   >
     <i-button  type="primary"  icon="refresh" @click.prevent="vm.refreshBtnClick" >刷新</i-button>
     <template v-for="item  in vm.PageButtons">
@@ -83,7 +83,10 @@ export class ListPage extends BizPage {
 
     public get PageTitle() {
         //if(){
+            if(this.Source && this.Source.PageView)
         return this.Source.PageView.Title;
+        else 
+        return "";
     }
 
     public get PageButtons():IDataButton {

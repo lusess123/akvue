@@ -1,16 +1,14 @@
-var BaseApp = /** @class */ (function () {
-    function BaseApp() {
+export class BaseApp {
+    constructor() {
         this.Name = "";
         this.Title = "";
         this.Doc = "";
         this.Icon = "";
     }
-    BaseApp.prototype.getMenus = function () {
+    getMenus() {
         return this.MenuList;
-    };
-    BaseApp.prototype.getPlugs = function () {
+    }
+    getPlugs() {
         return this.PlugDict;
-    };
-    return BaseApp;
-}());
-export { BaseApp };
+    }
+}

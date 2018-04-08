@@ -1,4 +1,4 @@
-export var getFunName = function (s) {
+export const getFunName = (s) => {
     if (typeof s == "string")
         return s;
     s = s.toString();
@@ -8,7 +8,7 @@ export var getFunName = function (s) {
     else
         return "";
 };
-export var sortBy = function (attr, rev) {
+export const sortBy = function (attr, rev) {
     //第二个参数k没有传递 默认升序排列
     if (rev == undefined) {
         rev = 1;
@@ -69,7 +69,7 @@ var handleCircular = function () {
     };
 };
 var tmp = JSON.stringify;
-export var safeJson = function (value, replacer, space) {
+export const safeJson = function (value, replacer, space) {
     replacer = replacer || handleCircular();
     return tmp(value, replacer, space);
 };
