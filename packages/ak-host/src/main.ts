@@ -13,9 +13,12 @@ import  * as boot from "ak-lib-sys/bootstrap";
 import {core} from "ak-lib-sys";
 import  event from "ak-lib-sys/event";
 
+const _url = "ak-app-dwh";
+
 import  * as a1 from "ak-lib-biz"; a1 ;
 import  * as a2 from "ak-app-sdk"; a2 ;
-import  * as dwh from "ak-app-dwh"; dwh ;
+import  * as loader from "./boot";
+//import  * as dwh from "ak-app-dwh"; dwh ;
 
 Vue.use(VueI18n);
 Vue.use(iView);
@@ -61,16 +64,7 @@ new Vue({
     created () {
 
          const _p:any =  new Promise((a, b) => {
-                    //require.ensure([],function (require) {
-                         // let ff =  require("ak-lib-biz");
-                          //let dwh = require("apps/dwh");
-                          //let sdk = require("apps/sdk");
-                        //let gg = require("app/listpage/ListForm");
-                        //alert("require app done");
-                        // core.log(ff,{sign:"app",info:"加载完毕了"});
-                         a();
-                        //b();
-                // });
+                   loader.load(a);
             });
 
          boot.addTask(_p);

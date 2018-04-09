@@ -11,7 +11,8 @@
 		"build-dwh":"cd packages/ak-app-dwh;npm run rebuild ;cd ..",
 		"build-react":"cd packages/ak-lib-react;npm run rebuild ;cd ..",
 		"build-react-web":"cd packages/ak-lib-react-web;npm run rebuild ;cd ..",
-		"serve-host":"cd packages/ak-host;npm run serve ;cd .."
+		"serve-host":"cd packages/ak-host;npm run serve ;cd ..",
+		"lerna":"lerna bootstrap"
 	},
 	"workspaces": [
 		"packages/*",
