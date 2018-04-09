@@ -41,7 +41,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    2.比起extends 非class 的 mixin 方式很灵活，可以在核心库里面使用
 
-+  **以UI框架无关的状态对象(类似angular的controller)为中心来构建组件**
++  **以UI框架无关的状态对象(类似angular的service)为中心来构建组件**
 
    解藕
    
