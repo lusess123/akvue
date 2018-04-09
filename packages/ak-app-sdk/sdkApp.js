@@ -39,7 +39,7 @@ const _menus = [
             { icon: "", name: "/web/vue/VuePage", text: "vue组件" },
             { icon: "", name: "/web/DymicPage", text: "动态模版页面" },
             { icon: "", name: "/web/reactdemopage", text: "react集成" },
-            { icon: "", name: "/web/ReactDemo2Page", text: "react集成2" }
+            { icon: "", name: "/web/ReactDemo2Page", text: "antdesignerpro" }
         ]
     },
     {
