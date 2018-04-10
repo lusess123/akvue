@@ -53,6 +53,24 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    akvue是一个简单的platform，提供SDK和可扩展的内核接口，可用来快速开发大型2b后台管理系统，每个项目是平台的一个插件，运行在这个平台之上。
 
+   platform 优点：
+
+   1.高度封装，多个技术栈高度一站式集成，复用程度高，对于开发人员来说，对于80%的场景，提高开发效率
+
+   2.由于统一的基础设施，可以更好的做监控和测试
+
+   3.统一的架构提高了产品质量的下限，
+
+    platform 缺点：
+
+    1.架构设计不合理容易导致模块耦合
+
+    2.黑盒化实现，扩展能力不足，会导致某些特殊场景开发效率低
+
+    3.lightweigh 的反义词
+
+
+
    
 
 ###  typescript开发
