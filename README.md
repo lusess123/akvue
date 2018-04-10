@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Status: beta](#Status: beta)
+- [Status:beta](#Status:beta)
 - [feature](#feature)
   - [平台内核与插件](#平台内核与插件)
   - [typescript开发](#typescript开发)
@@ -26,11 +26,11 @@
 
 ## Introduction
 
-- 一个插件式,模块化的平台 
+- 一个插件式,模块化，一站式的平台 
 - 可用于快速开发 大型2b后台管理系统  
 - 基于vue+typescript
 
-## Status: beta
+## Status:beta
 
 Most of the planned features are in place but there may still be bugs. API may still change until we reach RC phase. Do not use in production yet unless you are adventurous.
 
@@ -51,7 +51,9 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    5.platform  , 比如（vscode，Android ， OpenERP,各种Paas平台）
 
-   akvue是一个简单的platform，提供SDK和可扩展的内核接口，可用来快速开发大型2b后台管理系统，每个项目是平台的一个插件，运行在这个平台之上
+   akvue是一个简单的platform，提供SDK和可扩展的内核接口，可用来快速开发大型2b后台管理系统，每个项目是平台的一个插件，运行在这个平台之上。
+
+   
 
 ###  typescript开发
 
@@ -121,7 +123,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 ## screenshot
 
-### 项目列表
+ ### 项目列表
 
 
 ![img](https://lusess123.github.io/akvue/img/applist.jpg)
