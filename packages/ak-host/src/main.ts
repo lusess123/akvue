@@ -16,7 +16,7 @@ import  event from "ak-lib-sys/event";
 const _url = "ak-app-dwh";
 
 import  * as a1 from "ak-lib-biz"; a1 ;
-import  * as a2 from "ak-app-sdk"; a2 ;
+//import  * as a2 from "ak-app-sdk"; a2 ;
 import  * as loader from "./boot";
 //import  * as dwh from "ak-app-dwh"; dwh ;
 

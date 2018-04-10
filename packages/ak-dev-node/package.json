@@ -1,0 +1,54 @@
+{
+  "name": "ak-dev-node",
+  "version": "0.0.1",
+  "description": "用于构建的node基础库",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": " tsc",
+    "clean_js": " find .  -name  \"*.js\"  -o -name \"*.d.ts\" -o -name \"util\"  -o      -name \"js\"   |grep -v \"src/\" |grep -v \"node_modules/\" | xargs rm -rf",
+    "deljs": "shx rm -rf js",
+    "copy": "shx mv  ./js/*  .",
+    "copyvue": "cd src;find ./  -name \"*.vue\" | xargs -I{} rsync -R \"{}\" ../js/;cd ..;",
+    "build": "npm-run-all  clean_js tsc  copyvue copy deljs ",
+    "rebuild": "npm-run-all  clean_js tsc  copyvue copy deljs ",
+    "jest":"jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lusess123/akvue.git"
+  },
+  "author": "zyk2003xxx@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lusess123/akvue/issues"
+  },
+  "homepage": "https://github.com/lusess123/akvue/packages/ak-dev-node#readme",
+  "dependencies": {
+    "fs-extra": "*",
+    "@types/fs-extra": "*"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.2",
+    "jest": "^22.4.3",
+    "npm-run-all": "^4.1.2",
+    "shx": "^0.2.2",
+    "ts-jest": "^22.4.2",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
