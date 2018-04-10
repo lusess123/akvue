@@ -99,7 +99,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 ### 自动加载项目模块插件
 
-    可插拔模块
+   可插拔模块
 
 ###  使用@vue/cli-service构建站点
 
