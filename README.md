@@ -3,19 +3,19 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Status:beta](#Status:beta)
+- [Status:beta](#Statusbeta)
 - [feature](#feature)
   - [平台内核与插件](#平台内核与插件)
   - [typescript开发](#typescript开发)
-  - [使用继承BaseClass/interface来作为插件定义方式](#使用继承BaseClass/interface来作为插件定义方式)
+  - [使用继承BaseClass/interface来作为插件定义方式](#使用继承baseclassinterface来作为插件定义方式)
   - [集成react](#集成react)
   - [页面插件可自动注册路由](#页面插件可自动注册路由)
-  - [统一集成IOC,EventBus等常用基础设施](#统一集成IOC,EventBus等常用基础设施)
+  - [统一集成IOC,EventBus等常用基础设施](#统一集成ioceventbus等常用基础设施)
   - [ES6模块化方案](#ES6模块化方案)
   - [自动加载项目模块插件](#自动加载项目模块插件)
-  - [使用@vue/cli-service构建站点](#使用@vue/cli-service构建站点)
+  - [使用@vue/cli-service构建站点](#使用vuecli-service构建站点)
   - [lerna管理多模块](#lerna管理多模块)
-  - [提供针对业务对象(表)高可配置化的CURD组件](#提供针对业务对象高可配置化的CURD组件)
+  - [提供针对业务对象(表)高可配置化的CURD组件](#提供针对业务对象高可配置化的curd组件)
 
 
 - [Quickstart](#Quickstart)
