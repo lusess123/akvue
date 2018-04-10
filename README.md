@@ -14,8 +14,8 @@
   - [ES6模块化方案](#ES6模块化方案)
   - [自动加载项目模块插件](#自动加载项目模块插件)
   - [使用@vue/cli-service构建站点](#使用@vue/cli-service构建站点)
-  - [lerna管理多模块)](#lerna管理多模块)
-  - [提供针对业务对象(表)高可配置化的CURD组件](#提供针对业务对象(表)高可配置化的CURD组件)
+  - [lerna管理多模块](#lerna管理多模块)
+  - [提供针对业务对象(表)高可配置化的CURD组件](#提供针对业务对象高可配置化的CURD组件)
 
 
 - [Quickstart](#Quickstart)
@@ -57,7 +57,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    1.高度封装，多个技术栈高度一站式集成，复用程度高，对于开发人员来说，对于80%的场景，提高开发效率
 
-   2.由于统一的基础设施，可以更好的做监控和测试
+   2.由于统一的基础设施，可以更好的做监控和测试，文档和脚手架生成
 
    3.统一的架构提高了产品质量的下限，
 
@@ -127,9 +127,9 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    对于大型框架和平台型的方案 来说，适合使用 monorepo 来管理代码
 
-###  提供针对业务对象(表)高可配置化的CURD组件
+###  提供针对业务对象高可配置化的CURD组件
 
-   对业务对象(表)CURD是后台管理系统大部分的业务场景，如果能结合后端进行丰富的元数据配置和强大扩展，能解决很大部分的需求
+   对业务对象(可以简单理解为数据库的一张表)CURD是后台管理系统大部分的业务场景，如果能结合后端进行丰富的元数据配置和强大扩展，能解决很大部分的需求
 
 ## Quickstart
 
