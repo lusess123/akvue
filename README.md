@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Status:beta](#Statusbeta)
+- [Status:beta](#statusbeta)
 - [feature](#feature)
   - [平台内核与插件](#平台内核与插件)
   - [typescript开发](#typescript开发)
