@@ -208,3 +208,16 @@ const _menus: IMenu[] =
     ]
 
   ```
+
+  核心 | 基础库 | -|-|项目应用
+----|------|----|------|-----
+ak-lib-sys  | - |- | -|ak-host
+核心库|-|-|-|宿主和公共框架
+-|  ak-dev-node |- | -|ak-app-dwh
+-|用于构建的node库|-|-|事例项目
+-|ak-lib-web|- | -|ak-app-sdk
+-|页面基础库|-|-|SDK项目
+-| ak-lib-comp  |ak-lib-col| ak-lib-biz|-
+-|常用组件库|控件库|业务对象库|-
+-|ak-lib-react|ak-lib-react-web|-|-
+-|react集成库|react页面库|-|-
