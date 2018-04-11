@@ -22,7 +22,7 @@
 - [screenshot](#screenshot)
   - [项目列表](#项目列表)
   - [项目详细信息](#项目详细信息)
-  - [集成antdesigner](#集成antdesigner)
+  - [集成react的antdesigner](#集成antdesigner)
 - [项目插件信息注册](#项目插件信息注册)
 
 ## Introduction
