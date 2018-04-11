@@ -43,7 +43,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    1.function 
 
-   2.class/file   
+   2.class/file/目录   
 
    3.library/package(比如：Prototype.js，jquery) 
 
@@ -61,21 +61,21 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    3.统一的架构提高了产品质量的下限，
 
-    platform 缺点：
+   任何技术方案最终不过是一种权衡， platform 的缺点：
 
-    1.架构设计不合理容易导致模块耦合
+    1.紧耦合，解耦的代价就是细粒度化模块，写更多的代码，一站化的平台一定程度抑制住这样的行为
 
-    2.黑盒化实现，扩展能力不足，会导致某些特殊场景开发效率低
-
-    3.lightweigh 的反义词
-
-
-
-   
+    2.黑盒化，平台总有主次之分，某些特殊场景扩展能力不足或者模型过于复杂，开发效率反而更低
+ 
 
 ###  typescript开发
 
    提高工程稳定性，静态类型系统对IDE友好，能提供更好的类型推导和注释，rename，代码分析
+
+   typescript另外一个好处是 真正做到 声明与实现分离，可以把 .d.ts  类型文件放到另外单独的@type 包中
+
+   一般来说，“实现”的代码变更会比“声明”代码变更频繁，越底层的模块越是如此
+
 ###  使用继承BaseClass/interface来作为插件定义方式
 
    相对于FP 和 FRP ，OOP虽然笨重，但是门槛低，符合大多数人的理解和思维方式，并且可以复用几十年积累的各种设计模式和经验。对于界面交互大多数场景，OOP是比较好的方式。
