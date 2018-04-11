@@ -153,6 +153,8 @@ Most of the planned features are in place but there may still be bugs. API may s
 
 ![img](https://lusess123.github.io/akvue/img/sdkapp.jpg)
 
+###  集成 antdesigner
+![img](https://lusess123.github.io/akvue/img/antdesign.jpeg)
 
   ## 项目插件信息注册
 
