@@ -30,7 +30,6 @@
     "ak-lib-web":"*",
     "ak-lib-comp":"*",
     "ak-lib-col":"*",
-    "ak-app-sdk":"*",
     "vue-class-component": "^6.1.2"
   },
   "devDependencies": {
