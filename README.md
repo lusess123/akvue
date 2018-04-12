@@ -239,6 +239,6 @@ const _menus: IMenu[] =
 
 
 
-<iframe src="https://lusess123.github.io/akvue/img/antdesign.jpeg"></iframe>
+<img src="https://lusess123.github.io/akvue/img/antdesign.jpeg"></img>
 
 
