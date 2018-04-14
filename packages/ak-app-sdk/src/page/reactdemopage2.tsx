@@ -10,6 +10,30 @@ import Result from 'ant-design-pro/lib/Result';
 import Row from 'antd/lib/row';
 import Col from "antd/lib/col";
 
+// 
+export interface Iaa 
+{
+    aaa1:string 
+}
+
+export  class AA extends React.Component<Iaa, any> {
+   
+    render(){
+     return <div>{this.props.aaa1}</div>
+    }
+}
+
+
+ export const  component: React.SFC<{pro1:string ,pro2:number}>= (p) => {
+         return   <div>{p.pro1}-{p.pro2}</div>
+ }
+
+
+
+ function Custom(props) {
+    // props以函数参数的形式传递
+    return(<div>This is a functional component, {props.name}</div>);
+}
 
 
 export class ReactDemo2PageReact extends BaseDomReact<ReactDemo2Page>{
@@ -22,10 +46,13 @@ export class ReactDemo2PageReact extends BaseDomReact<ReactDemo2Page>{
                 <Row>
                     <Col span={12}> <LoginDemo /></Col>
                     <Col span={12}></Col>
+                    
                 </Row>
                 <Row>
                     <Table columns={columns}   dataSource={data} scroll={{ x: 1500, y: 300 }} />
                 </Row>
+                <AA   aaa1="aaaa"></AA>
+                <Custom  />
             </div>
 
         </div>;
