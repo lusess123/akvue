@@ -1,26 +1,27 @@
 {
 	"private": true,
 	"scripts": {
-		"buildlib":"npm-run-all build-sys build-react  build-react-web build-comp build-web build-col build-biz build-sdk build-dwh ",
-		"build-sys":"cd packages/ak-lib-sys;npm run rebuild ;cd ..;echo 'sys库生成成功'",
-		"build-comp":"cd packages/ak-lib-comp;npm run rebuild ;cd ..",
-		"build-web":"cd packages/ak-lib-web;npm run rebuild ;cd ..",
-		"build-col":"cd packages/ak-lib-col;npm run rebuild ;cd ..",
-		"build-biz":"cd packages/ak-lib-biz;npm run rebuild ;cd ..",
-		"build-sdk":"cd packages/ak-app-sdk;npm run rebuild ;cd ..",
-		"build-dwh":"cd packages/ak-app-dwh;npm run rebuild ;cd ..",
-		"build-react":"cd packages/ak-lib-react;npm run rebuild ;cd ..",
-		"build-react-web":"cd packages/ak-lib-react-web;npm run rebuild ;cd ..",
-		"serve-host":"cd packages/ak-host;npm run serve ;cd ..",
-		"lerna":"lerna bootstrap"
+		"buildlib": "npm-run-all build-sys build-react  build-react-web build-comp build-web build-col build-biz build-sdk build-dwh ",
+		"build-sys": "cd packages/ak-lib-sys;npm run rebuild ;cd ..;echo 'sys库生成成功'",
+		"build-comp": "cd packages/ak-lib-comp;npm run rebuild ;cd ..",
+		"build-web": "cd packages/ak-lib-web;npm run rebuild ;cd ..",
+		"build-col": "cd packages/ak-lib-col;npm run rebuild ;cd ..",
+		"build-biz": "cd packages/ak-lib-biz;npm run rebuild ;cd ..",
+		"build-sdk": "cd packages/ak-app-sdk;npm run rebuild ;cd ..",
+		"build-dwh": "cd packages/ak-app-dwh;npm run rebuild ;cd ..",
+		"build-react": "cd packages/ak-lib-react;npm run rebuild ;cd ..",
+		"build-react-web": "cd packages/ak-lib-react-web;npm run rebuild ;cd ..",
+		"serve-host": "cd packages/ak-host;npm run serve ;cd ..",
+		"lerna": "lerna bootstrap"
 	},
 	"workspaces": [
-		"packages/*",
-		"packages/libs"
-		
-	  ],
+		"packages/*"
+	],
 	"devDependencies": {
 		"lerna": "^2.9.0",
 		"npm-run-all": "^4.1.2"
+	},
+	"dependencies": {
+		"umi": "^1.1.6"
 	}
 }

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata":true ,
+    "paths": {
+      "components": ["components"]
+    },
+    "allowSyntheticDefaultImports": true
+  }
+}
