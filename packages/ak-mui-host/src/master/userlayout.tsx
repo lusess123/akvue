@@ -15,8 +15,7 @@ import SiderMenu from './../components/SiderMenu';
 import Authorized from '../utils/Authorized';
 import { getMenuData } from '../common/menu';
 import logo from '../assets/logo.svg';
-import 'antd/dist/antd.css'
-import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
+
 
 const { Content, Header, Footer } = Layout;
 const { AuthorizedRoute, check } = Authorized;

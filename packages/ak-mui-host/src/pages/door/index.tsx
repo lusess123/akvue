@@ -27,21 +27,17 @@ function handleFormSubmit(checkedValue) {
 export default () => {
   return <div>
     <Row className="row">
-      <Col span={8}>
+      <Col span={8} style={{ marginTop: 24 }}>
         <ChartCard
           title="搜索用户数量"
           total={numeral(8846).format('0,0')}
-          contentHeight={134}
+          contentHeight={46}
+          footer={<Field label="搜索用户数量" value={numeral(1234).format('0,0')} />}
         >
-          <NumberInfo
-            subTitle={<span>本周访问</span>}
-            total={numeral(12321).format('0,0')}
-            status="up"
-            subTotal={17.1}
-          />
+         
           <MiniArea
             line
-            height={45}
+            height={46}
             data={visitData}
           />
         </ChartCard>
