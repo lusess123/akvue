@@ -90,6 +90,11 @@ const routes = [
             "component": require('../door/index.tsx').default
           },
           {
+            "path": "/door/host",
+            "exact": true,
+            "component": require('../door/host.tsx').default
+          },
+          {
             "path": "/door/demo1",
             "exact": true,
             "component": require('../door/demo1.tsx').default
