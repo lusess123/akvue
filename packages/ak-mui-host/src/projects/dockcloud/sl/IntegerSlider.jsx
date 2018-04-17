@@ -13,6 +13,10 @@ export default class IntegerSlider extends React.Component {
     this.setState({
       inputValue: value,
     });
+    if(this.props.onChange)
+    {
+      this.props.onChange(value);
+    }
   }
   render() {
     return (
