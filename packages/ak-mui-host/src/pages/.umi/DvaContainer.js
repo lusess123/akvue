@@ -10,10 +10,10 @@ let app = dva({
 window.g_app = app;
 app.use(createLoading());
 
-app.model({ ...(require('/Users/zyking/Documents/work/lvwwork/akvue/packages/ak-mui-host/src/models/global.ts').default) });
-app.model({ ...(require('/Users/zyking/Documents/work/lvwwork/akvue/packages/ak-mui-host/src/models/login.ts').default) });
-app.model({ ...(require('/Users/zyking/Documents/work/lvwwork/akvue/packages/ak-mui-host/src/models/user.ts').default) });
-app.model({ ...(require('/Users/zyking/Documents/work/lvwwork/akvue/packages/ak-mui-host/src/pages/door/models/door.ts').default) });
+app.model({ ...(require('/Users/zyking/Documents/demo/pro-demo/akvue/packages/ak-mui-host/src/models/global.ts').default) });
+app.model({ ...(require('/Users/zyking/Documents/demo/pro-demo/akvue/packages/ak-mui-host/src/models/login.ts').default) });
+app.model({ ...(require('/Users/zyking/Documents/demo/pro-demo/akvue/packages/ak-mui-host/src/models/user.ts').default) });
+app.model({ ...(require('/Users/zyking/Documents/demo/pro-demo/akvue/packages/ak-mui-host/src/pages/door/models/door.ts').default) });
 
 class DvaContainer extends Component {
   render() {

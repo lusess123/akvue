@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
-require('/Users/zyking/Documents/work/lvwwork/akvue/packages/ak-mui-host/src/global.css');
+require('/Users/zyking/Documents/demo/pro-demo/akvue/packages/ak-mui-host/src/global.css');
 // Enable service worker
 if (process.env.NODE_ENV === 'production') {
   require('./registerServiceWorker');

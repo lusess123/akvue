@@ -13,66 +13,71 @@ Router = ConnectedRouter;
 
 const routes = [
   {
-    "component": require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/DefaultLayout.js').default,
+    "component": require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/DefaultLayout.js').default,
     "routes": [
       {
         "path": "/index.html",
         "exact": true,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/index.html' })
+        "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/index.html' })
       },
       {
         "path": "/web",
         "exact": false,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web' }),
+        "component": require('../web/_layout.tsx').default,
         "routes": [
+          {
+            "path": "/web/",
+            "exact": true,
+            "component": require('../web/index.tsx').default
+          },
           {
             "path": "/web/:page/",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/' })
+            "component": require('../web/$page/index.tsx').default
           },
           {
             "path": "/web/:page/:p1/",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/:p1/' })
+            "component": require('../web/$page/$p1/index.tsx').default
           },
           {
             "path": "/web/:page/:p1/:p2/",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/:p1/:p2/' })
+            "component": require('../web/$page/$p1/$p2/index.tsx').default
           },
           {
             "path": "/web/:page/:p1/:p2/:p3",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/:p1/:p2/:p3' })
+            "component": require('../web/$page/$p1/$p2/$p3.tsx').default
           }
         ]
       },
       {
         "path": "/me",
         "exact": true,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/me' })
+        "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/me' })
       },
       {
         "path": "/login",
         "exact": false,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/login' }),
+        "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/login' }),
         "routes": [
           {
             "path": "/login/utils",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/login/utils' })
+            "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/login/utils' })
           },
           {
             "path": "/login/",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/login/' })
+            "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/login/' })
           }
         ]
       },
       {
         "path": "/",
         "exact": true,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/' })
+        "component": require('../index.tsx').default
       },
       {
         "path": "/door",
@@ -82,7 +87,7 @@ const routes = [
           {
             "path": "/door/me",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/me' })
+            "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/me' })
           },
           {
             "path": "/door/",
@@ -92,29 +97,35 @@ const routes = [
           {
             "path": "/door/host",
             "exact": true,
-            "component": require('../door/host.tsx').default
+            "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/host' })
           },
           {
             "path": "/door/demo1",
             "exact": true,
-            "component": require('../door/demo1.tsx').default
+            "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/demo1' })
           },
           {
             "path": "/door/demo",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/demo' })
+            "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/demo' })
           },
           {
             "path": "/door/models/door",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/models/door' })
+            "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/models/door' })
           }
         ]
       },
       {
         "path": "/app",
         "exact": true,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/app' })
+        "component": () => React.createElement(require('/Users/zyking/Documents/demo/pro-demo/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/app' })
+      },
+      {
+        "path": "/ak",
+        "exact": false,
+        "component": require('../ak/_layout.tsx').default,
+        "routes": []
       }
     ]
   }
