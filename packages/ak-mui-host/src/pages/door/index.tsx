@@ -1,20 +1,14 @@
 import React from 'react'
-import TagSelect from 'ant-design-pro/lib/TagSelect';
-import Table from 'antd/lib/table';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Icon from 'antd/lib/icon';
-import Tooltip from 'antd/lib/tooltip';
+import TagSelect from './../../components/TagSelect';
+import {Table,Row,Col,Icon,Tooltip,Button,Modal} from 'antd';
 
-import  Button  from 'antd/lib/button';
-import  Modal from 'antd/lib/modal';
 
-import HeaderSearch from 'ant-design-pro/lib/HeaderSearch';
-import CountDown from 'ant-design-pro/lib/CountDown';
+import HeaderSearch from './../../components/HeaderSearch';
+import CountDown from './../../components/CountDown';
 
-import { ChartCard, Field, MiniArea, MiniBar, MiniProgress } from 'ant-design-pro/lib/Charts';
-import Trend from 'ant-design-pro/lib/Trend';
-import NumberInfo from 'ant-design-pro/lib/NumberInfo';
+import { ChartCard, Field, MiniArea, MiniBar, MiniProgress } from './../../components/Charts';
+import Trend from './../../components/Trend';
+import NumberInfo from './../../components/NumberInfo';
 //import { Row, Col, Icon, Tooltip } from 'antd';
 import numeral from 'numeral';
 import moment from 'moment';

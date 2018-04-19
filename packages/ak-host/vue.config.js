@@ -36,7 +36,7 @@ module.exports = {
             name: apps,
             minChunks: Infinity
         }));
-       // console.log(config.plugins)
+       console.log(config.module.rules)
 
     },
     css: {

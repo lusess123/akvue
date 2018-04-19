@@ -1,5 +1,5 @@
 import React from 'react'
-import Steps from 'antd/lib/steps'
+import {Steps} from 'antd'
 import ui from './../../../common/baseui'
 const {Button, Row, Col} = ui;
 const Step = Steps.Step;

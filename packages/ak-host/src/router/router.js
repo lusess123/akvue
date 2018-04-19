@@ -1,6 +1,6 @@
 import Main from './../views/main.vue';
 import Door from './../views/door.vue'
-
+import ts from './../pages/ts.vue'
 
 // 不作为Main组件的子页面展示的页面单独写，如下
 
@@ -22,6 +22,13 @@ import Door from './../views/door.vue'
             meta: {title: '数仓概况'},
             component: app
         },
+        {
+          path: 'ts',
+          name: 'ts',
+          title: 'react',
+          meta: {title: 'react'},
+          component: ts
+      },
         {
             path: '/nweb',
             name: 'nweb',

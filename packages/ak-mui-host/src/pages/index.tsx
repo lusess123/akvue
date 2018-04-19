@@ -4,7 +4,7 @@ import router from 'umi/router'
 import {Button} from 'antd'
 import {Row} from 'antd'
 import {Col} from 'antd'
-import TagSelect from 'ak-lib-antd/src/pro/TagSelect';
+import TagSelect from './../components/TagSelect';
 
 
 import * as ddd from 'ddd' ;ddd 

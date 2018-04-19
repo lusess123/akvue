@@ -1,6 +1,6 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
-import Button from "antd/lib/button"
+import {Button} from "antd"
 import { connect } from 'dva';
 import * as sys from "ak-lib-sys"
 import { DemoVm } from "./models/door"

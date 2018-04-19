@@ -21,33 +21,6 @@ const routes = [
         "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/index.html' })
       },
       {
-        "path": "/web",
-        "exact": false,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web' }),
-        "routes": [
-          {
-            "path": "/web/:page/",
-            "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/' })
-          },
-          {
-            "path": "/web/:page/:p1/",
-            "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/:p1/' })
-          },
-          {
-            "path": "/web/:page/:p1/:p2/",
-            "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/:p1/:p2/' })
-          },
-          {
-            "path": "/web/:page/:p1/:p2/:p3",
-            "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/:p1/:p2/:p3' })
-          }
-        ]
-      },
-      {
         "path": "/me",
         "exact": true,
         "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/me' })
@@ -77,7 +50,7 @@ const routes = [
       {
         "path": "/door",
         "exact": false,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door' }),
+        "component": require('../door/_layout.tsx').default,
         "routes": [
           {
             "path": "/door/me",
@@ -87,7 +60,7 @@ const routes = [
           {
             "path": "/door/",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/' })
+            "component": require('../door/index.tsx').default
           },
           {
             "path": "/door/host",

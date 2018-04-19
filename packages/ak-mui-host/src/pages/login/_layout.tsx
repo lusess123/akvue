@@ -4,8 +4,8 @@ import { withRouter } from 'react-router'
 import DocumentTitle from 'react-document-title';
 import { Icon } from 'antd';
 import GlobalFooter from 'ant-design-pro/lib/GlobalFooter';
-import 'antd/dist/antd.css'
-import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
+//import 'antd/dist/antd.css'
+//import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
 import styles from './UserLayout.less';
 import logo from './assets/logo.svg';
 import { getRoutes } from './utils';

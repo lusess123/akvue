@@ -1,39 +1,26 @@
-
 {
   "compilerOptions": {
     "experimentalDecorators": true,
     "allowJs": true,
-    "target": "es2015",
-    "module": "es2015",
+    "target": "es6",
+    "module": "es6",
     "strict": false,
     "jsx": "preserve",
     "moduleResolution": "node",
-    "noImplicitAny":false,
+    "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata":true ,
-     // 启用 vuex-class 需要开启此选项
-     "strictFunctionTypes": false,
-    "lib": [ "es6", "dom" ],
+    "emitDecoratorMetadata": true,
+    // 启用 vuex-class 需要开启此选项
+    "strictFunctionTypes": false,
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "declaration": false,
     "sourceMap": true,
-    "baseUrl": "./src/framework/",
-    "types": [
-      "node",
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.vue",
-    "tests/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    // "baseUrl": "./src/framework/",
+    // "types": [
+    //   "node",
+    // ]
+  }
 }
-
-
