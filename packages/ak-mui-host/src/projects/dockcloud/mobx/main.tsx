@@ -1,6 +1,9 @@
 import React, {Fragment} from 'react';
 import {observer} from 'mobx-react';
-import {observable} from 'mobx'
+import {observable,action} from 'mobx'
+import * as base from './base'
+import ui from './../../../common/baseui'
+import * as ioc from 'ak-lib-sys/Ioc'
 
 import * as detail from './detail'
 import * as navi from './navi'
@@ -9,17 +12,18 @@ import * as step2 from './step2'
 import * as step3 from './step3'
 import * as step4 from './step4'
 
-import * as base from './base'
-import ui from './../../../common/baseui'
+
 const {Button, Row, Col} = ui;
 import * as _detail from './../host/hostnew'
 
-export class BaseMain {
+
+export class BaseMain  extends base.BasePage{
     @observable Title : string = "gggggg";
 }
 
+@ioc.PlugIn({RegName:"MainPage",BaseType:"BasePage",Author:'sl',CreateDate:'2018-04-16',Doc:"沈力的第一个页面"})
 export class Main extends BaseMain {
-
+    ReactType :any = MainReact;
     Detail : detail.Detail;
     Navi : navi.Navi;
     Step1 : step1.Step1;
@@ -27,18 +31,33 @@ export class Main extends BaseMain {
     Step3 : step3.Step3;
     Step4 : step4.Step4;
 
+
+
     constructor() {
         super();
         this.Navi = new navi.Navi();
         this.Step1 = new step1.Step1();
         this.Step2 = new step2.Step2();
         this.Detail = new detail.Detail(this);
+
+        this.listenAppEvent("changetitle","main",()=>{
+            this.changeTitle();
+        })
+    }
+    @action.bound
+    setTitle(){
+        this.Title = new Date().toString()+"dddddd";
     }
 
     changeTitle() {
         this.Title = new Date().toString();
-        this.Step1 = new step1.Step1();
-        this.Step1.OS = 3 ;
+       // this.Step1 = new step1.Step1();
+      //  this.Step1.OS = 3 ;
+       setTimeout(() => {
+       // this.Title = new Date().toString();
+       this.setTitle()
+       }
+       , 3000);
 
     }
 
@@ -60,6 +79,11 @@ export class Main extends BaseMain {
 
 @observer
 export class MainReact extends base.BaseDom < Main > {
+
+    componentDidMount(){
+      //vm.
+    }
+
     pRender() {
 
         const index : number = this.vm.Navi.Index;

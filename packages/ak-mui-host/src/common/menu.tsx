@@ -149,9 +149,22 @@ const menuData = [
         path: 'register',
       },
       {
-        name: '注册结果',
-        path: 'register-result',
+        icon: 'ie',
+        name: '沈力的第一个页面',
+        path: 'web/mainpage',
       },
+      {
+        icon: 'github',
+        name: '一个测试页面',
+        path: 'web/testpage',
+      },
+      {
+        icon: 'chrome',
+        name: '代码生成页面',
+        path: 'web/codepage',
+      }
+      
+      
     ],
   },
 ];
@@ -165,7 +178,7 @@ function formatter(data, parentPath = '/', parentAuthority=0) {
     const result = {
       ...item,
       path,
-      authority: item.authority || parentAuthority,
+     authority: item.authority || parentAuthority,
     };
     if (item.children) {
       result.children = formatter(item.children, `${parentPath}${item.path}/`, item.authority);
@@ -174,4 +187,4 @@ function formatter(data, parentPath = '/', parentAuthority=0) {
   });
 }
 
-export const getMenuData = () => formatter(menuData);
+export const getMenuData = () => { return menuData;}

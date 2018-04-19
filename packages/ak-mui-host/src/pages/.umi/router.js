@@ -23,12 +23,12 @@ const routes = [
       {
         "path": "/web",
         "exact": false,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web' }),
+        "component": require('../web/_layout.tsx').default,
         "routes": [
           {
             "path": "/web/:page/",
             "exact": true,
-            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/' })
+            "component": require('../web/$page/index.tsx').default
           },
           {
             "path": "/web/:page/:p1/",
@@ -77,7 +77,7 @@ const routes = [
       {
         "path": "/door",
         "exact": false,
-        "component": require('../door/_layout.tsx').default,
+        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door' }),
         "routes": [
           {
             "path": "/door/me",
@@ -87,17 +87,17 @@ const routes = [
           {
             "path": "/door/",
             "exact": true,
-            "component": require('../door/index.tsx').default
+            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/' })
           },
           {
             "path": "/door/host",
             "exact": true,
-            "component": require('../door/host.tsx').default
+            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/host' })
           },
           {
             "path": "/door/demo1",
             "exact": true,
-            "component": require('../door/demo1.tsx').default
+            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/door/demo1' })
           },
           {
             "path": "/door/demo",

@@ -4,9 +4,13 @@ import {observable} from 'mobx'
 
 import * as base from './base'
 
-export class Step2 {
+export class Step2 extends base.BaseVm {
     @observable cpu = -1
     @observable sysDist = 20
+
+    changeMainTitle(){
+        this.emitAppEvent("changetitle","main")
+    }
 }
 
 import IntegerSlider from './../sl/IntegerSlider'
@@ -64,12 +68,14 @@ export class Step2React extends base.BaseDom < Step2 > {
     onItemClick(id, colName) {
         debugger;
         this.vm[colName] = id;
+        this.vm.changeMainTitle();
         //this.onItemClick.bind(this)
     }
 
     render() {
         return (
             <div>
+                
                 <h4>CPU</h4>
                 <div>
                     <RadioGroup

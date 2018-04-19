@@ -34,7 +34,9 @@ export default class SiderMenu extends PureComponent<any,any> {
   constructor(props) {
     super(props);
     this.menus = props.menuData;
+    console.log(this.menus);
     this.flatMenuKeys = this.getFlatMenuKeys(props.menuData);
+    console.log(this.flatMenuKeys);
     this.state = {
       openKeys: this.getDefaultCollapsedSubMenus(props),
     };
@@ -72,6 +74,7 @@ export default class SiderMenu extends PureComponent<any,any> {
       }
       keys.push(item.path);
     });
+    //console.log(keys);
     return keys;
   }
   /**
@@ -149,6 +152,8 @@ export default class SiderMenu extends PureComponent<any,any> {
     if (!menusData) {
       return [];
     }
+   // console.log("======");
+   // console.log(menusData);
     return menusData
       .filter(item => item.name && !item.hideInMenu)
       .map(item => {
@@ -220,13 +225,16 @@ export default class SiderMenu extends PureComponent<any,any> {
             <h1>Ant Design Pro</h1>
           </Link>
         </div>
+         {/* selectedKeys={[selectedKeys]*/}
+         {/* {...menuProps} */}
         <Menu
           key="Menu"
           theme="dark"
           mode="inline"
-          {...menuProps}
+          openKeys={["user"]}
           onOpenChange={this.handleOpenChange}
-          selectedKeys={selectedKeys}
+        
+          selectedKeys={['web/testpage']}
           style={{ padding: '16px 0', width: '100%' }}
         >
           {this.getNavMenuItems(this.menus)}
