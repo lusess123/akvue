@@ -1,10 +1,12 @@
 <template>
     <div id="main" class="app-main">
         <router-view></router-view>
+        <div id="react"></div>
     </div>
 </template>
 
-<script>
+<script lang="ts">
+   import React from 'react'
     export default {
         data () {
             return {
@@ -12,7 +14,7 @@
             };
         },
         mounted () {
-
+             this.$el
         },
         beforeDestroy () {
 

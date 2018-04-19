@@ -1,12 +1,3 @@
 module.exports = {
-  plugins: [
-    [
-      'babel-plugin-module-resolver',
-      {
-        alias: {
-          components: './components',
-        },
-      },
-    ],
-  ],
+  "plugins": ["transform-decorators-legacy", "transform-class-properties"]
 };

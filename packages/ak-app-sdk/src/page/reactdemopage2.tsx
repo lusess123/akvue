@@ -42,6 +42,7 @@ export class ReactDemo2PageReact extends BaseDomReact<ReactDemo2Page>{
             ReactDemoPage2React{new Date().toString()}
             {this.Vm.Pro1}
             <Result type='success' title='antdesigner'></Result>
+            <div></div>
             <div>
                 <Row>
                     <Col span={12}> <LoginDemo /></Col>

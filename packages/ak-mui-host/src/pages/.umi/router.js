@@ -72,7 +72,7 @@ const routes = [
       {
         "path": "/",
         "exact": true,
-        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/' })
+        "component": require('../index.tsx').default
       },
       {
         "path": "/door",

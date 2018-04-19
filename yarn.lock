@@ -1283,7 +1283,7 @@ antd-mobile@^2.0.0:
     rmc-tooltip "~1.0.0"
     rn-topview "^0.1.6"
 
-antd@^3.0.0, antd@^3.3.0:
+antd@^3.0.0, antd@^3.3.0, antd@^3.4.1:
   version "3.4.1"
   resolved "http://registry.npm.taobao.org/antd/download/antd-3.4.1.tgz#9f93c712e14d692a3db70fa3f254c79874cd3822"
   dependencies:

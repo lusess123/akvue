@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import Link from 'umi/link';
 import router from 'umi/router'
-import Button from 'antd/lib/button'
-import Row from 'antd/lib/row'
-import Col from 'antd/lib/col'
-import TagSelect from 'ant-design-pro/lib/TagSelect';
-import 'antd/dist/antd.less'
-import 'ant-design-pro/dist/ant-design-pro.less'
+import {Button} from 'antd'
+import {Row} from 'antd'
+import {Col} from 'antd'
+import TagSelect from 'ak-lib-antd/src/pro/TagSelect';
 
+
+import * as ddd from 'ddd' ;ddd 
 
 function handleFormSubmit(checkedValue) {
     console.log(checkedValue);
@@ -17,6 +17,7 @@ export default () => <div>
     
     <Row>
         <Col span={8}>
+        <ddd.gg />
             <Link to="login">
                 <Button type="primary">
                     登陆
