@@ -45,7 +45,7 @@ const routes = [
       {
         "path": "/",
         "exact": true,
-        "component": require('../index.tsx').default
+        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/' })
       },
       {
         "path": "/door",
@@ -88,6 +88,12 @@ const routes = [
         "path": "/app",
         "exact": true,
         "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/app' })
+      },
+      {
+        "path": "/ak",
+        "exact": false,
+        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/ak' }),
+        "routes": []
       }
     ]
   }
