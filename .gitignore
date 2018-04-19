@@ -59,3 +59,7 @@ typings/
 
 .mui
 
+packages/ak-mui-host/src/pages/.umi/DvaContainer.js
+packages/ak-mui-host/src/pages/.umi/DvaContainer.js
+packages/ak-mui-host/src/pages/.umi/router.js
+packages/ak-mui-host/src/pages/.umi/umi.js
