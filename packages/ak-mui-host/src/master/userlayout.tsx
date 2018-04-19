@@ -8,7 +8,7 @@ import { ContainerQuery } from 'react-container-query';
 import classNames from 'classnames';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import GlobalHeader from './../components/GlobalHeader';
-import GlobalFooter from 'ant-design-pro/lib/GlobalFooter';
+import GlobalFooter from './../components/GlobalFooter';
 import SiderMenu from './../components/SiderMenu';
 //import NotFound from '../routes/Exception/404';
 //import { getRoutes } from '../utils/utils';
