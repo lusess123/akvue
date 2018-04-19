@@ -1,0 +1,39 @@
+{
+  "name": "ak-lib-antd",
+  "version": "0.0.1",
+  "description": "对antd 和 antd pro 组件的封装",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": " tsc",
+    "clean_js": " find .  -name  \"*.js\"  -o -name \"*.d.ts\" -o -name \"com\"  -o -name \"event\"  -o -name \"net\" -o -name \"js\" -o -name \"vuemixin\"  |grep -v \"src/\" |grep -v \"node_modules/\" | xargs rm -rf",
+    "deljs": "shx rm -rf js",
+    "copy": "shx mv  ./js/*  .",
+    "copyvue": "cd src;find ./  -name \"*.vue\" | xargs -I{} rsync -R \"{}\" ../js/;cd ..;",
+    "build": "npm-run-all  clean_js rebuild ",
+    "rebuild": "npm-run-all   tsc  copyvue copy deljs "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ https://github.com/lusess123/akvue.git"
+  },
+  "author": "zyk2003xxx@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lusess123/akvue/issues"
+  },
+  "homepage": "https://github.com/lusess123/akvue/packages/ak-lib-antd#readme",
+  "dependencies": {
+    "@types/node": "^8.0.56",
+    "@types/react": "^16.0.27",
+    "antd": "^3.4.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.2",
+    "shx": "^0.2.2",
+    "typescript": "^2.6.2",
+    "@types/jest": "^22.2.2",
+    "ts-jest": "^22.4.2"
+  }
+}
