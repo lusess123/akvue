@@ -23,12 +23,12 @@ const routes = [
       {
         "path": "/web",
         "exact": false,
-        "component": require('../web/_layout.tsx').default,
+        "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web' }),
         "routes": [
           {
             "path": "/web/:page/",
             "exact": true,
-            "component": require('../web/$page/index.tsx').default
+            "component": () => React.createElement(require('/Users/zyking/Documents/work/lvwwork/akvue/node_modules/umi-build-dev/lib/Compiling.js').default, { route: '/web/:page/' })
           },
           {
             "path": "/web/:page/:p1/",
