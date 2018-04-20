@@ -14,7 +14,7 @@ import SiderMenu from './../components/SiderMenu';
 //import { getRoutes } from '../utils/utils';
 import Authorized from '../utils/Authorized';
 import { getMenuData } from '../common/menu';
-import logo from '../assets/logo.svg';
+import logo from '../assets/lw-sm.png';
 
 
 

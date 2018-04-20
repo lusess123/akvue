@@ -108,7 +108,7 @@ export class WinHull extends Hull {
     shouldComponentUpdate(p, s, c) {
 
         const { page } = p.match.params;
-        alert(page);
+      //  alert(page);
         if (page) {
             if ((page as string).toUpperCase().startsWith("WIN")) {
                 this.state.v = true;
