@@ -27,10 +27,10 @@
 - [项目插件信息注册](#项目插件信息注册)
 
 ## Introduction
-
-- 一个插件式,模块化，一站式的平台 
+- 一个 构建时集成 的前端微服务框架
+- 一个插件式,模块化应用的一站式的平台 
 - 可用于快速开发 大型2b后台管理系统  
-- 基于vue+typescript
+- 基于vue+typescript，同时支持　react
 
 ## Status:beta
 
@@ -54,6 +54,10 @@ Most of the planned features are in place but there may still be bugs. API may s
    5.platform  , 比如（vscode，Android ， OpenERP,各种Paas平台）
 
    akvue是一个简单的platform，提供SDK和可扩展的内核接口，可用来快速开发大型2b后台管理系统，每个项目是平台的一个插件，运行在这个平台之上。
+
+   应用插件化 是[前端微服务化](http://microfrontend.cn/) 的概念，平台现阶段只支持 [构建时集成](http://microfrontend.cn/#lazyload-%E5%8F%98%E4%BD%93-1%EF%BC%9A%E6%9E%84%E5%BB%BA%E6%97%B6%E9%9B%86%E6%88%90)
+
+   ![img](https://lusess123.github.io/akvue/img/mooa-app.jpg)
 
    platform 优点：
 
