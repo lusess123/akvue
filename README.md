@@ -61,7 +61,7 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    platform 优点：
 
-   1.多个团队在同不同的代码库里开发
+   1.多个团队在不同的代码库里开发
 
    2.高度封装，多个技术栈高度一站式集成，复用程度高，对于开发人员来说，对于80%的场景，提高开发效率
 
