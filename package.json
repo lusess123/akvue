@@ -12,6 +12,7 @@
 		"build-react": "cd packages/ak-lib-react;npm run rebuild ;cd ..",
 		"build-react-web": "cd packages/ak-lib-react-web;npm run rebuild ;cd ..",
 		"serve-host": "cd packages/ak-host;npm run serve ;cd ..",
+		"umi-host": "cd packages/ak-mui-host;npm run start ;cd ..",
 		"lerna": "lerna bootstrap"
 	},
 	"workspaces": [

@@ -3,6 +3,7 @@ import layout from './../../master/userlayout'
 import { withRouter, Route, Switch } from 'react-router'
 import { Card, Modal } from 'antd';
 import { truncateSync } from 'fs';
+import Web from './../../common/web'
 const Layout = layout as any;
 export default (p) => {
     return <Layout {...p}>
@@ -36,7 +37,11 @@ export class Hull extends React.Component<any, any> {
     ShowSign = "";
 
     renderMain() {
-        return <div>{JSON.stringify(this.props.match.params)}</div>;
+        const {page ,ak1 ,ak2,ak3} = this.props.match.params;
+        return <div>
+        {JSON.stringify(this.props.match.params)}
+        <Web    Page={page} P1={ak1} P2={ak2} P3 = {ak3}    />
+        </div>;
     }
 
     render() {

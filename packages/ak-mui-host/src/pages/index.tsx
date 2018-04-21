@@ -7,7 +7,7 @@ import {Col} from 'antd'
 import TagSelect from './../components/TagSelect';
 
 
-import * as ddd from 'ddd' ;ddd 
+
 
 function handleFormSubmit(checkedValue) {
     console.log(checkedValue);
@@ -17,7 +17,7 @@ export default () => <div>
     
     <Row>
         <Col span={8}>
-        <ddd.gg />
+       
             <Link to="login">
                 <Button type="primary">
                     登陆
