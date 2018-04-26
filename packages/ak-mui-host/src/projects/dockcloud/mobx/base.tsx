@@ -16,7 +16,7 @@ any > {
     }
 
     pRender() {
-        return <h1>
+        return <h1> 
             <code>
                 <pre>{core.json(this.vm)}</pre>
             </code>
