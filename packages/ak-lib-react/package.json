@@ -25,11 +25,13 @@
   },
   "homepage": "https://github.com/lusess123/akvue/packages/ak-lib-react#readme",
   "dependencies": {
-    "ak-lib-sys":"*",
-    "react":"*",
-    "react-dom":"*",
-    "@types/react":"*",
-     "@types/react-dom":"*"
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "ak-cli": "^0.0.1",
+    "ak-lib-sys": "*",
+    "commander": "^2.15.1",
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",
@@ -37,4 +39,3 @@
     "typescript": "*"
   }
 }
- 

@@ -3,6 +3,8 @@ import React from 'react';
 import  * as ioc from 'ak-lib-sys/Ioc'
 import { BasePage } from './../projects/dockcloud/mobx/base'
 
+import * as sdkapp from './../projects/sdk/sdkapp';sdkapp;
+
 
 
 export interface IHull {

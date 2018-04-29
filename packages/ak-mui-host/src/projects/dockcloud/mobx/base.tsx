@@ -4,7 +4,7 @@ import {observable} from 'mobx'
 import eventFile from 'ak-lib-sys/event'
 import * as core from 'ak-lib-sys/Core'
 
-export class BaseDom < T > extends React.Component < IPro < T >,
+export class BaseDom <T> extends React.Component < IPro < T >,
 any > {
     get vm() {
         return this.props.vm;

@@ -24,6 +24,39 @@ Vue.use(VueI18n);
 Vue.use(iView);
 
 
+import { Type, Field, Mutation, String, Boolean, Int, makeSchema } from 'graphql-typescript'
+
+
+@Type class Size {
+    @Field height: Int
+    @Field width: Int
+    @Field length: Int
+  }
+
+@Type class Box {
+    @Field size: Size
+   
+  }
+
+@Type class Query {
+  @Field box: Box
+}
+
+
+
+
+
+class UnboxArguments {
+  @Field([String]) tools: String[]
+}
+
+const schema = makeSchema(Query, {
+  types: [Size]
+})
+
+  console.log(schema);
+
+
 //require('@/assets/font-awesome/css/font-awesome.css')
 
 new Vue({

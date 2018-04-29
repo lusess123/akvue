@@ -25,9 +25,10 @@
   },
   "homepage": "https://github.com/lusess123/akvue/packages/ak-lib-react-web#readme",
   "dependencies": {
+    "ak-cli": "^0.0.1",
     "ak-lib-react": "*",
-    "ak-lib-web": "*"
-    
+    "ak-lib-web": "*",
+    "commander": "^2.15.1"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",

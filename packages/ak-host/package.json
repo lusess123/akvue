@@ -5,7 +5,6 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build"
-  
   },
   "repository": {
     "type": "git",
@@ -17,36 +16,36 @@
     "url": "https://github.com/lusess123/akvue/issues"
   },
   "homepage": "https://github.com/lusess123/akvue/packages/ak-host#readme",
-
   "dependencies": {
-    "vue": "^2.5.13",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "vue-axios": "2.0.2",
+    "ak-cli": "^0.0.1",
+    "ak-lib-col": "*",
+    "ak-lib-comp": "*",
+    "ak-lib-sys": "*",
+    "ak-lib-web": "*",
     "axios": "^0.17.1",
+    "commander": "^2.15.1",
     "iview": "^2.9.0",
-    "vue-i18n":"^5.0.3",
-    "ak-lib-sys":"*",
-    "ak-lib-web":"*",
-    "ak-lib-comp":"*",
-    "ak-lib-col":"*",
-    "vue-class-component": "^6.1.2"
+    "vue": "^2.5.13",
+    "vue-axios": "2.0.2",
+    "vue-class-component": "^6.1.2",
+    "vue-i18n": "^5.0.3",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "ak-dev-node":"*",
-    "copy-webpack-plugin": "^4.3.1",
+    "@types/jquery": "*",
     "@vue/cli-plugin-typescript": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
-
+    "ak-dev-node": "*",
+    "copy-webpack-plugin": "^4.3.1",
     "css-hot-loader": "^1.3.5",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
-    "@types/jquery":"*",
-   "typescript":"*",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "typescript": "*",
     "vue-loader": "^13.6.1",
     "vue-property-decorator": "^6.0.0",
     "vue-style-loader": "^3.0.3",
@@ -63,4 +62,3 @@
     "not ie <= 8"
   ]
 }
- 

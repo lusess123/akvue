@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/lusess123/akvue/packages/ak-umi-host#readme",
   "dependencies": {
+    "ak-cli": "^0.0.1",
     "axios": "*",
+    "commander": "^2.15.1",
     "iview": "^2.9.0",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.0",

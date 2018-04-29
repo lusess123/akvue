@@ -57,7 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
-.mui/
 
-packages/ak-mui-host/src/pages/.umi/
+packages/ak-mui-host/src/pages/.umi
+
+.history
+
+.umi
 

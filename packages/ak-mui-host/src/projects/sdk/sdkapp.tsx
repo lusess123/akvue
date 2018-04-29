@@ -1,0 +1,1 @@
+import * as  codepage from './codepage' ;  codepage

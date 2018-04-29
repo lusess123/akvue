@@ -25,11 +25,13 @@
   },
   "homepage": "https://github.com/lusess123/akvue/packages/ak-app-sdk#readme",
   "dependencies": {
+    "ak-cli": "^0.0.1",
     "ak-lib-react": "*",
     "ak-lib-react-web": "*",
     "ak-lib-sys": "*",
     "ant-design-pro": "^1.2.1",
     "antd": "^3.3.0",
+    "commander": "^2.15.1",
     "react-jsonschema-form": "*"
   },
   "devDependencies": {

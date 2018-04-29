@@ -25,9 +25,11 @@
   },
   "homepage": "https://github.com/lusess123/akvue/packages/ak-lib-biz#readme",
   "dependencies": {
-    "ak-lib-sys":"*",
-    "ak-lib-col":"*",
-    "ak-lib-comp":"*"
+    "ak-cli": "^0.0.1",
+    "ak-lib-col": "*",
+    "ak-lib-comp": "*",
+    "ak-lib-sys": "*",
+    "commander": "^2.15.1"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",

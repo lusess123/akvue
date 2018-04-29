@@ -13,9 +13,12 @@
     "build": "umi build"
   },
   "dependencies": {
+    "ak-cli": "^0.0.1",
     "ant-design-pro": "^1.2.1",
-    
+    "commander": "^2.15.1",
     "dva": "^2.1.0",
+    "graphql": "^0.10.5",
+    "graphql-typescript": "^0.2.0",
     "mobx": "^4.1.1",
     "mobx-react": "^5.0.0",
     "umi": "^1.0.0-0",

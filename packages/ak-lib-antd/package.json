@@ -27,13 +27,15 @@
   "dependencies": {
     "@types/node": "^8.0.56",
     "@types/react": "^16.0.27",
-    "antd": "^3.4.1"
+    "ak-cli": "^0.0.1",
+    "antd": "^3.4.1",
+    "commander": "^2.15.1"
   },
   "devDependencies": {
+    "@types/jest": "^22.2.2",
     "npm-run-all": "^4.1.2",
     "shx": "^0.2.2",
-    "typescript": "^2.6.2",
-    "@types/jest": "^22.2.2",
-    "ts-jest": "^22.4.2"
+    "ts-jest": "^22.4.2",
+    "typescript": "^2.6.2"
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "ak-dev-node",
+  "name": "ak-cli",
   "version": "0.0.1",
-  "description": "用于构建的node基础库",
+  "description": "ak cli 工具",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -14,8 +14,7 @@
     "build": "npm-run-all  clean_js tsc  copyvue copy deljs ",
     "rebuild": "npm-run-all  clean_js tsc  copyvue copy deljs ",
     "jest": "jest",
-    "runts": "ts-node ./src/console/index.ts",
-    "code": "gql-gen   -u http://localhost:3002/graphql  -t ts-multiple -o ./model/ "
+    "cli": "ts-node ./src/cli.ts"
   },
   "repository": {
     "type": "git",
@@ -29,7 +28,6 @@
   "homepage": "https://github.com/lusess123/akvue/packages/ak-dev-node#readme",
   "dependencies": {
     "@types/fs-extra": "*",
-    "ak-cli": "^0.0.1",
     "commander": "^2.15.1",
     "fs-extra": "*"
   },
