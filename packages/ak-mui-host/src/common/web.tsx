@@ -21,6 +21,7 @@ export default (props: IHull) => {
             Args: [props]
         })
         if (_pageObj) {
+            _pageObj.sysLoadPage();
             return <_pageObj.ReactType   vm={_pageObj}  />
         }
         else {
@@ -28,3 +29,5 @@ export default (props: IHull) => {
         }
     }
 }
+
+

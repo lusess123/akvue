@@ -29,9 +29,9 @@
   "homepage": "https://github.com/lusess123/akvue/packages/ak-dev-node#readme",
   "dependencies": {
     "@types/fs-extra": "*",
-    "ak-cli": "^0.0.1",
     "commander": "^2.15.1",
-    "fs-extra": "*"
+    "fs-extra": "*",
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
@@ -40,6 +40,7 @@
     "jest": "^22.4.3",
     "npm-run-all": "^4.1.2",
     "shx": "^0.2.2",
+    "ts-graphql-plugin": "^1.1.2",
     "ts-jest": "^22.4.2",
     "ts-node": "^6.0.1",
     "typescript": "^2.6.2"

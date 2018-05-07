@@ -104,3 +104,5 @@ ${vue.vm("ListFormObj")}
     ioc.PlugIn({ RegName: "ListPage", BaseType: "IPage", CreateDate: "2018-02-03", Doc: "List页面插件" })
 ], ListPage);
 export { ListPage };
+
+

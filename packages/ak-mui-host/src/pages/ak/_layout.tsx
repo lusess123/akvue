@@ -7,28 +7,29 @@ import Web from './../../common/web'
 const Layout = layout as any;
 export default(p) => {
     return <Layout {...p}>
-        <div>{JSON.stringify(p.match.params)}</div>
-        <hr/>
-        <Card>
-            {routeGroup(Hull)}
-        </Card>
-        <Card>
-            {routeGroup(WinHull)}
-        </Card>
-        <Card>
-            {routeGroup(PanelHull)}
-        </Card>
+
+        {routeGroup(Hull)}
+       
     </Layout>
 }
+// <Card>     {routeGroup(WinHull)} </Card> <Card>     {routeGroup(PanelHull)}
+// </Card>
+
+
+// {routeGroup(WinHull)}
+// {routeGroup(PanelHull)}
+
 
 const routeGroup = (hull) => {
-        return <Switch>
-            <Route path="/ak/:page/:ak1/:ak2/:ak3" component={hull}/>
-            <Route path="/ak/:page/:ak1/:ak2" component={hull}/>
-            <Route path="/ak/:page/:ak1" component={hull}/>
-            <Route path="/ak/:page" component={hull}/>
-            <Route path="/ak" component={hull}/>
-        </Switch>;
+        return <Card>
+            <Switch>
+                <Route path="/ak/:page/:ak1/:ak2/:ak3" component={hull}/>
+                <Route path="/ak/:page/:ak1/:ak2" component={hull}/>
+                <Route path="/ak/:page/:ak1" component={hull}/>
+                <Route path="/ak/:page" component={hull}/>
+                <Route path="/ak" component={hull}/>
+            </Switch>
+        </Card>;
     }
 
     export class Hull extends React.Component < any,
@@ -39,7 +40,7 @@ const routeGroup = (hull) => {
         renderMain() {
             const {page, ak1, ak2, ak3} = this.props.match.params;
             return <div>
-                {JSON.stringify(this.props.match.params)}
+
                 <Web Page={page} P1={ak1} P2={ak2} P3={ak3}/>
             </div>;
         }
@@ -83,9 +84,12 @@ const routeGroup = (hull) => {
         }
     }
 
-    export class ModalWin extends React.Component < any,any > {
+    export class ModalWin extends React.Component < any,
+    any > {
         // state = { v: true }
         render() {
+            const {pageo,  ak1, ak2, ak3} = this.props.match.params;
+            const page = pageo&&(pageo as string).length > 3?(pageo as string).substring(3):pageo;
             return <Modal
                 onCancel={() => {
                 this
@@ -93,7 +97,7 @@ const routeGroup = (hull) => {
                     .onCancle()
             }}
                 visible={this.props.v}>
-                <div>{JSON.stringify(this.props.match.params)}</div>
+                <Web Page={page} P1={ak1} P2={ak2} P3={ak3}/>
             </Modal>
         }
     }
@@ -105,6 +109,7 @@ const routeGroup = (hull) => {
             v: true
         }
         renderMain() {
+            const {page, ak1, ak2, ak3} = this.props.match.params;
             return <ModalWin
                 onCancle={() => {
                 this.state.v = false;

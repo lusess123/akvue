@@ -39,8 +39,8 @@ const pp =
             <hr />
             <pre><code>{sys.core.json(door.Vm)}</code></pre>
 
-            <Button>点击我</Button>
-            <Child1 {...props} />
+            <Button >点击我</Button>
+            <Child1 {...props}  />
             <hr/>
             <h1>子组件</h1>
             <AA/>

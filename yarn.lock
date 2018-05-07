@@ -796,6 +796,10 @@
   dependencies:
     "@types/node" "*"
 
+"@types/graphql@0.11.7":
+  version "0.11.7"
+  resolved "http://registry.npm.taobao.org/@types/graphql/download/@types/graphql-0.11.7.tgz#da39a2f7c74e793e32e2bb7b3b68da1691532dd5"
+
 "@types/graphql@0.12.6":
   version "0.12.6"
   resolved "http://registry.npm.taobao.org/@types/graphql/download/@types/graphql-0.12.6.tgz#3d619198585fcabe5f4e1adfb5cf5f3388c66c13"
@@ -819,6 +823,10 @@
 "@types/jquery@*":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.1.tgz#55758d44d422756d6329cbf54e6d41931d7ba28f"
+
+"@types/lodash@^4.14.85":
+  version "4.14.108"
+  resolved "http://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.108.tgz#02656af3add2e5b3174f830862c47421c00ef817"
 
 "@types/node@*", "@types/node@^9.3.0":
   version "9.6.2"
@@ -2251,6 +2259,13 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
+buffer@^5.0.3:
+  version "5.1.0"
+  resolved "http://registry.npm.taobao.org/buffer/download/buffer-5.1.0.tgz#c913e43678c7cb7c8bd16afbcddb6c5505e8f9fe"
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
+
 builtin-modules@^1.0.0, builtin-modules@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
@@ -3219,6 +3234,13 @@ cross-env@^5.1.1:
     cross-spawn "^5.1.0"
     is-windows "^1.0.0"
 
+cross-fetch@2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/cross-fetch/download/cross-fetch-2.0.0.tgz#a17475449561e0f325146cea636a8619efb9b382"
+  dependencies:
+    node-fetch "2.0.0"
+    whatwg-fetch "2.0.3"
+
 cross-port-killer@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/cross-port-killer/download/cross-port-killer-1.0.1.tgz#94be34efb5354a9c8d9dce7a9373ec2efeefb241"
@@ -3287,6 +3309,10 @@ css-animation@1.x, css-animation@^1.2.5, css-animation@^1.3.2:
     babel-runtime "6.x"
     component-classes "^1.2.5"
 
+css-color-keywords@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/css-color-keywords/download/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
+
 css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
@@ -3334,6 +3360,14 @@ css-selector-tokenizer@^0.7.0:
     cssesc "^0.1.0"
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
+
+css-to-react-native@^2.0.3:
+  version "2.1.2"
+  resolved "http://registry.npm.taobao.org/css-to-react-native/download/css-to-react-native-2.1.2.tgz#c06d628467ef961c85ec358a90f3c87469fb0095"
+  dependencies:
+    css-color-keywords "^1.0.0"
+    fbjs "^0.8.5"
+    postcss-value-parser "^3.3.0"
 
 css-what@2.1:
   version "2.1.0"
@@ -4871,7 +4905,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.3, fbjs@^0.8.9:
+fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.3, fbjs@^0.8.5, fbjs@^0.8.9:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -5615,6 +5649,61 @@ graphql-codegen-generators@0.8.21:
   version "0.8.21"
   resolved "http://registry.npm.taobao.org/graphql-codegen-generators/download/graphql-codegen-generators-0.8.21.tgz#646f1dc95c3437cb4ca0365e77282d0ead565cee"
 
+graphql-config@1.1.4:
+  version "1.1.4"
+  resolved "http://registry.npm.taobao.org/graphql-config/download/graphql-config-1.1.4.tgz#af09659f877b96451838de456e4e4f4be45be6dd"
+  dependencies:
+    graphql "^0.12.3"
+    graphql-import "^0.1.7"
+    graphql-request "^1.4.0"
+    js-yaml "^3.10.0"
+    minimatch "^3.0.4"
+    rimraf "^2.6.2"
+
+graphql-import@^0.1.7:
+  version "0.1.9"
+  resolved "http://registry.npm.taobao.org/graphql-import/download/graphql-import-0.1.9.tgz#9161f4f7ea92337b60fd40e22e64d3a68c212729"
+  dependencies:
+    "@types/graphql" "0.11.7"
+    "@types/lodash" "^4.14.85"
+    graphql "^0.12.3"
+    lodash "^4.17.4"
+
+graphql-language-service-interface@^1.0.15:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/graphql-language-service-interface/download/graphql-language-service-interface-1.1.0.tgz#ce66209bf9073c9f5fd8e9e0996696700b60a9a0"
+  dependencies:
+    graphql-config "1.1.4"
+    graphql-language-service-parser "^1.1.0"
+    graphql-language-service-types "^1.1.0"
+    graphql-language-service-utils "^1.1.0"
+
+graphql-language-service-parser@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/graphql-language-service-parser/download/graphql-language-service-parser-1.1.0.tgz#fb425235a78c4ecefc6094d86533c6376dc5fd2b"
+  dependencies:
+    graphql-config "1.1.4"
+    graphql-language-service-types "^1.1.0"
+
+graphql-language-service-types@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/graphql-language-service-types/download/graphql-language-service-types-1.1.0.tgz#a38037575690b590540c6da64aa1a918a702a9bf"
+  dependencies:
+    graphql-config "1.1.4"
+
+graphql-language-service-utils@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/graphql-language-service-utils/download/graphql-language-service-utils-1.1.0.tgz#ce2c6c44d47b1524cd6211a91f64d8eb473cb5bd"
+  dependencies:
+    graphql-config "1.1.4"
+    graphql-language-service-types "^1.1.0"
+
+graphql-request@^1.4.0:
+  version "1.6.0"
+  resolved "http://registry.npm.taobao.org/graphql-request/download/graphql-request-1.6.0.tgz#afe87cf2a336acabb0cc2a875900202eda89f412"
+  dependencies:
+    cross-fetch "2.0.0"
+
 graphql-tag@2.8.0:
   version "2.8.0"
   resolved "http://registry.npm.taobao.org/graphql-tag/download/graphql-tag-2.8.0.tgz#52cdea07a842154ec11a2e840c11b977f9b835ce"
@@ -5653,6 +5742,12 @@ graphql@^0.10.5:
   resolved "http://registry.npm.taobao.org/graphql/download/graphql-0.10.5.tgz#c9be17ca2bdfdbd134077ffd9bbaa48b8becd298"
   dependencies:
     iterall "^1.1.0"
+
+graphql@^0.12.3:
+  version "0.12.3"
+  resolved "http://registry.npm.taobao.org/graphql/download/graphql-0.12.3.tgz#11668458bbe28261c0dcb6e265f515ba79f6ce07"
+  dependencies:
+    iterall "1.1.3"
 
 graphql@^0.13.0, graphql@^0.13.2:
   version "0.13.2"
@@ -6740,6 +6835,10 @@ istanbul-reports@^1.3.0:
   dependencies:
     handlebars "^4.0.3"
 
+iterall@1.1.3:
+  version "1.1.3"
+  resolved "http://registry.npm.taobao.org/iterall/download/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
+
 iterall@^1.1.0, iterall@^1.1.3, iterall@^1.2.1:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/iterall/download/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
@@ -7060,7 +7159,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@^3.4.3, js-yaml@^3.7.0, js-yaml@^3.9.0, js-yaml@^3.9.1:
+js-yaml@^3.10.0, js-yaml@^3.4.3, js-yaml@^3.7.0, js-yaml@^3.9.0, js-yaml@^3.9.1:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
   dependencies:
@@ -8142,6 +8241,10 @@ no-case@^2.2.0, no-case@^2.3.2:
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
   dependencies:
     lower-case "^1.1.1"
+
+node-fetch@2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-2.0.0.tgz#982bba43ecd4f2922a29cc186a6bbb0bb73fcba6"
 
 node-fetch@^1.0.1, node-fetch@^1.4.1:
   version "1.7.3"
@@ -11897,6 +12000,21 @@ style-search@^0.1.0:
   version "0.1.0"
   resolved "http://registry.npm.taobao.org/style-search/download/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
 
+styled-components@^3.2.6:
+  version "3.2.6"
+  resolved "http://registry.npm.taobao.org/styled-components/download/styled-components-3.2.6.tgz#99e6e75a746bdedd295a17e03dd1493055a1cc3b"
+  dependencies:
+    buffer "^5.0.3"
+    css-to-react-native "^2.0.3"
+    fbjs "^0.8.16"
+    hoist-non-react-statics "^2.5.0"
+    is-plain-object "^2.0.1"
+    prop-types "^15.5.4"
+    react-is "^16.3.1"
+    stylis "^3.5.0"
+    stylis-rule-sheet "^0.0.10"
+    supports-color "^3.2.3"
+
 stylelint-config-prettier@^3.0.4:
   version "3.2.0"
   resolved "http://registry.npm.taobao.org/stylelint-config-prettier/download/stylelint-config-prettier-3.2.0.tgz#af32b7845adeeddbf0a0bd642ace4ca1e68958e2"
@@ -12002,6 +12120,14 @@ stylelint@^9.1.1:
     sugarss "^1.0.0"
     svg-tags "^1.0.0"
     table "^4.0.1"
+
+stylis-rule-sheet@^0.0.10:
+  version "0.0.10"
+  resolved "http://registry.npm.taobao.org/stylis-rule-sheet/download/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"
+
+stylis@^3.5.0:
+  version "3.5.0"
+  resolved "http://registry.npm.taobao.org/stylis/download/stylis-3.5.0.tgz#016fa239663d77f868fef5b67cf201c4b7c701e1"
 
 subarg@^1.0.0:
   version "1.0.0"
@@ -12390,6 +12516,12 @@ trough@^1.0.0:
 tryer@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/tryer/download/tryer-1.0.0.tgz#027b69fa823225e551cace3ef03b11f6ab37c1d7"
+
+ts-graphql-plugin@^1.1.2:
+  version "1.1.2"
+  resolved "http://registry.npm.taobao.org/ts-graphql-plugin/download/ts-graphql-plugin-1.1.2.tgz#edb74f1fedeb27f66c7ae8411897b5f56383df0c"
+  dependencies:
+    graphql-language-service-interface "^1.0.15"
 
 ts-jest-babel-7@^22.0.4, ts-jest-babel-7@^22.0.6:
   version "22.0.7"
@@ -13329,6 +13461,10 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   resolved "https://registry.yarnpkg.com/whatwg-encoding/-/whatwg-encoding-1.0.3.tgz#57c235bc8657e914d24e1a397d3c82daee0a6ba3"
   dependencies:
     iconv-lite "0.4.19"
+
+whatwg-fetch@2.0.3:
+  version "2.0.3"
+  resolved "http://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
 whatwg-fetch@>=0.10.0:
   version "2.0.4"

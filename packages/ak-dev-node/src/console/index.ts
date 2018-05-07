@@ -1,4 +1,4 @@
-console.log(123);
+   import gql from 'graphql-tag';
 
 
 export class AA {
@@ -10,3 +10,14 @@ export class AA {
 
 
 new AA().aaa();
+
+const str1 = gql`
+  {
+    
+  }
+`; 
+
+// query is now a GraphQL syntax tree object
+
+
+console.log(str1);
