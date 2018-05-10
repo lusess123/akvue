@@ -22,14 +22,7 @@
     // 启用 vuex-class 需要开启此选项
     "strictFunctionTypes": false,
     //"allowJs":true,
-    "allowSyntheticDefaultImports": true,
-    "plugins": [
-      {
-        "name": "ts-graphql-plugin",
-        "schema": "./src/schema.json",
-        "tag": "gql"
-      }
-    ]
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "./src/**/*.ts"

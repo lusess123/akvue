@@ -24,7 +24,7 @@ Vue.use(VueI18n);
 Vue.use(iView);
 
 
-var ddd :any = "13";
+
 
 
 //require('@/assets/font-awesome/css/font-awesome.css')
@@ -38,6 +38,8 @@ new Vue({
         currentPageName: ''
     },
     mounted () {
+
+         alert(process);
         this.currentPageName = this.$route.name;
         // 显示打开的页面的列表
         this.$store.commit('setOpenedList');

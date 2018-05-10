@@ -8,10 +8,13 @@ const buildapp = require("ak-dev-node/build/buildapp");
 const apps = buildapp.getApps();
 console.log("apps:");
 console.log(apps);
+const _va = process.env;
+console.log(_va);
+console.log(process);
 module.exports = {
     configureWebpack: (config) => {
         debugger;
-
+       // config.entry.app[0] = "./src/main.js";
      // console.log("fffff:"+buildapp.getApps());  
         //config.resolve.alias["apps"] = "@/framework/apps";
         config.devtool = 'cheap-module';

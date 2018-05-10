@@ -35,12 +35,9 @@
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
-    "graphql": "^0.13.2",
-    "graphql-code-generator": "^0.8.21",
     "jest": "^22.4.3",
     "npm-run-all": "^4.1.2",
     "shx": "^0.2.2",
-    "ts-graphql-plugin": "^1.1.2",
     "ts-jest": "^22.4.2",
     "ts-node": "^6.0.1",
     "typescript": "^2.6.2"

@@ -7,6 +7,7 @@ import * as sdkapp from './../projects/sdk/sdkapp';sdkapp;
 
 
 
+
 export interface IHull {
     Page: string;
     P1?: string;
@@ -19,7 +20,7 @@ export default (props: IHull) => {
     if (props.Page) {
         const _pageObj = ioc.Ioc.Current().FetchInstance<BasePage>(Page, "BasePage", {
             Args: [props]
-        })
+        }) 
         if (_pageObj) {
             _pageObj.sysLoadPage();
             return <_pageObj.ReactType   vm={_pageObj}  />
