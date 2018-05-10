@@ -173,7 +173,7 @@ ak-lib-sys  | - |- | -|ak-host
 
  ### 项目详细信息
 
-![img](https://lusess123.github.io/akvue/img/sdkapp.jpg)
+![img](https://github.com/lusess123/akvue/blob/master/docs/img/sdkapp.png)
 
 ###  集成antdesigner
 ![img](https://lusess123.github.io/akvue/img/antdesign.jpeg)
