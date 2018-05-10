@@ -166,7 +166,7 @@ ak-lib-sys  | - |- | -|ak-host
  ### 项目列表
 
 
-![img](https://lusess123.github.io/akvue/img/applist.jpg)
+![img](https://github.com/lusess123/akvue/blob/master/docs/img/applist.jpg)
 
 
 
