@@ -102,6 +102,45 @@ Most of the planned features are in place but there may still be bugs. API may s
 
    2. 更容易可在vue/react/anguar三大框架之间复用数据和逻辑
 
+#### 控件定义
+
+ ```
+@ioc.PlugIn({RegName:"DateTimeCol",BaseType:"BaseCol",Author:"zhengyukun",CreateDate:"2018-01-26",Doc:"时间控件插件"})
+@vue.com('<DatePicker type="datetime" placeholder="Select date" ></DatePicker>')
+export   class DateTimeCol extends BaseCol {
+
+      constructor (config?: IDateTimeColConfig){
+          super(config);
+      }
+
+
+}
+
+ ```
+
+
+ #### 控件接口声明
+
+ ```
+ import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/BaseCom";
+export interface IBaseColConfig extends IBaseComConfig {
+    DataValue: any;
+    RegName?: string;
+    DataSet?: any;
+}
+export declare class BaseCol extends BaseCom {
+    private fDataValue;
+    private RegName;
+    private DataSet;
+    constructor(config?: IBaseColConfig);
+    DataValue: any;
+    readonly DataText: string;
+    protected pGetDataValue(): any;
+    protected pGetDataText(): any;
+}
+ ```
+
+
 ###  集成react
 
     对于2B后台管理系统，“尽量缩小需要下载的js包大小” 和 “兼并react的生态” 的权衡,选择了后者
