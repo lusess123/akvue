@@ -60,3 +60,5 @@ typings/
 .mui/
 
 .history/
+
+packages/ak-app-jwt

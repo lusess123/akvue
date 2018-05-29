@@ -11,6 +11,7 @@ export  abstract class BaseApp  implements IApp {
 
     protected MenuList :IMenu [] ;
     protected PlugDict:ioc.IClassList ;
+    public Order :number = 0;
 
      public  getMenus():IMenu[]{
                   return  this.MenuList ;

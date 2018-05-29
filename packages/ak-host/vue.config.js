@@ -5,14 +5,23 @@ const webpack = require('webpack');
 const buildapp = require("ak-dev-node/build/buildapp");
 
 
-const apps = buildapp.getApps();
+const _apps = buildapp.getApps();
+
+const apps = _apps.filter(app=>{
+    //a
+      if(app == "ak-app-dwh")
+        return false ;
+        else 
+        return true ;
+});
+
 console.log("apps:");
 console.log(apps);
 module.exports = {
     configureWebpack: (config) => {
         debugger;
 
-     // console.log("fffff:"+buildapp.getApps());  
+        // console.log("fffff:"+buildapp.getApps());  
         //config.resolve.alias["apps"] = "@/framework/apps";
         config.devtool = 'cheap-module';
         apps.forEach((app) => {
@@ -36,7 +45,7 @@ module.exports = {
             name: apps,
             minChunks: Infinity
         }));
-       // console.log(config.plugins)
+        // console.log(config.plugins)
 
     },
     css: {
