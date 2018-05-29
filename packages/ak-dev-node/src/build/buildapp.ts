@@ -7,8 +7,8 @@ export const getApps = () : string[] => {
     // var _package = require("./../../package.json"); var name = _package.name; var
     // version = _package.version; console.log(name + "   "+ version);
 
-    return _strs.filter((str) => {
-        if (str.toUpperCase().indexOf("AK-APP") == 0) {
+    return _strs.concat(getFilesByDir(path.resolve(appcontext.getBasePath, "..","apps","arwen"))).filter((str) => {
+        if (str.toUpperCase().indexOf("AK-APP") == 0 ) {
             return true;
         }
     })
