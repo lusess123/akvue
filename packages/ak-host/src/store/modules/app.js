@@ -1,9 +1,17 @@
-import { otherRouter, appRouter } from '@/router/router';
+import {
+    otherRouter,
+    appRouter
+} from '@/router/router';
 import Util from '@/libs/util';
 import Cookies from 'js-cookie';
 import Vue from 'vue';
 import * as menuData from './menu';
-import { debug } from 'util';
+import {
+    debug
+} from 'util';
+import {
+    core
+} from 'ak-lib-sys'
 
 const _menuMap = (sMenu) => {
     return {
@@ -14,8 +22,7 @@ const _menuMap = (sMenu) => {
         children: (sMenu.children && sMenu.children.length > 0) ?
             sMenu.children.map((child) => {
                 return _menuMap(child);
-            }) :
-            undefined
+            }) : undefined
     }
 
 }
@@ -62,12 +69,26 @@ const app = {
             //目前菜单只有两级
             // debugger;
             if (state.menuList.length == 0) {
-                const menuList = menuData.default.map(m => {
-                    return _menuMap(m);
+                const ss = window.sessionStorage;
+                if (ss) {
+                    const _menus = sessionStorage.getItem('menus_session_key');
+                    if (_menus) {
+                        const _menuObjects = core.parseJson(_menus);
+                        if (_menuObjects) {
+                            const menuList = _menuObjects.map(m => {
+                                return _menuMap(m);
 
-                })
+                            })
 
-                state.menuList = menuList;
+                            state.menuList = menuList;
+                        }
+
+
+                    }
+                }
+
+
+
             }
         },
 
@@ -158,7 +179,7 @@ const app = {
             localStorage.pageOpenedList = JSON.stringify(state.pageOpenedList);
         },
         setOpenedList(state) {
-           // state.pageOpenedList = localStorage.pageOpenedList ? JSON.parse(localStorage.pageOpenedList) : [otherRouter.children[0]];
+            // state.pageOpenedList = localStorage.pageOpenedList ? JSON.parse(localStorage.pageOpenedList) : [otherRouter.children[0]];
         },
         setCurrentPath(state, pathArr) {
             state.currentPath = pathArr;

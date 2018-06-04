@@ -12,6 +12,23 @@ import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
 import Result from 'ant-design-pro/lib/Result';
 import Row from 'antd/lib/row';
 import Col from "antd/lib/col";
+export class AA extends React.Component {
+    render() {
+        return React.createElement("div", null, this.props.aaa1);
+    }
+}
+export const component = (p) => {
+    return React.createElement("div", null,
+        p.pro1,
+        "-",
+        p.pro2);
+};
+function Custom(props) {
+    // props以函数参数的形式传递
+    return (React.createElement("div", null,
+        "This is a functional component, ",
+        props.name));
+}
 export class ReactDemo2PageReact extends BaseDomReact {
     render() {
         return React.createElement("div", null,
@@ -26,7 +43,9 @@ export class ReactDemo2PageReact extends BaseDomReact {
                         React.createElement(LoginDemo, null)),
                     React.createElement(Col, { span: 12 })),
                 React.createElement(Row, null,
-                    React.createElement(Table, { columns: columns, dataSource: data, scroll: { x: 1500, y: 300 } }))));
+                    React.createElement(Table, { columns: columns, dataSource: data, scroll: { x: 1500, y: 300 } })),
+                React.createElement(AA, { aaa1: "aaaa" }),
+                React.createElement(Custom, null)));
     }
 }
 let ReactDemo2Page = class ReactDemo2Page extends BaseReactPage {
