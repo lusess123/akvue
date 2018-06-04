@@ -18,6 +18,10 @@
                     </MenuItem>
                 </template>
             </Submenu>
+               <MenuItem v-else :name="item.name" :key="'menuitem' + item.name">
+                        <i class="fa" :class="getIcon(item)" :key="'icon' + item.name"></i> 
+                        <span class="layout-text" :key="'title' + item.name">{{ itemTitle(item) }}</span>
+                    </MenuItem>
         </template>
     </Menu>
 </template>
