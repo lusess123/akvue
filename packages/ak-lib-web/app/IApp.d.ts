@@ -5,6 +5,7 @@ export interface IApp {
     Title: string;
     Doc: string;
     Icon: string;
+    Order?: number;
     getMenus(): IMenu[];
     getPlugs(): ioc.IClassList;
 }

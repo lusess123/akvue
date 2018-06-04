@@ -1,8 +1,8 @@
 <template>
     <div>
         <template v-for="(item, index) in menuList">
-            <div style="text-align: center;" :key="index">
-                <Dropdown transfer v-if="item.children.length !== 1" placement="right-start" :key="index" @on-click="changeMenu">
+            <div v-if=" item.children"  style="text-align: center;" :key="index"  >
+                <Dropdown transfer v-if=" item.children.length !== 1" placement="right-start" :key="index" @on-click="changeMenu">
                     <Button style="width: 70px;margin-left: -5px;padding:10px 0;" type="text">
                         <i class="fa fa-2" :class="getIcon(item)"></i> 
                     </Button>

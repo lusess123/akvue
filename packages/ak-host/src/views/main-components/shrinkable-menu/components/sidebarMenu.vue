@@ -8,7 +8,7 @@
            
                
 
-            <Submenu v-if="item.children.length >= 1" :name="item.name" :key="item.name">
+            <Submenu v-if="item.children &&item.children.length >= 1" :name="item.name" :key="item.name">
                 <template slot="title">
                   
                     <i class="fa" :class="getIcon(item)"></i> 

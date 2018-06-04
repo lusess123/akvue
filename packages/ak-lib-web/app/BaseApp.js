@@ -4,6 +4,7 @@ export class BaseApp {
         this.Title = "";
         this.Doc = "";
         this.Icon = "";
+        this.Order = 0;
     }
     getMenus() {
         return this.MenuList;

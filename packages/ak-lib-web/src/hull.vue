@@ -112,7 +112,7 @@ export default {
 
         getPageName(pageName: string) {
             if (pageName) {
-                const _len = pageName.split("-");
+                const _len = pageName.split("$")
                 if (_len.length > 1) {
                     const _param = _len[1];
                     return { pageName: _len[0], isWin: _param.toUpperCase() == "WIN" };

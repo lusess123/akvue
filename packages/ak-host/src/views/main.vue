@@ -164,14 +164,14 @@
                 }
             },
             checkTag (name) {
-                let openpageHasTag = this.pageTagsList.some(item => {
-                    if (item.name === name) {
-                        return true;
-                    }
-                });
-                if (!openpageHasTag) { //  解决关闭当前标签后再点击回退按钮会退到当前页时没有标签的问题
-                    util.openNewPage(this, name, this.$route.params || {}, this.$route.query || {});
-                }
+                // let openpageHasTag = this.pageTagsList.some(item => {
+                //     if (item.name === name) {
+                //         return true;
+                //     }
+                // });
+                // if (!openpageHasTag) { //  解决关闭当前标签后再点击回退按钮会退到当前页时没有标签的问题
+                //     util.openNewPage(this, name, this.$route.params || {}, this.$route.query || {});
+                // }
             },
             handleSubmenuChange (val) {
                 // console.log(val)
