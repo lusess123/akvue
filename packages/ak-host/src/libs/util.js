@@ -77,12 +77,12 @@ util.handleTitle = function (vm, item) {
     }
 };
 
-util.setCurrentPath = (vm,name,rootTitle = "当前集群")=>{
+util.setCurrentPath = (vm,name,rootTitle = "")=>{
     //debugger;
     //alert(domFile.getCookie("orgid"));
    // console.log('当前组织机构是： '+ dwhcore.getOrg());
     //console.log(dwhcore.getOrg());
-   // if
+   // i
    // rootTitle = dwhcore.getOrg() ?dwhcore.getOrg().cnname:"";
     let title = '';
     let leafObj ;

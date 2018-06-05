@@ -5,10 +5,10 @@
            
             :key="item.name"
         >
-        <template v-if="index == 0 ">
+        <template v-if="index == -3 ">
              <div style="display:inline-block;padding:0 6px;">
                 
-              当前集群： <router-link :to='{name:"dwh.table.search"}'> {{ itemTitle(item) }}</router-link>
+             <router-link :to='{name:"dwh.table.search"}'> {{ itemTitle(item) }}</router-link>
         <Dropdown trigger="click"  @on-visible-change="openMenu" @on-click="ddd">
             <a href="javascript:void(0)">
                 <Icon :style="{marginTop: '-2px', verticalAlign: 'middle'}" color="#495060" :size="25" :type="'android-arrow-drop'+ (IsDown?'down':'up')"></Icon>

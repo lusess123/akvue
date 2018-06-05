@@ -5,7 +5,7 @@
 <template>
     <Menu ref="sideMenu" :active-name="$route.path" :open-names="openNames" :theme="menuTheme" width="auto" @on-select="changeMenu">
         <template v-for="item in menuList">
-            <Submenu v-if="item.children &&item.children.length >= 1" :name="item.name" :key="item.name">
+            <MenuGroup v-if="item.children &&item.children.length >= 1" :name="item.name" :key="item.name" :title="itemTitle(item)">
                 <template slot="title">
                   
                     <i class="fa" :class="getIcon(item)"></i> 
@@ -17,11 +17,11 @@
                         <span class="layout-text" :key="'title' + child.name">{{ itemTitle(child) }}</span>
                     </MenuItem>
                 </template>
-            </Submenu>
+            </MenuGroup>
                <MenuItem v-else :name="item.name" :key="'menuitem' + item.name">
                         <i class="fa" :class="getIcon(item)" :key="'icon' + item.name"></i> 
                         <span class="layout-text" :key="'title' + item.name">{{ itemTitle(item) }}</span>
-                    </MenuItem>
+                </MenuItem>
         </template>
     </Menu>
 </template>
@@ -34,7 +34,7 @@ export default {
     iconSize: Number,
     menuTheme: {
       type: String,
-      default: "dark"
+      default: "light"
     },
     openNames: {
       type: Array
