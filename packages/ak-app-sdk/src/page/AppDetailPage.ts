@@ -8,7 +8,7 @@ import { IMenu } from "ak-lib-web/app/IMenu";
 import event from "ak-lib-sys/event";
 import vuerouter from "vue-router"
 import Vue from "vue";
-
+import {ITreeNode} from './../lib/tree'
 
 @vue.com(`<Card>
 <Row>
@@ -90,13 +90,9 @@ export class AppDetailPagePage extends BasePage {
 
     public getAppInfo(): IApp[] {
 
-        const _mo = ioc.Ioc.Current().IocModel();
-        let _res: ioc.IClassMeta[] = [];
-        for (const n in _mo) {
-            _res.push(_mo[n]);
-        }
+        const _res = ioc.Ioc.Current().GetTypeList("IApp");
 
-        const _apps = _res.filter(f => { return f.BaseType == "IApp" }).map(info => {
+        const _apps = _res.map(info => {
 
             return ioc.Ioc.Current().FetchInstance<IApp>(info.RegName, "IApp");
 
@@ -174,22 +170,3 @@ export class AppDetailPagePage extends BasePage {
 
 }
 
-
-export interface ITreeNode {
-
-    title: string;
-    expand?: boolean;
-    disabled?: boolean;
-    disableCheckbox?: boolean;
-    selected?: boolean;
-    checked?: boolean;
-    children?: ITreeNode[];
-    render?: (h: any, renderObj: IRenderObj) => any;
-
-}
-
-export interface IRenderObj {
-    root: ITreeNode[],
-    node: any,
-    data: ITreeNode
-}

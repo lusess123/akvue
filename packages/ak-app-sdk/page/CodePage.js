@@ -107,7 +107,7 @@ const _pageFun = (XXX) => {
     return `  
    
     import { core, ioc, vue, util } from "ak-lib-sys";
-    import { BasePage } from "ak-lib-web/BasePage";
+    import { BasePage } from "ak-lib-web/basepage";
 
     @vue.com(\`<div>${XXX}Page</div>\`)
     @ioc.PlugIn({  RegName: "${XXX}Page", BaseType: "IPage", CreateDate:"${util.formatDate(new Date(), "yyyy-MM-dd")}", Doc: "${XXX}页面插件" })
@@ -126,7 +126,7 @@ const _reactPageFun = (XXX) => {
    
 
 import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/BasePage";
+import { BasePage } from "ak-lib-web/basepage";
 import { BaseReactPage, BaseDomReact } from "ak-lib-react-web/basereactpage";
 import React, { Component } from "react";
 

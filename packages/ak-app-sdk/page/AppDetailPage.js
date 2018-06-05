@@ -35,12 +35,8 @@ let AppDetailPagePage = class AppDetailPagePage extends BasePage {
         return null;
     }
     getAppInfo() {
-        const _mo = ioc.Ioc.Current().IocModel();
-        let _res = [];
-        for (const n in _mo) {
-            _res.push(_mo[n]);
-        }
-        const _apps = _res.filter(f => { return f.BaseType == "IApp"; }).map(info => {
+        const _res = ioc.Ioc.Current().GetTypeList("IApp");
+        const _apps = _res.map(info => {
             return ioc.Ioc.Current().FetchInstance(info.RegName, "IApp");
         });
         const _app = _apps.filter(a => a.Name.toUpperCase() == this.AppName.toUpperCase());

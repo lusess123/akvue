@@ -19,7 +19,9 @@ console.log("apps:");
 console.log(apps);
 module.exports = {
     configureWebpack: (config) => {
-        debugger;
+        //debugger;
+
+       
 
         // console.log("fffff:"+buildapp.getApps());  
         //config.resolve.alias["apps"] = "@/framework/apps";
@@ -50,5 +52,10 @@ module.exports = {
     },
     css: {
         extract: true
+    },
+    devServer:{
+        proxy: 'http://localhost:4000',
+        host: '0.0.0.0',
+    port: 8080
     }
 }

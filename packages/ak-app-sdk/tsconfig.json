@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     // 与 Vue 的浏览器支持保持一致
     "target": "es2015",
@@ -22,7 +23,8 @@
     "strictFunctionTypes": false,
    
     //"allowJs":true,
-    "allowSyntheticDefaultImports":true
+    "allowSyntheticDefaultImports":true,
+    
    
   },
   "include": [
