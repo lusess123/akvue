@@ -54,7 +54,7 @@ module.exports = {
         extract: true
     },
     devServer:{
-        proxy: 'http://localhost:4000',
+       // proxy: 'http://localhost:4000',
         host: '0.0.0.0',
     port: 8080
     }

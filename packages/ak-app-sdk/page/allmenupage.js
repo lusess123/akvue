@@ -109,7 +109,12 @@ let AllMenuPage = class AllMenuPage extends BasePage {
     }
 };
 AllMenuPage = __decorate([
-    vue.com(`<div><Card><h3 slot="title">所有的菜单</h3><Tree @on-select-change="vm.onSelectChange($event)" :data="vm.getMenuTreeObj()"></Tree></Card></div>`),
+    vue.com(`<div>
+<Card>
+<h3 slot="title">所有的菜单</h3>
+<Tree @on-select-change="vm.onSelectChange($event)" :data="vm.getMenuTreeObj()"></Tree>
+</Card>
+</div>`),
     ioc.PlugIn({ RegName: "AllMenuPage", BaseType: "IPage", CreateDate: "2018-06-05", Doc: "AllMenuPage页面插件" })
 ], AllMenuPage);
 export { AllMenuPage };

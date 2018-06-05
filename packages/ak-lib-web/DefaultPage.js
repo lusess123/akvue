@@ -100,7 +100,7 @@ DefultPage = __decorate([
    <Card v-if="!vm.IsNoAppList">
    <p  slot=“title”><h2>项目应用 列表：</h2></p>
    <Row  :gutter="16">
-   <Col span="6" v-for=" app in vm.appList()" :key="app.Name">
+   <Col span="6" v-for=" app in vm.appList()" :key="app.Name" style="padding:1rem">
             <Card style="text-align:center" >
                 <router-link  :to="{path:'/nweb/appdetailpagepage/'+app.Name}" ><Icon :type="app.Icon" size="100"></Icon></router-link >
                 <p>{{app.Title}}</p>

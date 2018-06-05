@@ -1,4 +1,4 @@
-import * as codepgae from "./page/CodePage";
+import * as codepgae from "./page/codepage";
 codepgae;
 import * as sdkapp from "./sdkApp";
 sdkapp;
@@ -25,3 +25,4 @@ reactpage;
 import * as reactpage2 from "./page/reactdemopage2";
 reactpage2;
 require("./page/allmenupage");
+require("./page/allapppage");

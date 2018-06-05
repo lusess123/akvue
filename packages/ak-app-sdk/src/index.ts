@@ -1,5 +1,5 @@
 
-import * as  codepgae from "./page/CodePage";codepgae;
+import * as  codepgae from "./page/codepage";codepgae;
 import * as sdkapp from "./sdkApp"; sdkapp;
 import * as appDetailPage from "./page/appdetailpage"; appDetailPage;
 import * as vueclassPage from "./page/VueClassPage"; vueclassPage ;
@@ -15,3 +15,4 @@ import * as eventbuspage from "./page/eventbuspage";eventbuspage;
 import * as reactpage from "./page/reactdemopage";reactpage;
 import * as reactpage2 from "./page/reactdemopage2";reactpage2;
 require("./page/allmenupage");
+require("./page/allapppage")
