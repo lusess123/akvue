@@ -108,11 +108,7 @@ export class AppDetailPagePage extends BasePage {
     public enterApp() {
         const _menus = this.AppInfo.getMenus();
 
-        const ss = window.sessionStorage;
-        if (ss) {
-            const _json = core.json(_menus);
-            sessionStorage.setItem('menus_session_key',_json);
-        }
+       
 
         event.GetAppEvent().emit("global-main-mounted", _menus, this.getFirstUrl(_menus));
         const _first = this.getFirstUrl(_menus);

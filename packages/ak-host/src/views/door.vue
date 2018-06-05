@@ -23,7 +23,7 @@
                      <p class="full-screen-btn-con"  >
                      <Tooltip content="应用列表" placement="bottom">
                        
-                          <router-link :to="{path:'/nweb'}"><Icon type="ios-keypad" :size="23"  ></Icon></router-link>
+                          <a @click="goAllApp"><Icon type="ios-keypad" :size="23"  ></Icon></a>
                      
                      </Tooltip>
                      </p>
@@ -70,6 +70,7 @@
     import themeSwitch from './main-components/theme-switch/theme-switch.vue';
     import Cookies from 'js-cookie';
     import util from '@/libs/util.js';
+     import event from "ak-lib-sys/event";
     
     export default {
         components: {
@@ -116,6 +117,14 @@
             }
         },
         methods: {
+
+            goAllApp(){
+                     event.GetAppEvent().emit("openurl", {
+                                    path: "/web/allapppage$win",
+                                    nourl: true
+                                });
+            },
+
             init () {
                // debugger;
                 //alert("init");

@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { ioc } from "ak-lib-sys";
-import { dwhBaseSource } from "./../../base/dwhBaseSource";
+import { dwhBaseSource } from "./../../base/dwhbasesource";
 import { dwh_search_tables } from "./../../data/dwh_search_tables";
 dwh_search_tables;
 let dwh_search_tables_source = class dwh_search_tables_source extends dwhBaseSource {

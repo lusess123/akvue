@@ -6,9 +6,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { BaseSource } from "ak-lib-biz/source/BaseSource";
+import { BaseSource } from "ak-lib-biz/source/basesource";
 import { net } from "ak-lib-sys";
-import { TableMetaDict } from "ak-lib-biz/contract/TableMeta";
+import { TableMetaDict } from "ak-lib-biz/contract/tablemeta";
 //import { timeout } from "_rxjs@5.5.6@rxjs/operator/timeout";
 import * as codeTables from "./DwhCodeTable";
 export class dwhBaseSource extends BaseSource {
@@ -26,9 +26,21 @@ export class dwhBaseSource extends BaseSource {
     }
     asyncLoadData() {
         return __awaiter(this, void 0, void 0, function* () {
-            const _data = yield _$searchTable(this.Url, {});
-            // debugger ;
+            //     try{
+            //     const _data = await _$searchTable(this.Url, {});
+            //    // alert();
+            //     // debugger ;
+            //     this.setData(_data);
+            //     }
+            //     catch(error){
+            let _data = {};
+            _data[this.TableName] = [];
+            _data.order = "desc";
+            _data.page = "2";
+            _data.size = "5";
+            _data.total = "30";
             this.setData(_data);
+            // }
         });
     }
     setData(data) {
@@ -63,7 +75,12 @@ export class dwhBaseSource extends BaseSource {
     asyncSearch(postData) {
         return __awaiter(this, void 0, void 0, function* () {
             const _param = this.setPostData(postData);
-            const _data = yield _$searchTable(this.Url, _param);
+            // const _data = await _$searchTable(this.Url, _param);
+            let _data = {};
+            _data[this.TableName] = [];
+            _data.order = "desc";
+            _data.page = "2";
+            _data.size = "5";
             this.setData(_data);
         });
     }

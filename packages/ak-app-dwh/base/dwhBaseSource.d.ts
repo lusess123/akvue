@@ -1,4 +1,4 @@
-import { BaseSource } from "ak-lib-biz/source/BaseSource";
+import { BaseSource } from "ak-lib-biz/source/basesource";
 import * as pageView from "ak-lib-biz/contract/PageView";
 import * as contractFile from "ak-lib-biz/contract/net";
 export declare abstract class dwhBaseSource extends BaseSource {

@@ -1,6 +1,6 @@
-import {BaseSource} from "ak-lib-biz/source/BaseSource";
+import {BaseSource} from "ak-lib-biz/source/basesource";
 import { ioc } from "ak-lib-sys";
-import {dwhBaseSource} from "./../../base/dwhBaseSource";
+import {dwhBaseSource} from "./../../base/dwhbasesource";
 
 import  * as dt  from "./../../data/dwh_HostComputer";dt;
 @ioc.PlugIn({BaseType:"ISource",RegName:"dwh_HostComputersource",Author:"zhengyukun",Doc:"主机管理的数据源插件"})

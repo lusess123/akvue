@@ -1,4 +1,5 @@
-import  {Column } from "ak-lib-biz/contract/TableMeta";
+
+import  {Column } from "ak-lib-biz/contract/tablemeta";
 export class dwh_permission   {
     @Column({DisplayName:"单号"})
     id:string ;

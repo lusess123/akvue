@@ -59,13 +59,16 @@ AllAppPage = __decorate([
 
 
 <Row  :gutter="16">
-<Col span="4"  v-for=" app in vm.appList()" :key="app.Name" style="padding:1rem">
+<Col span="4"  v-for=" (app,n) in vm.appList()" :key="app.Name" style="padding:1rem">
 
          <Card style="text-align:center" >
              <a @click="vm.goMenu(app.Name)"><Icon :type="app.Icon" size="100"></Icon></a >
              <p>{{app.Title}}</p>
             
          </Card>
+        
+        
+     
      </Col>
 </Row>
 

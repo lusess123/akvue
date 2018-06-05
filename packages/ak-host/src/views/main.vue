@@ -31,15 +31,15 @@
                 </div>
                 <div class="header-avator-con">
                     <a class="full-screen-btn-con"  >
-                     <Tooltip content="跳转到所有集群的面板" placement="bottom">
-                          <router-link :to="{name:'door'}"><Icon type="cube" :size="23"  ></Icon></router-link>
+                     <Tooltip content="首页" placement="bottom">
+                          <router-link :to="{path:'/web/allapppage'}"><Icon type="cube" :size="23"  ></Icon></router-link>
                      
                      </Tooltip>
                      </a>
                       <p class="full-screen-btn-con"  >
                      <Tooltip content="应用列表" placement="bottom">
                        
-                          <router-link :to="{path:'/nweb'}"><Icon type="ios-keypad" :size="23"  ></Icon></router-link>
+                           <a @click="goAllApp"><Icon type="ios-keypad" :size="23"  ></Icon></a>
                      
                      </Tooltip>
                      </p>
@@ -86,6 +86,7 @@
     import themeSwitch from './main-components/theme-switch/theme-switch.vue';
     import Cookies from 'js-cookie';
     import util from '@/libs/util.js';
+    import event from "ak-lib-sys/event";
     
     export default {
         components: {
@@ -132,6 +133,12 @@
             }
         },
         methods: {
+             goAllApp(){
+                     event.GetAppEvent().emit("openurl", {
+                                    path: "/web/allapppage$win",
+                                    nourl: true
+                                });
+            },
             init () {
                 //debugger;
                 let pathArr = util.setCurrentPath(this, this.$route.path);

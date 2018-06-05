@@ -1,5 +1,5 @@
 
-import  {Column } from "ak-lib-biz/contract/TableMeta";
+import  {Column } from "ak-lib-biz/contract/tablemeta";
 
 export class dwh_HostComputer   {
     @Column({DisplayName:"主键编号",ControlType:"hidden"})

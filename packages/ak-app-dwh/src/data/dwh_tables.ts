@@ -1,4 +1,5 @@
-import  {Column } from "ak-lib-biz/contract/TableMeta";
+
+import  {Column } from "ak-lib-biz/contract/tablemeta";
 export class dwh_tables   {
     @Column({DisplayName:"编号",ControlType:"Hidden"})
     id:string ;

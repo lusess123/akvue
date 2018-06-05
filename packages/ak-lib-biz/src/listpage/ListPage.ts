@@ -100,7 +100,7 @@ export class ListPage extends BizPage {
             switch (btn.Name.toLocaleLowerCase()) {
                 case "insert":
                     event.GetAppEvent().emit("openurl", {
-                        path: "/web/insertpage-win/" + this.Source.PageView.RegName,
+                        path: "/web/insertpage$win/" + this.Source.PageView.RegName,
                         nourl: true
                     });
                     break;

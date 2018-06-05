@@ -43,6 +43,12 @@ new Vue({
         this.$store.commit('updateMenulist');
 
         event.GetAppEvent().addListener("global-main-mounted",(menus,url)=>{
+
+            const ss = window.sessionStorage;
+            if (ss) {
+                const _json = core.json(menus);
+                sessionStorage.setItem('menus_session_key',_json);
+            }
            // alert(123);
             this.$store.commit('changeMenuList',menus);
             if(url){
@@ -51,7 +57,7 @@ new Vue({
                    
         });
 
-        event.GetAppEvent().on("openurl",({path,nourl})=>{
+        event.GetAppEvent().addListener("openurl",({path,nourl})=>{
            if(!nourl){
             this.$router.push({path});
            }

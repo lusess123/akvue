@@ -1,4 +1,4 @@
-import { dwhBaseSource } from "./../../base/dwhBaseSource";
+import { dwhBaseSource } from "./../../base/dwhbasesource";
 import * as contractFile from "ak-lib-biz/contract/net";
 export declare class dwh_tabless_source extends dwhBaseSource {
     Title: string;

@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { ioc } from "ak-lib-sys";
-import { dwhBaseSource } from "./../../base/dwhBaseSource";
+import { dwhBaseSource } from "./../../base/dwhbasesource";
 import * as dt from "./../../data/dwh_task_subscriptions";
 dt;
 let dwh_task_subscriptions_source = class dwh_task_subscriptions_source extends dwhBaseSource {
@@ -17,6 +17,6 @@ let dwh_task_subscriptions_source = class dwh_task_subscriptions_source extends 
     }
 };
 dwh_task_subscriptions_source = __decorate([
-    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_task_subscriptions_source", Author: "zhengyukun", Doc: "订阅任务管理的数据源" })
+    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_task_subscriptions", Author: "zhengyukun", Doc: "订阅任务管理的数据源" })
 ], dwh_task_subscriptions_source);
 export { dwh_task_subscriptions_source };

@@ -9,7 +9,7 @@ const _apps = buildapp.getApps();
 
 const apps = _apps.filter(app=>{
     //a
-      if(app == "ak-app-dwh")
+      if(app == "1ak-app-dwh")
         return false ;
         else 
         return true ;
