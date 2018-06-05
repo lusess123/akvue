@@ -30,13 +30,12 @@ let AllMenuPage = class AllMenuPage extends BasePage {
     onSelectChange(nodes) {
         //debugger;
         if (nodes[0].obj && nodes[0].obj.menu.name) {
-            event.GetAppEvent().emit("global-main-mounted", nodes[0].obj._menus, nodes[0].obj.menu.name);
+            event
+                .GetAppEvent()
+                .emit("global-main-mounted", nodes[0].obj._menus, nodes[0].obj.menu.name);
         }
-        //     event.GetAppEvent().emit("openurl", {
-        //         path: nodes[0].obj.menu.name
-        //     });
-        // }
-        //  alert(nodes[0].obj);
+        //     event.GetAppEvent().emit("openurl", {         path:
+        // nodes[0].obj.menu.name     }); }  alert(nodes[0].obj);
     }
     getMenuTreeObj() {
         const _apps = this.getAppInfo();
@@ -45,7 +44,7 @@ let AllMenuPage = class AllMenuPage extends BasePage {
             _apps.forEach(_app => {
                 let _node = {
                     title: _app.Title,
-                    expand: true,
+                    //expand: true,
                     children: []
                 };
                 const _menus = _app.getMenus();
@@ -60,11 +59,44 @@ let AllMenuPage = class AllMenuPage extends BasePage {
         return _nodes;
     }
     mapTree(menu, _menus) {
+        const _isLeaf = menu.name && (!menu.children || menu.children.length == 0);
         let _node = {
-            title: menu.text + "   " + ((menu.name && (!menu.children || menu.children.length == 0)) ? menu.name : ""),
+            title: menu.text + "   " + (_isLeaf
+                ? menu.name
+                : ""),
             expand: true,
+            render: _isLeaf
+                ? (h, obj) => {
+                    return vue.tpl(h)(`
+                    <span> 
+                    <Button  size="small"  shape="circle"   @click="vm.click">{{vm.title}}{{vm.url}}</Button>
+                    <Button  size="small"  shape="circle" icon="android-open" @click="vm.newclick"></Button>
+                    </span>
+
+                     `, {
+                        title: menu.text,
+                        url: menu.name,
+                        click: (a) => {
+                            event
+                                .GetAppEvent()
+                                .emit("global-main-mounted", _menus, menu.name);
+                        },
+                        newclick: (a) => {
+                            event
+                                .GetAppEvent()
+                                .emit("openurl", {
+                                path: menu.name + "$win",
+                                nourl: true
+                            });
+                        }
+                    });
+                }
+                : undefined,
             //obj:menu.name,
-            obj: { _menus, menu },
+            obj: {
+                _menus,
+                menu
+            },
             children: menu.children
                 ? menu
                     .children
