@@ -17,6 +17,6 @@ let dwh_tasksource = class dwh_tasksource extends dwhBaseSource {
     }
 };
 dwh_tasksource = __decorate([
-    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_tasksource", Author: "zhengyukun", Doc: "调度任务的数据源插件" })
+    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_task", Author: "zhengyukun", Doc: "调度任务的数据源插件" })
 ], dwh_tasksource);
 export { dwh_tasksource };

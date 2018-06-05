@@ -32,9 +32,6 @@ const _menus = [
             { name: '/web/listpage/dwh_tabless_source', text: '数据表管理', icon: 'table' },
             { name: '/web/listpage/dwh_permissionsource', text: '订阅权限管理' },
             { name: '/web/listpage/dwh_task_subscriptions', text: '订阅任务管理' },
-            { name: '/dwh/table/manage', text: '数据表管理_old', icon: 'table' },
-            { name: '/dwh/sub/permission/manage', text: '订阅权限管理_old' },
-            { name: '/dwh/sub/task/manage', text: '订阅任务管理_old' },
         ]
     },
     {
@@ -43,10 +40,8 @@ const _menus = [
         icon: 'fa-plug',
         children: [
             { name: '/web/listpage/dwh_source', text: '数据源管理' },
-            { name: '/dwh/task/edit', text: '编辑任务' },
+            // { name: '/dwh/task/edit', text: '编辑任务' },
             { name: '/web/listpage/dwh_task', text: '调度任务' },
-            { name: '/dwh/source/manage', text: '数据源管理_old' },
-            { name: '/dwh/task/schedule', text: '调度任务_old' }
         ]
     },
     {
@@ -55,7 +50,6 @@ const _menus = [
         icon: 'fa-cog',
         children: [
             { name: '/web/listpage/dwh_HostComputer', text: '主机管理' },
-            { name: '/dwh/clusters', text: '集群管理' }
         ]
     },
     {
