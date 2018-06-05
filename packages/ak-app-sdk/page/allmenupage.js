@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { ioc, vue } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
+import event from "ak-lib-sys/event";
 let AllMenuPage = class AllMenuPage extends BasePage {
     constructor() {
         super(...arguments);
@@ -26,6 +27,17 @@ let AllMenuPage = class AllMenuPage extends BasePage {
         // const _app = _apps.filter(a => a.Name.toUpperCase() ==
         // this.AppName.toUpperCase()); _app[0].getMenus()  return _apps;
     }
+    onSelectChange(nodes) {
+        //debugger;
+        if (nodes[0].obj && nodes[0].obj.menu.name) {
+            event.GetAppEvent().emit("global-main-mounted", nodes[0].obj._menus, nodes[0].obj.menu.name);
+        }
+        //     event.GetAppEvent().emit("openurl", {
+        //         path: nodes[0].obj.menu.name
+        //     });
+        // }
+        //  alert(nodes[0].obj);
+    }
     getMenuTreeObj() {
         const _apps = this.getAppInfo();
         let _nodes = [];
@@ -33,28 +45,31 @@ let AllMenuPage = class AllMenuPage extends BasePage {
             _apps.forEach(_app => {
                 let _node = {
                     title: _app.Title,
+                    expand: true,
                     children: []
                 };
                 const _menus = _app.getMenus();
                 const _menusNodes = _menus.forEach(a => {
                     _node
                         .children
-                        .push(this.mapTree(a));
+                        .push(this.mapTree(a, _menus));
                 });
                 _nodes.push(_node);
             });
         }
         return _nodes;
     }
-    mapTree(menu) {
+    mapTree(menu, _menus) {
         let _node = {
-            title: menu.text,
+            title: menu.text + "   " + ((menu.name && (!menu.children || menu.children.length == 0)) ? menu.name : ""),
             expand: true,
+            //obj:menu.name,
+            obj: { _menus, menu },
             children: menu.children
                 ? menu
                     .children
                     .map(a => {
-                    return this.mapTree(a);
+                    return this.mapTree(a, _menus);
                 })
                 : undefined
         };
@@ -62,7 +77,7 @@ let AllMenuPage = class AllMenuPage extends BasePage {
     }
 };
 AllMenuPage = __decorate([
-    vue.com(`<div><Card><h3 slot="title">所有的菜单</h3><Tree :data="vm.getMenuTreeObj()"></Tree></Card></div>`),
+    vue.com(`<div><Card><h3 slot="title">所有的菜单</h3><Tree @on-select-change="vm.onSelectChange($event)" :data="vm.getMenuTreeObj()"></Tree></Card></div>`),
     ioc.PlugIn({ RegName: "AllMenuPage", BaseType: "IPage", CreateDate: "2018-06-05", Doc: "AllMenuPage页面插件" })
 ], AllMenuPage);
 export { AllMenuPage };

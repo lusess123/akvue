@@ -4,8 +4,9 @@ import {BasePage} from "ak-lib-web/basepage";
 import {IApp} from "ak-lib-web/app/IApp";
 import {IMenu} from "ak-lib-web/app/IMenu";
 import {ITreeNode} from './../lib/tree'
+import event from "ak-lib-sys/event";
 
-@vue.com(`<div><Card><h3 slot="title">所有的菜单</h3><Tree :data="vm.getMenuTreeObj()"></Tree></Card></div>`)
+@vue.com(`<div><Card><h3 slot="title">所有的菜单</h3><Tree @on-select-change="vm.onSelectChange($event)" :data="vm.getMenuTreeObj()"></Tree></Card></div>`)
 @ioc.PlugIn({RegName: "AllMenuPage", BaseType: "IPage", CreateDate: "2018-06-05", Doc: "AllMenuPage页面插件"})
 export class AllMenuPage extends BasePage {
 
@@ -33,6 +34,22 @@ export class AllMenuPage extends BasePage {
 
     }
 
+    public onSelectChange( nodes :ITreeNode[])
+    {
+        //debugger;
+        if(nodes[0].obj && nodes[0].obj.menu.name){
+            event.GetAppEvent().emit("global-main-mounted", nodes[0].obj._menus, nodes[0].obj.menu.name);
+        }
+
+    //     event.GetAppEvent().emit("openurl", {
+    //         path: nodes[0].obj.menu.name
+    //     });
+    // }
+
+      //  alert(nodes[0].obj);
+
+    }
+
     public getMenuTreeObj() {
         const _apps : IApp[] = this.getAppInfo();
         let _nodes : ITreeNode[] = [];
@@ -41,13 +58,14 @@ export class AllMenuPage extends BasePage {
             _apps.forEach(_app => {
                 let _node : ITreeNode = {
                     title: _app.Title,
+                    expand: true,
                     children: []
                 }
                 const _menus = _app.getMenus();
                 const _menusNodes = _menus.forEach(a => {
                     _node
                         .children
-                        .push(this.mapTree(a));
+                        .push(this.mapTree(a,_menus));
                 });
                 _nodes.push(_node);
 
@@ -57,16 +75,18 @@ export class AllMenuPage extends BasePage {
         return _nodes;
     }
 
-    public mapTree(menu : IMenu) : ITreeNode {
+    public mapTree(menu : IMenu,_menus?) : ITreeNode {
 
         let _node: ITreeNode = {
-            title: menu.text,
+            title: menu.text+"   "+((menu.name&&(!menu.children||menu.children.length == 0) )?menu.name :""),
             expand: true,
+            //obj:menu.name,
+            obj:{_menus,menu},
             children: menu.children
                 ? menu
                     .children
                     .map(a => {
-                        return this.mapTree(a);
+                        return this.mapTree(a,_menus);
                     })
                 : undefined
         };

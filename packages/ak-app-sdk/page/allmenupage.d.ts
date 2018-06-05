@@ -6,6 +6,7 @@ export declare class AllMenuPage extends BasePage {
     Title: string;
     protected loadPage(): void;
     getAppInfo(): IApp[];
+    onSelectChange(nodes: ITreeNode[]): void;
     getMenuTreeObj(): ITreeNode[];
-    mapTree(menu: IMenu): ITreeNode;
+    mapTree(menu: IMenu, _menus?: any): ITreeNode;
 }

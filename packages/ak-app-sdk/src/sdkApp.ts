@@ -39,7 +39,8 @@ const _menus: IMenu[] =
         },
         {
             icon: "fa-plug", name: "aa3", text: "监控工具", children: [
-                { icon: "", name: "/web", text: "应用和插件列表" }
+                { icon: "", name: "/web", text: "应用和插件列表" },
+                { icon: "", name: "/web/allmenupage", text: "应用所有的菜单" }
             ]
         },
 
