@@ -10,7 +10,7 @@ import event from "ak-lib-sys/event";
 let AllAppPage = class AllAppPage extends BasePage {
     constructor() {
         super(...arguments);
-        this.Title = "AllApp";
+        this.Title = "所有的应用";
     }
     loadPage() { }
     goMenu(name) {

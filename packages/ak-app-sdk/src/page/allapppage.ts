@@ -24,7 +24,7 @@ import event from "ak-lib-sys/event";
 @ioc.PlugIn({RegName: "AllAppPage", BaseType: "IPage", CreateDate: "2018-06-05", Doc: "AllApp页面插件"})
 export class AllAppPage extends BasePage {
 
-    public Title : string = "AllApp";
+    public Title : string = "所有的应用";
 
     private fAppList : IApp[];
     protected loadPage() {}
