@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { core, ioc, vue } from "ak-lib-sys";
+import { ioc, vue } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 //import { IAPP } from "../../../../mock/management/app";
 import event from "ak-lib-sys/event";
@@ -45,11 +45,6 @@ let AppDetailPagePage = class AppDetailPagePage extends BasePage {
     }
     enterApp() {
         const _menus = this.AppInfo.getMenus();
-        const ss = window.sessionStorage;
-        if (ss) {
-            const _json = core.json(_menus);
-            sessionStorage.setItem('menus_session_key', _json);
-        }
         event.GetAppEvent().emit("global-main-mounted", _menus, this.getFirstUrl(_menus));
         const _first = this.getFirstUrl(_menus);
         // vuerouter.

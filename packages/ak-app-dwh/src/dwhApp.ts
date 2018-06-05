@@ -1,4 +1,4 @@
-import { BaseApp } from "ak-lib-web/app/BaseApp";
+import { BaseApp } from "ak-lib-web/app/baseapp";
 import { IMenu } from "ak-lib-web/app/IMenu";
 
 import { ioc } from "ak-lib-sys"

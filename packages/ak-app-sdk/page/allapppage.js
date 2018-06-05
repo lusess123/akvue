@@ -64,11 +64,7 @@ AllAppPage = __decorate([
          <Card style="text-align:center" >
              <a @click="vm.goMenu(app.Name)"><Icon :type="app.Icon" size="100"></Icon></a >
              <p>{{app.Title}}</p>
-            
          </Card>
-        
-        
-     
      </Col>
 </Row>
 

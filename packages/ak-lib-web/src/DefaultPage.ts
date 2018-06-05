@@ -18,16 +18,18 @@ debugger;
    <h1 v-if="vm.getPageName() != 'defaultpage'"><Icon type="sad-outline"></Icon> 找不到名称为：  <b>{{vm.PageName}}</b>  的页面</h1>
    
    <Card v-if="!vm.IsNoAppList">
-   <p  slot=“title”><h2>项目应用 列表：</h2></p>
+  
+  
+
    <Row  :gutter="16">
-   <Col span="6" v-for=" app in vm.appList()" :key="app.Name" style="padding:1rem">
-            <Card style="text-align:center" >
-                <router-link  :to="{path:'/nweb/appdetailpagepage/'+app.Name}" ><Icon :type="app.Icon" size="100"></Icon></router-link >
-                <p>{{app.Title}}</p>
-               
-            </Card>
-        </Col>
-   </Row>
+<Col span="4"  v-for=" (app,n) in vm.appList()" :key="app.Name" style="padding:1rem">
+
+         <Card style="text-align:center" >
+         <router-link  :to="{path:'/nweb/appdetailpagepage/'+app.Name}" ><Icon :type="app.Icon" size="100"></Icon></router-link >
+             <p>{{app.Title}}</p>
+         </Card>
+     </Col>
+</Row>
 
    </Card>
    <Card>
