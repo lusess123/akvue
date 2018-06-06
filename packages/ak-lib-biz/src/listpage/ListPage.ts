@@ -21,7 +21,9 @@ import event from "ak-lib-sys/event";
    {{vm.PageTitle + "  列表"}}
 </p>
 ${vue.vm("SearchFormObj")}
+<br/>
 <Card >
+
 <div v-if="vm.IsLoad" >
 <div class="row" style="padding-bottom:1rem;text-align:right"><Button-group size="small"     shape="circle"  slot="extra"   >
     <i-button  type="primary"  icon="refresh" @click.prevent="vm.refreshBtnClick" >刷新</i-button>
@@ -29,6 +31,7 @@ ${vue.vm("SearchFormObj")}
     <i-button   type="primary"     :key="item.Name"  @click.prevent="vm.pageButtonClick(item)">{{item.Text}}</i-button>
     </template>
 </Button-group></div>
+<br/>
 ${vue.vm("ListFormObj")}
 </div>
  </Card>

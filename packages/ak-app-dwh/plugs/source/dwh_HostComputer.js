@@ -17,6 +17,6 @@ let dwh_HostComputersource = class dwh_HostComputersource extends dwhBaseSource 
     }
 };
 dwh_HostComputersource = __decorate([
-    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_HostComputersource", Author: "zhengyukun", Doc: "主机管理的数据源插件" })
+    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_HostComputer", Author: "zhengyukun", Doc: "主机管理的数据源插件" })
 ], dwh_HostComputersource);
 export { dwh_HostComputersource };

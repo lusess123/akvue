@@ -17,6 +17,6 @@ let dwh_source_source = class dwh_source_source extends dwhBaseSource {
     }
 };
 dwh_source_source = __decorate([
-    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_source_source", Author: "zhengyukun", Doc: "数据源管理的数据源插件" })
+    ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_source", Author: "zhengyukun", Doc: "数据源管理的数据源插件" })
 ], dwh_source_source);
 export { dwh_source_source };
