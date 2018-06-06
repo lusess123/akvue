@@ -17,6 +17,7 @@ let ListPage = class ListPage extends BizPage {
         super(...arguments);
         this.Title = "List";
         this.IsLoad = false;
+        this.PageStyle = "list";
         this.SearchFormObj = null;
         this.ListFormObj = null;
     }
@@ -66,7 +67,7 @@ let ListPage = class ListPage extends BizPage {
             switch (btn.Name.toLocaleLowerCase()) {
                 case "insert":
                     event.GetAppEvent().emit("openurl", {
-                        path: "/web/insertpage$win/" + this.Source.PageView.RegName,
+                        path: "/web/insertpage$win/" + this.P1 + "/" + this.P2,
                         nourl: true
                     });
                     break;

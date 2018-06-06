@@ -6,6 +6,7 @@ export declare class InsertPage extends BizPage {
     GroupIndex: number;
     DataRow: {};
     FormVMObj: vmform.VmFormCom;
+    PageStyle: string;
     protected loadPage(): void;
     private getColumnByName(name);
     createFormVm(group: IColumnGroup): vmform.VmFormCom;

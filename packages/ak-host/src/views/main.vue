@@ -32,7 +32,7 @@
                 <div class="header-avator-con">
                     <a class="full-screen-btn-con"  >
                      <Tooltip content="首页" placement="bottom">
-                          <router-link :to="{path:'/web/allapppage'}"><Icon type="cube" :size="23"  ></Icon></router-link>
+                          <router-link :to="{path:'/web/allapppage'}"><Icon type="home" :size="23"  ></Icon></router-link>
                      
                      </Tooltip>
                      </a>

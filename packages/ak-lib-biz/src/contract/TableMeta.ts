@@ -5,9 +5,9 @@ export let TableMetaDict: PageViewFile.IForms = {
 
 };
 
-export function Column(config: PageViewFile.IColumn) {
+export function Column(config: PageViewFile.IColumn = {}) {
     return function (target: any, key: string) {
-        let _config = { ...{}, ...config, ...{ Name: key } };
+        let _config = { ...{Name:key,DisplayName:key}, ...config, ...{ Name: key } };
         //debugger;
         let _cons: string[] = target.constructor.toString().match(/function\s*([^(]*)\(/);
         if (!_cons || _cons.length <= 1) {

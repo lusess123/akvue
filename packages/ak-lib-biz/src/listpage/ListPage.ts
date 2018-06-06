@@ -46,6 +46,8 @@ export class ListPage extends BizPage {
     public Title: string = "List";
     private IsLoad: boolean = false;
 
+    public PageStyle :string = "list";
+
     public SearchFormObj: SearchForm = null;
     public ListFormObj: ListForm = null;
     //ddd = "ddddd";
@@ -103,7 +105,7 @@ export class ListPage extends BizPage {
             switch (btn.Name.toLocaleLowerCase()) {
                 case "insert":
                     event.GetAppEvent().emit("openurl", {
-                        path: "/web/insertpage$win/" + this.Source.PageView.RegName,
+                        path: "/web/insertpage$win/" + this.P1 + "/" + this.P2,
                         nourl: true
                     });
                     break;

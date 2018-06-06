@@ -21,8 +21,9 @@ let InsertPage = class InsertPage extends BizPage {
         this.GroupIndex = 0;
         this.DataRow = {};
         this.FormVMObj = null;
+        //public vmFormObjList:vmform.VmFormCom[] = [] ;
+        this.PageStyle = "insert";
     }
-    //public vmFormObjList:vmform.VmFormCom[] = [] ;
     loadPage() {
         //------------
         super.loadPage();

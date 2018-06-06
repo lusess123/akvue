@@ -10,6 +10,7 @@ export class BaseApp {
         return this.MenuList;
     }
     getPlugs() {
+        
         return this.PlugDict;
     }
 }

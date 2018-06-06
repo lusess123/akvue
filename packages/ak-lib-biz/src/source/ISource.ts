@@ -21,5 +21,7 @@ export interface ISource
     command(name:string ,ids?:string[]);
 
     readonly getColumnGroupsByPageStyle:pageView.IColumnGroup[];
+
+    setSource(pageStyle:string,obj:any);
      
 }

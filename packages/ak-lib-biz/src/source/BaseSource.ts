@@ -131,4 +131,7 @@ export class BaseSource implements ISource {
             ids: ids
         });
     }
+    setSource(pageStyle:string,obj:any){
+        
+    }
 }

@@ -21,4 +21,5 @@ export declare class BaseSource implements ISource {
     decode(regName: any, val: any): string;
     readonly getDataRowKey: string;
     command(name: string, ids?: string[]): void;
+    setSource(pageStyle: string, obj: any): void;
 }

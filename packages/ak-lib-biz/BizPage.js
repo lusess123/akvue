@@ -11,13 +11,19 @@ let BizPage = class BizPage extends BasePage {
         super(...arguments);
         this.Title = "ak-lib-biz";
         this.Source = null;
+        this.PageStyle = null;
     }
-    loadPage() {
+    reset(pagename, p1, p2, p3) {
+        super.reset(pagename, p1, p2, p3);
         let _sourceName = this.P1;
         _sourceName = _sourceName ? _sourceName : "BaseSource";
         const _source = ioc.Ioc.Current().FetchInstance(_sourceName, "ISource");
-        _source.initData();
+        // _source.initData();
         this.Source = _source;
+        this.Source.setSource(this.PageStyle, { P1: p1, P2: p2, P3: p3 });
+    }
+    loadPage() {
+        this.Source.initData();
         // alert("load page after");
     }
     loadModule() {

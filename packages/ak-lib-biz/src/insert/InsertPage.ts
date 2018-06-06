@@ -44,6 +44,10 @@ export class InsertPage extends BizPage {
     public DataRow = {};
     public FormVMObj:vmform.VmFormCom = null
     //public vmFormObjList:vmform.VmFormCom[] = [] ;
+
+    public PageStyle :string = "insert"; 
+
+
     protected loadPage() {
         //------------
         super.loadPage();

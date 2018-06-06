@@ -105,6 +105,8 @@ let BaseSource = class BaseSource {
             ids: ids
         });
     }
+    setSource(pageStyle, obj) {
+    }
 };
 BaseSource = __decorate([
     ioc.PlugIn({ RegName: "BaseSource", BaseType: "ISource" })

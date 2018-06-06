@@ -5,6 +5,7 @@ import { BizPage } from "./../BizPage";
 export declare class ListPage extends BizPage {
     Title: string;
     private IsLoad;
+    PageStyle: string;
     SearchFormObj: SearchForm;
     ListFormObj: ListForm;
     protected loadPage(): void;

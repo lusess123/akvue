@@ -13,4 +13,5 @@ export interface ISource {
     readonly getDataRowKey: string;
     command(name: string, ids?: string[]): any;
     readonly getColumnGroupsByPageStyle: pageView.IColumnGroup[];
+    setSource(pageStyle: string, obj: any): any;
 }
