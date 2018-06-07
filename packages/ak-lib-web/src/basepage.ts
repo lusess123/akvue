@@ -1,4 +1,4 @@
-import { IPage } from "./IPage";
+import { IPage } from "./ipage";
 import {BaseCom, IBaseComConfig} from "ak-lib-sys/com/BaseCom";
 import { vue,core } from "ak-lib-sys";
 
