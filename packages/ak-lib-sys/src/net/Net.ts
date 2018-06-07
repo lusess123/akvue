@@ -1,5 +1,5 @@
 import axios from 'axios'
-import * as core from "./../Core"
+import * as core from "../core"
 import HTTP_STATUS from "./code";
 
 

@@ -1,5 +1,5 @@
-import  * as vueEvent from "./VueEvent";
-import { IEvent } from "./IEvent";
+import  * as vueEvent from "./vueevent";
+import { IEvent } from "./ievent";
 
 
  class App {
