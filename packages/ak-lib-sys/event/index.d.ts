@@ -1,4 +1,4 @@
-import { IEvent } from "./IEvent";
+import { IEvent } from "./ievent";
 declare class App {
     private static fAppEvent;
     private static fUniId;

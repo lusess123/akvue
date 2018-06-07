@@ -1,7 +1,7 @@
 
 
 import { core, ioc, vue } from "ak-lib-sys";
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/BaseCom";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
 import  lvForm from "./vmformvue.vue";
 
 

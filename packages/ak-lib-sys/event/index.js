@@ -1,4 +1,4 @@
-import * as vueEvent from "./VueEvent";
+import * as vueEvent from "./vueevent";
 class App {
     static getUniId() {
         this.fUniId++;

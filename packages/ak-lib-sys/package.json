@@ -12,7 +12,7 @@
     "copy": "shx mv  ./js/*  .",
     "copyvue": "cd src;find ./  -name \"*.vue\" | xargs -I{} rsync -R \"{}\" ../js/;cd ..;",
     "build": "npm-run-all  clean_js rebuild ",
-    "rebuild": "npm-run-all   tsc  copyvue copy deljs "
+    "rebuild": "npm-run-all  clean_js tsc  copyvue copy deljs "
   },
   "repository": {
     "type": "git",

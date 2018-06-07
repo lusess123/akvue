@@ -1,5 +1,5 @@
-import * as BaseCom from "./BaseCom";
-import * as ICom from "./ICom";
+import * as BaseCom from "./basecom";
+import * as ICom from "./icom";
 declare const _default: {
     BaseCom: typeof BaseCom;
     ICom: typeof ICom;

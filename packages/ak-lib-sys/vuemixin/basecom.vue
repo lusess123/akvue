@@ -19,8 +19,8 @@ import Vue from "vue";
 import UniIdMixin from "./uniidmixin.vue";
 import tipmixin from "./tipmixin.vue";
 import * as $ from "jquery";
-import * as util from "./../Util";
-import * as basecom from "./../com/BaseCom";
+import * as util from "./../util";
+import * as basecom from "./../com/basecom";
 export default {
   props: ["vm"],
   mixins: [UniIdMixin as any, tipmixin as any],
