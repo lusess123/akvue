@@ -4,7 +4,7 @@ import * as pageView from "ak-lib-biz/contract/PageView";
 import { TableMetaDict } from "ak-lib-biz/contract/tablemeta";
 import * as contractFile from "ak-lib-biz/contract/net";
 //import { timeout } from "_rxjs@5.5.6@rxjs/operator/timeout";
-import * as  codeTables from "./DwhCodeTable";
+import * as  codeTables from "./dwhcodetable";
 import { core } from "ak-lib-sys";
 
 
