@@ -1,4 +1,4 @@
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/BaseCom";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
 export interface ITableComConfig extends IBaseComConfig {
     Columns?: IColumn[];
     DataTable: IRow[];
