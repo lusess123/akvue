@@ -1,5 +1,5 @@
 import { IPage } from "./ipage";
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/BaseCom";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
 export interface IBasePageConfig extends IBaseComConfig {
 }
 export declare class BasePage extends BaseCom implements IPage {

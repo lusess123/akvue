@@ -1,8 +1,8 @@
 import {core, ioc, vue, util} from "ak-lib-sys";
 import {BasePage} from "ak-lib-web/basepage";
 
-import {IApp} from "ak-lib-web/app/IApp";
-import {Ioc} from "ak-lib-sys/Ioc";
+import {IApp} from "ak-lib-web/app/iapp";
+import {Ioc} from "ak-lib-sys/ioc";
 import event from "ak-lib-sys/event";
 
 @vue.com(`<div>

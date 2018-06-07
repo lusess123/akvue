@@ -1,8 +1,8 @@
-import { BaseCom } from "ak-lib-sys/com/BaseCom";
-import { IBasePageConfig } from "ak-lib-web/BasePage";
-import * as data from "./../contract/PageView";
+import { BaseCom } from "ak-lib-sys/com/basecom";
+import { IBasePageConfig } from "ak-lib-web/basepage";
+import * as data from "./../contract/pageview";
 import { ISource } from "../source/isource";
-import { IPageView } from "./../contract/PageView";
+import { IPageView } from "./../contract/pageview";
 export interface ISearchFormConfig extends IBasePageConfig {
     Columns?: data.IColumn[];
     DataRow?: any;

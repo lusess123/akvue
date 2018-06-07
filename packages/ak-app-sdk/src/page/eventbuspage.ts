@@ -4,7 +4,7 @@ import { core, ioc, vue, util } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 
 import eventBus, { fetchEvent } from "ak-lib-sys/event";
-import { IEvent ,IEventInfo } from "ak-lib-sys/event/IEvent";
+import { IEvent ,IEventInfo } from "ak-lib-sys/event/ievent";
 
 import  * as table from "ak-lib-comp/iview/table"
 

@@ -3,9 +3,9 @@
 import { core, ioc, vue, util } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 import { ISource } from "../source/isource";
-import { IPageView, IDataButton } from "./../contract/PageView";
+import { IPageView, IDataButton } from "./../contract/pageview";
 import { SearchForm } from "./searchform";
-import { ListForm } from "./ListForm";
+import { ListForm } from "./listForm";
 //import tree from "../../../components/vue-tree/tree";
 import Vue from "vue";
 import { BizPage } from "../bizpage";

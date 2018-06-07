@@ -1,4 +1,4 @@
-import  { get ,post } from "./Net";
+import  { get ,post } from "./net";
 
 
 

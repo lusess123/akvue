@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { ioc, vue } from "ak-lib-sys";
-import { BaseCom } from "ak-lib-sys/com/BaseCom";
+import { BaseCom } from "ak-lib-sys/com/basecom";
 let TeamButtonCom = class TeamButtonCom extends BaseCom {
     constructor(config) {
         super(config);

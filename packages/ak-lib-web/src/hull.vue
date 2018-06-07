@@ -11,11 +11,11 @@
 <script lang="ts">
 import { core, ioc, vue } from "ak-lib-sys";
 import { IPage } from "./IPage";
-import * as _defaultPage from "./DefaultPage";
+import * as _defaultPage from "./defaultpage";
 _defaultPage;
 
 import * as bootstrap from "ak-lib-sys/bootstrap";
-import * as vuePage from "./vue/VuePage"; vuePage;
+import * as vuePage from "./vue/vuepage"; vuePage;
 import event from "ak-lib-sys/event";
 // import * as _app from "app"; 
 // _app ;

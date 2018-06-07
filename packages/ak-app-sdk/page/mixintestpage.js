@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { ioc, vue } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
-import { BaseCom } from "ak-lib-sys/com/BaseCom";
+import { BaseCom } from "ak-lib-sys/com/basecom";
 import BaseComVue from "ak-lib-sys/vuemixin/basecom.vue";
 let mixintestPage = class mixintestPage extends BasePage {
     constructor() {

@@ -1,5 +1,5 @@
 import { ISource } from "./isource";
-import * as pageView from "./../contract/PageView";
+import * as pageView from "./../contract/pageview";
 export declare const DetaiComTrans: {
     DateTime: string;
     Date: string;

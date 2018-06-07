@@ -13,7 +13,7 @@
 </template>
 
 <script>
- import InputTag from './InputTag.vue'
+ import InputTag from './inputtag.vue'
 
 export default {
     components: {

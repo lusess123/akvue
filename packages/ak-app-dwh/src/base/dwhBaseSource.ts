@@ -1,6 +1,6 @@
 import { BaseSource } from "ak-lib-biz/source/basesource";
 import { ioc, net } from "ak-lib-sys";
-import * as pageView from "ak-lib-biz/contract/PageView";
+import * as pageView from "ak-lib-biz/contract/pageview";
 import { TableMetaDict } from "ak-lib-biz/contract/tablemeta";
 import * as contractFile from "ak-lib-biz/contract/net";
 //import { timeout } from "_rxjs@5.5.6@rxjs/operator/timeout";

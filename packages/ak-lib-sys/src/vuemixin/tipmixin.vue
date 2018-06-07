@@ -4,7 +4,7 @@
 
 <script>
 import * as $ from "jquery";
-import * as util from "./../Util";
+import * as util from "./../util";
 export default {
 
   methods:{

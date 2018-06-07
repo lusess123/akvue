@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { ioc, vue } from "ak-lib-sys";
 import { SearchForm } from "./searchform";
-import { ListForm } from "./ListForm";
+import { ListForm } from "./listForm";
 import { BizPage } from "../bizpage";
 //import JsonEditor from 'vue-json-edit'
 import event from "ak-lib-sys/event";

@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import InputTag from './../inputtag/InputTag.vue'
-import radioSelector from './../multi/RadioSelector.vue'
+import InputTag from './../inputtag/inputtag.vue'
+import radioSelector from './../multi/radioselector.vue'
 import { util } from "ak-lib-sys"
 
 const _conDict = {

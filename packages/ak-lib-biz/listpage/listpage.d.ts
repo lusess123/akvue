@@ -1,6 +1,6 @@
-import { IPageView, IDataButton } from "./../contract/PageView";
+import { IPageView, IDataButton } from "./../contract/pageview";
 import { SearchForm } from "./searchform";
-import { ListForm } from "./ListForm";
+import { ListForm } from "./listForm";
 import { BizPage } from "../bizpage";
 export declare class ListPage extends BizPage {
     Title: string;

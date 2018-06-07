@@ -1,4 +1,4 @@
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/BaseCom";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
 export interface ITeamButtonComConfig extends IBaseComConfig {
     Buttons: IButton[];
     Data?: any;

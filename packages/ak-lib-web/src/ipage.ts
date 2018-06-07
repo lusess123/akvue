@@ -1,4 +1,4 @@
-import { ICom } from "ak-lib-sys/com/ICom";
+import { ICom } from "ak-lib-sys/com/icom";
 
 export interface IPage  extends ICom
 {

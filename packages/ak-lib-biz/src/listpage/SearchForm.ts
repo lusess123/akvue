@@ -1,12 +1,12 @@
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/BaseCom";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
 import Vue from "vue";
 import { core, ioc, vue } from "ak-lib-sys";
 import cols from "ak-lib-comp/complex/col.vue";
-import { IBasePageConfig } from "ak-lib-web/BasePage";
-import * as data from "./../contract/PageView";
+import { IBasePageConfig } from "ak-lib-web/basepage";
+import * as data from "./../contract/pageview";
 
 import { ISource } from "../source/isource";
-import { IPageView } from "./../contract/PageView";
+import { IPageView } from "./../contract/pageview";
 
 
 export interface ISearchFormConfig extends IBasePageConfig {

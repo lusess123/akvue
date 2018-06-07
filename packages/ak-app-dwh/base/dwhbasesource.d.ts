@@ -1,5 +1,5 @@
 import { BaseSource } from "ak-lib-biz/source/basesource";
-import * as pageView from "ak-lib-biz/contract/PageView";
+import * as pageView from "ak-lib-biz/contract/pageview";
 import * as contractFile from "ak-lib-biz/contract/net";
 export declare abstract class dwhBaseSource extends BaseSource {
     Title: string;

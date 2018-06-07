@@ -3,7 +3,7 @@
 import { core, ioc, vue, util } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 
-import  {BaseCom}  from "ak-lib-sys/com/BaseCom" 
+import  {BaseCom}  from "ak-lib-sys/com/basecom" 
 import  BaseComVue from "ak-lib-sys/vuemixin/basecom.vue"
 
 
