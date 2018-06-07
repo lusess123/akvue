@@ -10,7 +10,7 @@ import { BaseSource } from "ak-lib-biz/source/basesource";
 import { net } from "ak-lib-sys";
 import { TableMetaDict } from "ak-lib-biz/contract/tablemeta";
 //import { timeout } from "_rxjs@5.5.6@rxjs/operator/timeout";
-import * as codeTables from "./DwhCodeTable";
+import * as codeTables from "./dwhcodetable";
 export class dwhBaseSource extends BaseSource {
     constructor() {
         super(...arguments);

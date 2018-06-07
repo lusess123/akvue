@@ -1,6 +1,6 @@
-import * as a from "./single/DateTimeCol";
+import * as a from "./single/datetimecol";
 a;
-import * as b from "./single/DetailCol";
+import * as b from "./single/detailcol";
 b;
-import * as c from "./single/DateTimeDetailCol";
+import * as c from "./single/datetimedetailcol";
 c;

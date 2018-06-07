@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import * as core from "./Core";
-import * as util from "./Util";
+import * as core from "./core";
+import * as util from "./util";
 import event from "./event";
 import basecomixin from "./vuemixin/basecom.vue";
 export const create = (options, name) => {

@@ -1,4 +1,4 @@
-import * as _listpage from "./listpage/ListPage";
+import * as _listpage from "./listpage/listpage";
 _listpage;
 //import * as  _appPage  from "./_apppage.vue";_appPage;
 import * as insertPage from './insert/InsertPage';

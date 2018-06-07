@@ -1,6 +1,6 @@
-import { BizPage } from "./../BizPage";
+import { BizPage } from "../bizpage";
 import * as vmform from "./vmform/vmform";
-import { IColumnGroup } from "../contract/PageView";
+import { IColumnGroup } from "../contract/pageview";
 export declare class InsertPage extends BizPage {
     Title: string;
     GroupIndex: number;

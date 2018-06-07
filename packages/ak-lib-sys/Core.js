@@ -1,4 +1,4 @@
-import * as domFile from "./Dom";
+import * as domFile from "./dom";
 export const ErrorCode = {
     "-1": "SYS_ERR",
     "0": "NO_ERR",

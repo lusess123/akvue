@@ -1,8 +1,8 @@
 import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/BaseCom";
-import * as data from "./../contract/PageView";
+import * as data from "../contract/pageview";
 import { IPage } from "./../contract/net";
 import { ISource } from "./../source/ISource";
-import { IPageView } from "./../contract/PageView";
+import { IPageView } from "../contract/pageview";
 export interface IListFormConfig extends IBaseComConfig {
     Columns?: data.IColumn[];
     Datasource?: any[];

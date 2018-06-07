@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { ioc, vue, util } from "ak-lib-sys";
-import { BizPage } from "./../BizPage";
+import { BizPage } from "../bizpage";
 import NaviVue from "./Navi.vue";
 import * as vmform from "./vmform/vmform";
 //import DragableTable from './../../views/tables/components/dragableTable.vue';

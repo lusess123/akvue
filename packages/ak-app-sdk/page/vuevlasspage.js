@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { core, ioc, vue, util } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 import Vue from "vue";
-import { VuePage } from "./VuePage";
+import { VuePage } from "./vuepage";
 VuePage;
 //mport {Container} from "typedi";
 const _getType = (name) => {
