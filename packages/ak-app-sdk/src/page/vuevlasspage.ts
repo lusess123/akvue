@@ -1,7 +1,7 @@
 import { core, ioc, vue, util } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 import Vue from "vue"
-import { VuePage } from "./VuePage"; VuePage;
+import { VuePage } from "./vuepage"; VuePage;
 
 
 //mport {Container} from "typedi";
