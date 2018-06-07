@@ -1,4 +1,4 @@
-import * as PageViewFile from './PageView';
+import * as PageViewFile from './pageview';
 
 export let TableMetaDict: PageViewFile.IForms = {
 

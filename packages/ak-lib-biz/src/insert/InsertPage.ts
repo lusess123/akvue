@@ -1,9 +1,9 @@
 import { core, ioc, vue, util } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
-import { BizPage } from "./../BizPage";
+import { BizPage } from "../bizpage";
 import NaviVue from "./Navi.vue";
 import * as vmform from "./vmform/vmform";
-import { IColumnGroup, IColumn } from "../contract/PageView";
+import { IColumnGroup, IColumn } from "../contract/pageview";
 
 //import DragableTable from './../../views/tables/components/dragableTable.vue';
 // import tableCol from "./../multi/TableDataCol.vue";
