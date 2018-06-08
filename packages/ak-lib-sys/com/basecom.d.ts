@@ -17,7 +17,7 @@ export declare class BaseCom implements ICom {
     protected bindMethod(): void;
     forceUpdate(): void;
     getEvent(): IEvent;
-    private toogleShow();
+    private toogleShow;
     renderString(): string;
     getConstructName(): any;
     protected setRx(pro: string, obj?: any): void;

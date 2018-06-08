@@ -1,3 +1,6 @@
+
+import * as akvue from "./.akvue";akvue;
+
 import Vue from 'vue';
 import iView from 'iview';
 import {router} from './router';
@@ -10,7 +13,7 @@ import  * as boot from "ak-lib-sys/bootstrap";
 import {core} from "ak-lib-sys";
 import  event from "ak-lib-sys/event";
 import  * as a1 from "ak-lib-biz"; a1 ;
-import  * as loader from "./boot";
+//import  * as loader from "./boot";
 
 Vue.use(VueI18n);
 Vue.use(iView);
@@ -61,11 +64,11 @@ new Vue({
     },
     created () {
 
-         const _p:any =  new Promise((a, b) => {
-                   loader.load(a);
-            });
+        //  const _p:any =  new Promise((a, b) => {
+        //            loader.load(a);
+        //     });
 
-         boot.addTask(_p);
+        //  boot.addTask(_p);
         // boot.begin();
 
         // let tagsList = [];

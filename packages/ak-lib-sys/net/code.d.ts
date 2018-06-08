@@ -1,3 +1,6 @@
+/**
+ * Created by nihilism on 03/06/2017.
+ */
 declare const _default: {
     OK: number;
     UNAUTHORIZED: number;

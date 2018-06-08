@@ -1,5 +1,5 @@
 import { IMenu } from "./imenu"
-import { ioc } from "ak-lib-sys"
+import { ioc,vue } from "ak-lib-sys"
 
 export interface IApp 
 {
@@ -11,5 +11,8 @@ export interface IApp
 
     getMenus():IMenu[];
     getPlugs():ioc.IClassList;
+
+    RootRoute?: vue.IRouteConfig[];
+    MainRoute?: vue.IRouteConfig[];
    
 }
