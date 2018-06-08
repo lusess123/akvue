@@ -1,14 +1,7 @@
-import {
-    otherRouter,
-    appRouter
-} from '@/router/router';
 import Util from '@/libs/util';
-import Cookies from 'js-cookie';
+
 import Vue from 'vue';
-import * as menuData from './menu';
-import {
-    debug
-} from 'util';
+
 import {
     core
 } from 'ak-lib-sys'
@@ -52,8 +45,7 @@ const app = {
         ], // 面包屑数组
         menuList: [],
         routers: [
-            otherRouter,
-            ...appRouter
+           
         ],
         tagsList: [],
         messageCount: 0,

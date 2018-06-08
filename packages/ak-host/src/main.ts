@@ -1,26 +1,16 @@
 import Vue from 'vue';
 import iView from 'iview';
-import {router} from './router/index';
-import {appRouter} from './router/router';
+import {router} from './router';
 import store from './store';
 import App from './app.vue';
 import '@/locale';
 import 'iview/dist/styles/iview.css';
-//import './views/main-components/theme-switch/theme/g.css';
 import VueI18n from 'vue-i18n';
-//import util from '@/libs/util';
 import  * as boot from "ak-lib-sys/bootstrap";
 import {core} from "ak-lib-sys";
 import  event from "ak-lib-sys/event";
-
-const _url = "ak-app-dwh";
-
 import  * as a1 from "ak-lib-biz"; a1 ;
-//import  * as a2 from "ak-app-sdk"; a2 ;
 import  * as loader from "./boot";
-//import  * as dwh from "ak-app-dwh"; dwh ;
-
-
 
 Vue.use(VueI18n);
 Vue.use(iView);
@@ -78,14 +68,14 @@ new Vue({
          boot.addTask(_p);
         // boot.begin();
 
-        let tagsList = [];
-        appRouter.map((item) => {
-            if (item.children.length <= 1) {
-                tagsList.push(item.children[0]);
-            } else {
-                tagsList.push(...item.children);
-            }
-        });
-        this.$store.commit('setTagsList', tagsList);
+        // let tagsList = [];
+        // appRouter.map((item) => {
+        //     if (item.children.length <= 1) {
+        //         tagsList.push(item.children[0]);
+        //     } else {
+        //         tagsList.push(...item.children);
+        //     }
+        // });
+        // this.$store.commit('setTagsList', tagsList);
     }
 });
