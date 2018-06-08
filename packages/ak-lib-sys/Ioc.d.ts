@@ -45,8 +45,8 @@ export declare class Ioc {
     RegisterType(regName: string, baseType: any, instaceType: any, customData?: any, meta?: IClassMeta): void;
     RegisterTypeSrc(regName: string, baseType: any, src: string): void;
     FetchAsyInstance<T>(regName: string, baseType: any, fun: IIocAsy<T>, error?: Function, config?: IRegisterTypeSrcConfig): void;
-    private fFetchAsyInstance<T>(regName, baseType, fun, error?, config?);
-    private fFetchInstance<T>(regName, baseType, config?);
+    private fFetchAsyInstance;
+    private fFetchInstance;
     FetchInstance<T>(regName: string, baseType: any, config?: IFetchConfig): T;
     static fGetFunName(s: any): any;
     GetTypeList(baseType: any): Array<IClassMeta>;

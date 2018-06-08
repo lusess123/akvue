@@ -15,7 +15,7 @@ export declare class BaseEvent implements IEvent {
     private fEventBus;
     constructor(eventBus: EventBus, name: string);
     protected fName: string;
-    private createName(name);
+    private createName;
     showAllEvent(): IEventInfo[];
     removeAllBusListeners(): void;
     getSubjectByName(name: string): any;
