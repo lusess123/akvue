@@ -1,6 +1,6 @@
 import { IApp } from "./iapp";
 import { IMenu } from "./imenu";
-import { ioc } from "ak-lib-sys";
+import { ioc, vue } from "ak-lib-sys";
 export declare abstract class BaseApp implements IApp {
     Name: string;
     Title: string;
@@ -9,6 +9,8 @@ export declare abstract class BaseApp implements IApp {
     protected MenuList: IMenu[];
     protected PlugDict: ioc.IClassList;
     Order: number;
+    RootRoute: vue.IRouteConfig[];
+    MainRoute: vue.IRouteConfig[];
     getMenus(): IMenu[];
     getPlugs(): ioc.IClassList;
 }
