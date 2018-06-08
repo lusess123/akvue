@@ -60,8 +60,7 @@ typings/
 .mui/
 
 .history/
-
-packages/arwen/
 packages/apps/
+packages/arwen/
 yarn.lock
 package.lock
