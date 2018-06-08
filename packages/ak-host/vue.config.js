@@ -26,9 +26,9 @@ module.exports = {
         // console.log("fffff:"+buildapp.getApps());  
         //config.resolve.alias["apps"] = "@/framework/apps";
         config.devtool = 'cheap-module';
-        apps.forEach((app) => {
-            config.entry[app] = [app];
-        })
+        // apps.forEach((app) => {
+        //     config.entry[app] = [app];
+        // })
 
 
         config.resolve.alias = {
@@ -43,10 +43,21 @@ module.exports = {
                 'vue$': 'vue/dist/vue.esm.js',
             }
         };
-        config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-            name: apps,
-            minChunks: Infinity
-        }));
+
+      const _def =  new webpack.DefinePlugin({
+            EXELOADAPPS:`
+            import("ak-app-sdk/src/index").then(()=>{});
+            `,
+            APP_SDK:JSON.stringify("ak-app-sdk/src/index"),
+            APP_DWH:JSON.stringify("ak-app-dwh/src/index"),
+            APP_APPS:JSON.stringify("ak-app-dwh/src/index|ak-app-sdk/src/index")
+          })
+
+          config.plugins.push(_def);
+        // config.pl,ugins.push(new webpack.optimize.CommonsChunkPlugin({
+        //     name: apps,
+        //     minChunks: Infinity
+        // }));
         // console.log(config.plugins)
 
     },

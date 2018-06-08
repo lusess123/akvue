@@ -6,7 +6,7 @@ import {Ioc} from "ak-lib-sys/ioc";
 import event from "ak-lib-sys/event";
 
 @vue.com(`<div>
-
+123uuuu
 
 <Row  :gutter="16">
 <Col span="4"  v-for=" (app,n) in vm.appList()" :key="app.Name" style="padding:1rem">
