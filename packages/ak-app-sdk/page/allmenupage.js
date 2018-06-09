@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { ioc, vue } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 import event from "ak-lib-sys/event";
+import getapps from "ak-lib-web/app/appget";
 let AllMenuPage = class AllMenuPage extends BasePage {
     constructor() {
         super(...arguments);
@@ -14,16 +15,7 @@ let AllMenuPage = class AllMenuPage extends BasePage {
     }
     loadPage() { }
     getAppInfo() {
-        const _cml = ioc
-            .Ioc
-            .Current()
-            .GetTypeList("IApp");
-        return _cml.map(info => {
-            return ioc
-                .Ioc
-                .Current()
-                .FetchInstance(info.RegName, "IApp");
-        });
+        return getapps();
         // const _app = _apps.filter(a => a.Name.toUpperCase() ==
         // this.AppName.toUpperCase()); _app[0].getMenus()  return _apps;
     }

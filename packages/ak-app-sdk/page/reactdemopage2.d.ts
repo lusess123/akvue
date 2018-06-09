@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseReactPage, BaseDomReact } from "ak-lib-react-web/basereactpage";
 import React from "react";
 import 'antd/dist/antd.css';

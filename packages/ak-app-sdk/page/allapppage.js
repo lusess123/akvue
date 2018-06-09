@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { ioc, vue } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 import event from "ak-lib-sys/event";
+import getapps from "ak-lib-web/app/appget";
 let AllAppPage = class AllAppPage extends BasePage {
     constructor() {
         super(...arguments);
@@ -37,26 +38,14 @@ let AllAppPage = class AllAppPage extends BasePage {
     }
     appList() {
         if (!this.fAppList) {
-            debugger;
-            const _res = ioc
-                .Ioc
-                .Current()
-                .GetTypeList("IApp");
-            const _apps = _res.map(info => {
-                return ioc
-                    .Ioc
-                    .Current()
-                    .FetchInstance(info.RegName, "IApp");
-            });
-            // core.alert(_apps);
-            this.fAppList = _apps;
+            this.fAppList = getapps();
         }
         return this.fAppList;
     }
 };
 AllAppPage = __decorate([
     vue.com(`<div>
-
+123uuuu
 
 <Row  :gutter="16">
 <Col span="4"  v-for=" (app,n) in vm.appList()" :key="app.Name" style="padding:1rem">

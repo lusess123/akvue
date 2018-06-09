@@ -14,7 +14,7 @@ export declare class FormPage extends BasePage {
     };
     constructor(a: any);
     protected loadPage(): void;
-    private createOptData();
+    private createOptData;
     DataRow: any;
     FormOpt: Ioption[];
     IsAction: boolean;

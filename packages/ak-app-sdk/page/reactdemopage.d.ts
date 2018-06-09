@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BasePage } from "ak-lib-web/basepage";
 import React from "react";
 import { Hello } from "ak-lib-react/testdom";

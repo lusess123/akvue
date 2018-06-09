@@ -4,6 +4,7 @@ import {BasePage} from "ak-lib-web/basepage";
 import {IApp} from "ak-lib-web/app/iapp";
 import {Ioc} from "ak-lib-sys/ioc";
 import event from "ak-lib-sys/event";
+import getapps from "ak-lib-web/app/appget";
 
 @vue.com(`<div>
 123uuuu
@@ -56,21 +57,8 @@ export class AllAppPage extends BasePage {
 
     appList() : IApp[] {
         if (!this.fAppList) {
-           debugger;
-            const _res : ioc.IClassMeta[] = ioc
-                .Ioc
-                .Current()
-                .GetTypeList("IApp");
-            const _apps = _res.map(info => {
-
-                return ioc
-                    .Ioc
-                    .Current()
-                    .FetchInstance < IApp > (info.RegName, "IApp");
-
-            })
-            // core.alert(_apps);
-            this.fAppList = _apps;
+          
+            this.fAppList = getapps();
         }
         return this.fAppList;
 
