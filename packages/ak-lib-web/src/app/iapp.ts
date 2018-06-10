@@ -1,5 +1,6 @@
 import { IMenu } from "./imenu"
 import { ioc,vue } from "ak-lib-sys"
+import { promises } from "fs";
 
 export interface IApp 
 {
@@ -14,5 +15,6 @@ export interface IApp
 
     RootRoute?: vue.IRouteConfig[];
     MainRoute?: vue.IRouteConfig[];
+    useContext(pre:any):Promise<any> ;
    
 }

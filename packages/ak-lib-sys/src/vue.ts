@@ -2,8 +2,9 @@ import Vue from 'vue';
 import * as core from "./core";
 import * as util from "./util";
 import event from "./event";
-import * as $ from "jquery";
+//import * as $ from "jquery";
 import basecomixin from "./vuemixin/basecom.vue"
+import VueRouter from 'vue-router';
 
 export const create = (options, name?: string) => {
     if (name) options.name = name;
@@ -217,6 +218,15 @@ export interface IRouteConfig
     caseSensitive?: boolean;
     pathToRegexpOptions?: any;
 
+}
+
+let _route :any ;
+export const setGlobRoute = (route)=>{
+    _route = route ;
+}
+
+export const getGlobRoute = ():VueRouter =>{
+    return _route ;
 }
 
 

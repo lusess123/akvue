@@ -11,6 +11,7 @@ export declare abstract class BaseApp implements IApp {
     Order: number;
     RootRoute: vue.IRouteConfig[];
     MainRoute: vue.IRouteConfig[];
+    useContext(pre: any): Promise<any>;
     getMenus(): IMenu[];
     getPlugs(): ioc.IClassList;
 }

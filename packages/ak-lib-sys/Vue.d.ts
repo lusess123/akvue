@@ -1,3 +1,4 @@
+import VueRouter from 'vue-router';
 export declare const create: (options: any, name?: string) => any;
 export declare const tpl: (h: any) => (tpl: string, pro?: any) => any;
 export declare const vm: (objPro: string) => string;
@@ -24,3 +25,5 @@ export interface IRouteConfig {
     caseSensitive?: boolean;
     pathToRegexpOptions?: any;
 }
+export declare const setGlobRoute: (route: any) => void;
+export declare const getGlobRoute: () => VueRouter;

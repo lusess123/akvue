@@ -10,4 +10,5 @@ export interface IApp {
     getPlugs(): ioc.IClassList;
     RootRoute?: vue.IRouteConfig[];
     MainRoute?: vue.IRouteConfig[];
+    useContext(pre: any): Promise<any>;
 }

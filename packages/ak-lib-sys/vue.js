@@ -2,6 +2,7 @@ import Vue from 'vue';
 import * as core from "./core";
 import * as util from "./util";
 import event from "./event";
+//import * as $ from "jquery";
 import basecomixin from "./vuemixin/basecom.vue";
 export const create = (options, name) => {
     if (name)
@@ -142,4 +143,11 @@ const _createTplVue = function (tpl, vm) {
 };
 export const cvue = (vm) => (tpl) => {
     return _createTplVue(tpl, vm);
+};
+let _route;
+export const setGlobRoute = (route) => {
+    _route = route;
+};
+export const getGlobRoute = () => {
+    return _route;
 };

@@ -9,18 +9,25 @@ const _getMainRoute = () => {
   
 
   const _apps = getapps();
-  let _routes = [];
+  let MainRoute = [];
+  let RootRoute = [];
+
   _apps.forEach(a => {
     if (a.MainRoute) {
-      _routes =  _routes.concat(a.MainRoute)
+      MainRoute =  MainRoute.concat(a.MainRoute)
+    }
+    if (a.RootRoute) {
+      RootRoute =  RootRoute.concat(a.RootRoute)
     }
   });
-  core.alert(_routes);
-  return _routes;
+  //core.alert(_routes);
+  return  {MainRoute,RootRoute};
   // _apps.
 }
 
-export default {
+const _routes = _getMainRoute();
+
+export const MainRoutes = {
 
   path : '/',
   name : 'root',
@@ -49,7 +56,9 @@ export default {
       name: 'web3',
       component: hull
     },
-    ..._getMainRoute()
+    ..._routes.MainRoute
 
   ]
 }
+
+export const RootRoutes = _routes.RootRoute;

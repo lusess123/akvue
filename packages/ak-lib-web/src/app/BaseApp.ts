@@ -15,6 +15,9 @@ export  abstract class BaseApp  implements IApp {
 
     public RootRoute: vue.IRouteConfig[] ;
     public MainRoute: vue.IRouteConfig[] ;
+    public   async useContext(pre:any):Promise<any> {
+        return pre ;
+    }
 
      public  getMenus():IMenu[]{
                   return  this.MenuList ;
