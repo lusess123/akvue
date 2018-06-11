@@ -86,7 +86,8 @@ const _obj = {
     created() {}
 }
 
-useapp(_obj).then(a => {
+useapp(_obj).then((a:any)=> {
+    debugger;
     const _vuexConfig = a.StoreConfig;
     a.StoreConfig = undefined ;
     a.store =  new Vuex.Store(_vuexConfig);
