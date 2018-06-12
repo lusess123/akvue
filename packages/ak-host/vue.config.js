@@ -65,8 +65,20 @@ module.exports = {
         extract: true
     },
     devServer:{
-       // proxy: 'http://localhost:4000',
+        proxy: {
+            '/auth/':{
+                target:'http://172.17.3.40',
+                changeOrigin:true,
+                pathRewrite:{
+                    '^/auth':'/auth'
+                }
+            },
+            '/sendSSOToken':{
+                target:'http://172.17.3.40',
+                changeOrigin:true
+            }
+        },
         host: '0.0.0.0',
-    port: 8080
+        port: 8080
     }
 }
