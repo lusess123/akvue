@@ -6,6 +6,7 @@ export interface IApp {
     Doc: string;
     Icon: string;
     Order?: number;
+    TagName?: string;
     getMenus(): IMenu[];
     getPlugs(): ioc.IClassList;
     RootRoute?: vue.IRouteConfig[];

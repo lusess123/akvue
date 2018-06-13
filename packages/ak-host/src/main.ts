@@ -19,7 +19,7 @@ import useapp from "ak-lib-web/app/appuse";
 //import  * as loader from "./boot";
 import Vuex from 'vuex';
 
-
+//import "font-awesome/less/font-awesome.less";
 Vue.use(Vuex);
 
 

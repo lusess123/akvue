@@ -3,7 +3,7 @@
 </style>
 
 <template>
-    <Menu accordion ref="sideMenu" :active-name="$route.path" :open-names="openNames" :theme="menuTheme" width="auto" @on-select="changeMenu">
+    <Menu  ref="sideMenu" :active-name="$route.path" :open-names="openNames" :theme="menuTheme" width="auto" @on-select="changeMenu">
         <template v-for="item in menuList">
             <Submenu  :name="item.name" :key="item.name">
                 <template slot="title">

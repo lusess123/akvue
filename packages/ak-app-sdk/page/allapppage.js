@@ -8,6 +8,7 @@ import { ioc, vue } from "ak-lib-sys";
 import { BasePage } from "ak-lib-web/basepage";
 import event from "ak-lib-sys/event";
 import getapps from "ak-lib-web/app/appget";
+import MyIcon from "ak-lib-comp/iview/icon.vue";
 let AllAppPage = class AllAppPage extends BasePage {
     constructor() {
         super(...arguments);
@@ -45,13 +46,12 @@ let AllAppPage = class AllAppPage extends BasePage {
 };
 AllAppPage = __decorate([
     vue.com(`<div>
-123uuuu
-
 <Row  :gutter="16">
 <Col span="4"  v-for=" (app,n) in vm.appList()" :key="app.Name" style="padding:1rem">
 
          <Card style="text-align:center" >
-             <a @click="vm.goMenu(app.Name)"><Icon :type="app.Icon" size="100"></Icon></a >
+             <a @click="vm.goMenu(app.Name)"><MyIcon :type="app.Icon" size="100"></MyIcon></a >
+             <Icon type="social-freebsd-devil"></Icon>
              <p>{{app.Title}}</p>
          </Card>
      </Col>
@@ -59,7 +59,9 @@ AllAppPage = __decorate([
 
 
 
-</div>`),
+</div>`, {
+        components: { MyIcon }
+    }),
     ioc.PlugIn({ RegName: "AllAppPage", BaseType: "IPage", CreateDate: "2018-06-05", Doc: "AllApp页面插件" })
 ], AllAppPage);
 export { AllAppPage };

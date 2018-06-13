@@ -12,6 +12,7 @@ export class BaseApp {
         this.Title = "";
         this.Doc = "";
         this.Icon = "";
+        this.TagName = "default";
         this.Order = 0;
     }
     useContext(pre) {

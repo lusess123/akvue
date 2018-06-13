@@ -30,7 +30,8 @@
     "ak-lib-sys": "*",
     "ant-design-pro": "^1.2.1",
     "antd": "^3.3.0",
-    "react-jsonschema-form": "*"
+    "react-jsonschema-form": "*",
+    "lodash":"*"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.2",

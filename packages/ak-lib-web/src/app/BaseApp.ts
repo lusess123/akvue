@@ -8,6 +8,7 @@ export  abstract class BaseApp  implements IApp {
     public Title :string  = "";
     public Doc :string  = "";
     public Icon :string = "";
+    public  TagName:string = "default";
 
     protected MenuList :IMenu [] ;
     protected PlugDict:ioc.IClassList ;

@@ -30,7 +30,8 @@
     "ak-lib-web":"*",
     "ak-lib-comp":"*",
     "ak-lib-col":"*",
-    "vue-class-component": "^6.1.2"
+    "vue-class-component": "^6.1.2",
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
     "ak-dev-node":"*",

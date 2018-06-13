@@ -16,6 +16,6 @@ export declare class TeamButtonCom extends BaseCom {
     readonly IsFirst: boolean;
     constructor(config?: ITeamButtonComConfig);
     changeMenu(val: any): void;
-    private fGetFirstBtn();
+    private fGetFirstBtn;
     clickBtn(name: string): void;
 }

@@ -2,26 +2,35 @@ import {core, ioc, vue, util} from "ak-lib-sys";
 import {BasePage} from "ak-lib-web/basepage";
 
 import {IApp} from "ak-lib-web/app/iapp";
-import {Ioc} from "ak-lib-sys/ioc";
+
 import event from "ak-lib-sys/event";
 import getapps from "ak-lib-web/app/appget";
+import MyIcon from "ak-lib-comp/iview/icon.vue";
+import * as loadash from "lodash";
 
 @vue.com(`<div>
-123uuuu
-
+<Card  v-for=" (applist,key) in vm.appTagGroup()">
+<h2 slot="title">
+            <Icon type="ios-film-outline"></Icon>
+           {{key == "default"?"示例demo":key}}
+        </h2>
 <Row  :gutter="16">
-<Col span="4"  v-for=" (app,n) in vm.appList()" :key="app.Name" style="padding:1rem">
+<Col span="4"  v-for=" (app,n) in applist" :key="app.Name" style="padding:1rem">
 
          <Card style="text-align:center" >
-             <a @click="vm.goMenu(app.Name)"><Icon :type="app.Icon" size="100"></Icon></a >
+             <a @click="vm.goMenu(app.Name)"><MyIcon :type="app.Icon" size="100"></MyIcon></a >
              <p>{{app.Title}}</p>
          </Card>
-     </Col>
+</Col>
 </Row>
+<br/>
+</Card>
 
 
 
-</div>`)
+</div>`, {components: {
+        MyIcon
+    }})
 @ioc.PlugIn({RegName: "AllAppPage", BaseType: "IPage", CreateDate: "2018-06-05", Doc: "AllApp页面插件"})
 export class AllAppPage extends BasePage {
 
@@ -30,14 +39,18 @@ export class AllAppPage extends BasePage {
     private fAppList : IApp[];
     protected loadPage() {}
 
-    goMenu(name:string){
-        const _app =  this.fAppList.find(a=>a.Name == name);
-        if(_app){
-            const _menus =  _app.getMenus();
-           const _url = this.getFirstUrl(_menus);
-           if(_url){
-             event.GetAppEvent().emit("global-main-mounted", _menus, _url);
-           }
+    goMenu(name : string) {
+        const _app = this
+            .fAppList
+            .find(a => a.Name == name);
+        if (_app) {
+            const _menus = _app.getMenus();
+            const _url = this.getFirstUrl(_menus);
+            if (_url) {
+                event
+                    .GetAppEvent()
+                    .emit("global-main-mounted", _menus, _url);
+            }
 
         }
     }
@@ -47,8 +60,7 @@ export class AllAppPage extends BasePage {
             const _a = menus[0];
             if (_a.children && _a.children.length > 0) {
                 return this.getFirstUrl(_a.children);
-            }
-            else {
+            } else {
                 return _a.name;
             }
         }
@@ -57,11 +69,21 @@ export class AllAppPage extends BasePage {
 
     appList() : IApp[] {
         if (!this.fAppList) {
-          
+
             this.fAppList = getapps();
         }
         return this.fAppList;
 
+    }
+
+    private fAppGroup : any;
+
+    appTagGroup() {
+        if (!this.fAppGroup) {
+            this.fAppGroup = loadash.groupBy(this.appList(), "TagName");
+        }
+        console.log(this.fAppGroup);
+        return this.fAppGroup;
     }
 
 }

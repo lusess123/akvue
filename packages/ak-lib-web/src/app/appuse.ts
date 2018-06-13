@@ -5,7 +5,7 @@ import rxjs from 'rxjs'
 export default async(obj) => {
     // const props : any[] = appget().map(app => {     return (obj, callback) => {
     //     app             .useContext(obj)             .then(callback)     }; });
-    debugger;
+    //debugger;
     // return props[0](obj).then(a => {     return props[1](a).then(b => { return
     // props[2](b)     }) })   return callPromise(props,obj);
     const _apps = appget().map(a => a.useContext);
@@ -84,7 +84,7 @@ function callPost(calls : IPost[], obj : any, i, callback) {
 
 const _sconFun = (apps:any[],obj) => callback =>{
         const _$ = rxjs.Observable.from ;
-        return  _$(apps).mergeScan((acc, fun) => _$(fun(acc)), obj).subscribe(a=>callback(a));
+        return  _$(apps).mergeScan((acc, fun) => _$(fun(acc)), obj).last().subscribe(a=> callback(a));
 }
 
 const reduceFun = (apps:any[],obj) => callback =>{

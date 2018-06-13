@@ -35,7 +35,7 @@ export declare enum ColumnType {
     index = "index",
     selection = "selection",
     expand = "expand",
-    html = "html",
+    html = "html"
 }
 export declare class TableCom extends BaseCom {
     Columns: IColumn[];

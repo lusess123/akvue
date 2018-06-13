@@ -6,6 +6,7 @@ export declare abstract class BaseApp implements IApp {
     Title: string;
     Doc: string;
     Icon: string;
+    TagName: string;
     protected MenuList: IMenu[];
     protected PlugDict: ioc.IClassList;
     Order: number;
