@@ -50,7 +50,9 @@ module.exports = {
             `,
             APP_SDK:JSON.stringify("ak-app-sdk/src/index"),
             APP_DWH:JSON.stringify("ak-app-dwh/src/index"),
-            APP_APPS:JSON.stringify("ak-app-dwh/src/index|ak-app-sdk/src/index")
+            APP_APPS:JSON.stringify("ak-app-dwh/src/index|ak-app-sdk/src/index"),
+            NODE_ENV: '"development"',
+           __URL__: JSON.stringify('http://172.16.134.43/auth')
           })
 
           config.plugins.push(_def);

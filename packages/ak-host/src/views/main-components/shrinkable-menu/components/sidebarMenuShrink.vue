@@ -17,7 +17,7 @@
                         <i class="fa fa-2" :class="getIcon(item)"></i> 
                     </Button>
                     <DropdownMenu style="width: 200px;" slot="list">
-                        <DropdownItem :name="item.children[0].name" :key="'d' + index"><i class="fa" :class="getIcon(item)"></i> <span style="padding-left:10px;">{{ itemTitle(item.children[0]) }}</span></DropdownItem>
+                        <DropdownItem :name="item.children[0].name" :key="'d' + index"><i class="fa" :class="getIcon(item)"></i> <span style="padding-left:10px;">{{ itemTitle(item.children[0]) }}111</span></DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
             </div>

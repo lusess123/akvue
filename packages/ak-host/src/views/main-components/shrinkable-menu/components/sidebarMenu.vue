@@ -10,6 +10,7 @@
                   
                     <i class="fa" :class="getIcon(item)"></i> 
                     <span class="layout-text">{{ itemTitle(item) }}</span>
+
                 </template>
                 <template v-for="child in item.children">
                     <MenuItem :name="child.name" :key="'menuitem' + child.name">

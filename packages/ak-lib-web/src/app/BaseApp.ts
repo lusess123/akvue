@@ -20,6 +20,10 @@ export  abstract class BaseApp  implements IApp {
         return pre ;
     }
 
+    public   async afterUseContext(pre:any):Promise<any> {
+        return pre ;
+    };
+
      public  getMenus():IMenu[]{
                   return  this.MenuList ;
      }

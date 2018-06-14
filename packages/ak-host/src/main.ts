@@ -1,3 +1,4 @@
+import {getApps} from './../../ak-dev-node/src/build/buildapp';
 debugger;
 import * as akvue from "./.akvue";
 akvue;
@@ -15,14 +16,13 @@ import {core} from "ak-lib-sys";
 import event from "ak-lib-sys/event";
 import * as a1 from "ak-lib-biz";
 a1;
-import useapp from "ak-lib-web/app/appuse";
+import apps from 'ak-lib-web/app/appget';
 //import  * as loader from "./boot";
 import Vuex from 'vuex';
+import rxjs from 'rxjs';
 
 //import "font-awesome/less/font-awesome.less";
 Vue.use(Vuex);
-
-
 
 Vue.use(VueI18n);
 Vue.use(iView);
@@ -86,13 +86,30 @@ const _obj = {
     created() {}
 }
 
-useapp(_obj).then((a:any)=> {
-    debugger;
-    const _vuexConfig = a.StoreConfig;
-    a.StoreConfig = undefined ;
-    a.store =  new Vuex.Store(_vuexConfig);
+const _callFuns = (calls, obj) => {
+    return new Promise(_sconFun(calls, obj));
+}
 
-    new Vue(a);
+const _sconFun = (calls : any[], obj) => callback => {
+    const _$ = rxjs.Observable.from;
+    return _$(calls).mergeScan((acc, fun) => _$(fun(acc)), obj)
+        .last()
+        .subscribe(a => callback(a));
+}
+
+const _runs = apps().map(a => a.useContext);
+const _afterRuns = apps().map(a => a.afterUseContext);
+
+_callFuns(_runs, _obj).then((a : any) => {
+    // debugger;
+    const _vuexConfig = a.StoreConfig;
+    a.StoreConfig = undefined;
+
+    a.store = new Vuex.Store(_vuexConfig);
+    _callFuns(_afterRuns, a).then((aa) => {
+        new Vue(aa);
+    });
+
 });
 
 //require('@/assets/font-awesome/css/font-awesome.css')

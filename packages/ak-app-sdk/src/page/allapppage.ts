@@ -12,7 +12,7 @@ import * as loadash from "lodash";
 <temple v-for=" (applist,key) in vm.appTagGroup()">
 <Card>
 <h2 slot="title">
-            <Icon type="ios-film-outline"></Icon>
+           
            {{key == "default"?"示例demo":key}}
         </h2>
 <Row  :gutter="16">

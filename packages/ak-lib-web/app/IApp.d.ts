@@ -12,4 +12,5 @@ export interface IApp {
     RootRoute?: vue.IRouteConfig[];
     MainRoute?: vue.IRouteConfig[];
     useContext(pre: any): Promise<any>;
+    afterUseContext(pre: any): Promise<any>;
 }

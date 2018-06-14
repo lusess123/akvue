@@ -20,6 +20,12 @@ export class BaseApp {
             return pre;
         });
     }
+    afterUseContext(pre) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return pre;
+        });
+    }
+    ;
     getMenus() {
         return this.MenuList;
     }
