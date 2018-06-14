@@ -1,6 +1,5 @@
-import {BaseCom,IBaseComConfig} from "ak-lib-sys/com/basecom";
-import Vue from "vue";
-import { core ,ioc,vue } from "ak-lib-sys";
+
+import { core ,ioc,vue } from "ak-lib-sys/src";
 import { BaseCol, IBaseColConfig} from "../basecol";
 
 

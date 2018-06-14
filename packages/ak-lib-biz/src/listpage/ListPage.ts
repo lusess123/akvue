@@ -1,16 +1,14 @@
 
 
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
-import { ISource } from "../source/isource";
+import {  ioc, vue} from "ak-lib-sys/src";
+
 import { IPageView, IDataButton } from "./../contract/pageview";
 import { SearchForm } from "./searchform";
-import { ListForm } from "./listForm";
-//import tree from "../../../components/vue-tree/tree";
-import Vue from "vue";
+import { ListForm } from "./listform";
+
 import { BizPage } from "../bizpage";
 //import JsonEditor from 'vue-json-edit'
-import event from "ak-lib-sys/event";
+import event from "ak-lib-sys/src/event";
 //Vue.use(JsonEditor)
 
 @vue.com(`

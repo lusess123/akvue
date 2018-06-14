@@ -9,14 +9,14 @@
 </template>
 
 <script lang="ts">
-import { core, ioc, vue } from "ak-lib-sys";
+import { core, ioc, vue } from "ak-lib-sys/src";
 import { IPage } from "./IPage";
 import * as _defaultPage from "./defaultpage";
 _defaultPage;
 
-import * as bootstrap from "ak-lib-sys/bootstrap";
+import * as bootstrap from "ak-lib-sys/src/bootstrap";
 import * as vuePage from "./vue/vuepage"; vuePage;
-import event from "ak-lib-sys/event";
+import event from "ak-lib-sys/src/event";
 // import * as _app from "app"; 
 // _app ;
 //import * as _appPage from "./../app/_AppPage.vue";

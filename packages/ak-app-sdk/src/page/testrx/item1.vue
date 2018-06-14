@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import vuemixin  from "ak-lib-sys/vuemixin/uniidmixin.vue"
-import { core} from "ak-lib-sys"
+import vuemixin  from "ak-lib-sys/src/vuemixin/uniidmixin.vue"
+import { core} from "ak-lib-sys/src"
 //core.alert(123);
  // core.alert(vuemixin);
 export default {

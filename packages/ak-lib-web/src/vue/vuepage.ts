@@ -1,4 +1,4 @@
-import { core, ioc, vue, util } from "ak-lib-sys";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
 import { BasePage } from "./../basepage";
 import Vue from "vue";
 

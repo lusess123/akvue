@@ -1,8 +1,8 @@
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/src/com/basecom";
 import Vue from "vue";
-import { core, ioc, vue } from "ak-lib-sys";
-import cols from "ak-lib-comp/complex/col.vue";
-import { IBasePageConfig } from "ak-lib-web/basepage";
+import { core, ioc, vue } from "ak-lib-sys/src";
+import cols from "ak-lib-comp/src/complex/col.vue";
+import { IBasePageConfig } from "ak-lib-web/src/basepage";
 import * as data from "./../contract/pageview";
 
 import { ISource } from "../source/isource";

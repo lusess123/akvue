@@ -1,6 +1,6 @@
-import { BasePage } from "ak-lib-web/basepage";
+import { BasePage } from "ak-lib-web/src/basepage";
 import Vue from "vue";
-import { core, ioc, vue, util } from "ak-lib-sys";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
 
 
 
@@ -68,8 +68,8 @@ export class CodePage extends BasePage {
 const _comFun = (XXX): string => {
     return `
   
-    import { core ,ioc,vue } from "ak-lib-sys";
-    import {BaseCom,IBaseComConfig} from "ak-lib-sys/com/BaseCom";
+    import { core ,ioc,vue } from "ak-lib-sys/src";
+    import {BaseCom,IBaseComConfig} from "ak-lib-sys/src/com/BaseCom";
 
     export interface I${XXX}ComConfig extends IBaseComConfig{
    
@@ -90,7 +90,7 @@ const _comFun = (XXX): string => {
 
 const _colFun = (XXX): string => {
     return `
-    import { core ,ioc,vue } from "ak-lib-sys";
+    import { core ,ioc,vue } from "ak-lib-sys/src";
     import {BaseCol,IBaseColConfig}  from "./BaseCol"
     
     export interface I${XXX}ColConfig extends IBaseColConfig{
@@ -113,8 +113,8 @@ const _colFun = (XXX): string => {
 const _pageFun = (XXX): string => {
     return `  
    
-    import { core, ioc, vue, util } from "ak-lib-sys";
-    import { BasePage } from "ak-lib-web/basepage";
+    import { core, ioc, vue, util } from "ak-lib-sys/src";
+    import { BasePage } from "ak-lib-web/src/basepage";
 
     @vue.com(\`<div>${XXX}Page</div>\`)
     @ioc.PlugIn({  RegName: "${XXX}Page", BaseType: "IPage", CreateDate:"${util.formatDate(new Date(), "yyyy-MM-dd")}", Doc: "${XXX}页面插件" })
@@ -133,8 +133,8 @@ const _reactPageFun = (XXX): string => {
     return `
    
 
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
+import { BasePage } from "ak-lib-web/src/basepage";
 import { BaseReactPage, BaseDomReact } from "ak-lib-react-web/basereactpage";
 import React, { Component } from "react";
 

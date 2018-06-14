@@ -1,6 +1,6 @@
 import { ISource } from "./isource";
 import * as pageView from "./../contract/pageview";
-import { ioc,core } from "ak-lib-sys";
+import { ioc,core } from "ak-lib-sys/src";
 //import { core } from "../../../ref/index";
 
 

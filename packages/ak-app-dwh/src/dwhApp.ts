@@ -1,7 +1,7 @@
-import { BaseApp } from "ak-lib-web/app/baseapp";
-import { IMenu } from "ak-lib-web/app/imenu";
+import { BaseApp } from "ak-lib-web/src/app/baseapp";
+import { IMenu } from "ak-lib-web/src/app/imenu";
 
-import { ioc } from "ak-lib-sys"
+import { ioc } from "ak-lib-sys/src"
 
 @ioc.PlugIn({RegName:"dwhApp",BaseType:"IApp",Doc:"数据仓库管理系统应用插件"})
 export class dwhApp extends BaseApp

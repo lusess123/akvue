@@ -1,11 +1,11 @@
-import { BaseSource } from "ak-lib-biz/source/basesource";
-import { ioc, net } from "ak-lib-sys";
-import * as pageView from "ak-lib-biz/contract/pageview";
-import { TableMetaDict } from "ak-lib-biz/contract/tablemeta";
-import * as contractFile from "ak-lib-biz/contract/net";
+import { BaseSource } from "ak-lib-biz/src/source/basesource";
+import { ioc, net } from "ak-lib-sys/src";
+import * as pageView from "ak-lib-biz/src/contract/pageview";
+import { TableMetaDict } from "ak-lib-biz/src/contract/tablemeta";
+import * as contractFile from "ak-lib-biz/src/contract/net";
 //import { timeout } from "_rxjs@5.5.6@rxjs/operator/timeout";
 import * as  codeTables from "./dwhcodetable";
-import { core } from "ak-lib-sys";
+import { core } from "ak-lib-sys/src";
 
 
 export abstract class dwhBaseSource extends BaseSource {

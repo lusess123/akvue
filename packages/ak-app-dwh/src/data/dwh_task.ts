@@ -1,5 +1,5 @@
 
-import  {Column } from "ak-lib-biz/contract/tablemeta";
+import  {Column } from "ak-lib-biz/src/contract/tablemeta";
 
 
 export class dwh_task  {

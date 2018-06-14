@@ -1,6 +1,6 @@
 import { IPage } from "./ipage";
-import {BaseCom, IBaseComConfig} from "ak-lib-sys/com/basecom";
-import { vue,core } from "ak-lib-sys";
+import {BaseCom, IBaseComConfig} from "ak-lib-sys/src/com/basecom";
+import { vue,core } from "ak-lib-sys/src";
 
 
 export interface  IBasePageConfig extends IBaseComConfig

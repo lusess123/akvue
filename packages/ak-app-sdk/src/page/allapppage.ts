@@ -1,11 +1,11 @@
-import {core, ioc, vue, util} from "ak-lib-sys";
-import {BasePage} from "ak-lib-web/basepage";
+import {core, ioc, vue, util} from "ak-lib-sys/src";
+import {BasePage} from "ak-lib-web/src/basepage";
 
-import {IApp} from "ak-lib-web/app/iapp";
+import {IApp} from "ak-lib-web/src/app/iapp";
 
-import event from "ak-lib-sys/event";
-import getapps from "ak-lib-web/app/appget";
-import MyIcon from "ak-lib-comp/iview/icon.vue";
+import event from "ak-lib-sys/src/event";
+import getapps from "ak-lib-web/src/app/appget";
+import MyIcon from "ak-lib-comp/src/iview/icon.vue";
 import * as loadash from "lodash";
 
 @vue.com(`<div>

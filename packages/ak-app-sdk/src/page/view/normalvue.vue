@@ -3,7 +3,7 @@
 </template>
 
 <script  lang="ts">
-import { vue } from "ak-lib-sys";
+import { vue } from "ak-lib-sys/src";
 export default   vue.create( {
     name :"normalvue",
     props:["vm"]

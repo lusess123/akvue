@@ -1,5 +1,5 @@
-import {BaseSource} from "ak-lib-biz/source/basesource";
-import { ioc } from "ak-lib-sys";
+import {BaseSource} from "ak-lib-biz/src/source/basesource";
+import { ioc } from "ak-lib-sys/src";
 import {dwhBaseSource} from "./../../base/dwhbasesource";
 
 import  * as dt  from "./../../data/dwh_permission";dt;

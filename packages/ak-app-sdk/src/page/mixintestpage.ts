@@ -1,10 +1,10 @@
 
 
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
+import { BasePage } from "ak-lib-web/src/basepage";
 
-import  {BaseCom}  from "ak-lib-sys/com/basecom" 
-import  BaseComVue from "ak-lib-sys/vuemixin/basecom.vue"
+import  {BaseCom}  from "ak-lib-sys/src/com/basecom" 
+import  BaseComVue from "ak-lib-sys/src/vuemixin/basecom.vue"
 
 
 @vue.com(`<div>  

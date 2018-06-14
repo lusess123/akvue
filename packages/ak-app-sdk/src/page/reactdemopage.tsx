@@ -1,7 +1,7 @@
 
 
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
+import { BasePage } from "ak-lib-web/src/basepage";
 import { renderTest } from "ak-lib-react/testdom";
 import React, { Component } from "react";
 import { render } from "react-dom";

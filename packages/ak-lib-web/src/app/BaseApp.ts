@@ -1,6 +1,6 @@
 import { IApp } from "./iapp"
 import {IMenu} from "./imenu"
-import {ioc,vue} from "ak-lib-sys"
+import {ioc,vue} from "ak-lib-sys/src"
 
 export  abstract class BaseApp  implements IApp {
    

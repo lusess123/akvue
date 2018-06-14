@@ -13,7 +13,7 @@
 
 
 <script lang="ts">
-import { core, ioc, vue, util } from "ak-lib-sys";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
 import { IView } from "./iview"
 export default {
     props: ["vm", "Pro","ischange"],

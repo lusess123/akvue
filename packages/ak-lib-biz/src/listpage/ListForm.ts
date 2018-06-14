@@ -1,12 +1,12 @@
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/src/com/basecom";
 import Vue from "vue";
-import { core, ioc, vue } from "ak-lib-sys";
+import { core, ioc, vue } from "ak-lib-sys/src";
 
 import * as data from "../contract/pageview";
-import * as baseColFile from "ak-lib-col/baseCol";
-import { DetailCol } from "ak-lib-col/single/detailcol"; DetailCol;
-import * as col from "ak-lib-col"; col;
-import { TeamButtonCom } from "ak-lib-comp/buttons/teambutton";
+import * as baseColFile from "ak-lib-col/src/baseCol";
+import { DetailCol } from "ak-lib-col/src/single/detailcol"; DetailCol;
+import * as col from "ak-lib-col/src"; col;
+import { TeamButtonCom } from "ak-lib-comp/src/buttons/teambutton";
 import { IPage } from "./../contract/net";
 
 

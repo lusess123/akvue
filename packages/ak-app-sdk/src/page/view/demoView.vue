@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Emit, Inject, Model, Prop, Provide, Vue, Watch } from 'vue-property-decorator'
-import { core, ioc, vue, util } from "ak-lib-sys";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
 import { IView } from "./iview"
 
 const name: string = "xxx";

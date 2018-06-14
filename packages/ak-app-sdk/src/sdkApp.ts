@@ -1,7 +1,7 @@
-import { BaseApp } from "ak-lib-web/app/baseapp";
-import { IMenu } from "ak-lib-web/app/IMenu";
+import { BaseApp } from "ak-lib-web/src/app/baseapp";
+import { IMenu } from "ak-lib-web/src/app/IMenu";
 
-import { ioc } from "ak-lib-sys"
+import { ioc } from "ak-lib-sys/src"
 
 @ioc.PlugIn({ RegName: "sdkApp", BaseType: "IApp", Doc: "开发者平台的应用" })
 export class dwhApp extends BaseApp {

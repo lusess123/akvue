@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import { core, ioc, vue, util } from "ak-lib-sys";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
 import normalvue from "./view/normalvue.vue";
 
 @Component

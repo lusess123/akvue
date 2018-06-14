@@ -13,7 +13,7 @@
 </template>
 <script>
 //import  * as net from './../../requests/net'
-import   { core,net } from "ak-lib-sys";
+import   { core,net } from "ak-lib-sys/src";
     export default {
         props:["onChange","Val","Url","ItemList"],
         data () {

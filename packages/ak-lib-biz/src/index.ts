@@ -4,7 +4,7 @@ import  * as insertPage from './insert/insertpage' ; insertPage
 //import  * as  _listpage1  from "./listpage1/ListPage";_listpage1;
 //alert("app -index-done ");
 
-import { core ,ioc  } from "ak-lib-sys";
+import { core ,ioc  } from "ak-lib-sys/src";
 
 //alert(core.alert(ioc.Ioc.Current().IocModel()));
 

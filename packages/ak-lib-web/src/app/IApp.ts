@@ -1,5 +1,5 @@
 import { IMenu } from "./imenu"
-import { ioc,vue } from "ak-lib-sys"
+import { ioc,vue } from "ak-lib-sys/src"
 import { promises } from "fs";
 
 export interface IApp 

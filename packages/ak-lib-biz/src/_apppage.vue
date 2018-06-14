@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import {BasePage} from "ak-lib-web/basepage";
-import { ioc,core } from "ak-lib-sys";
+import {BasePage} from "ak-lib-web/src/basepage";
+import { ioc,core } from "ak-lib-sys/src";
 import Vue from 'vue'
 
 

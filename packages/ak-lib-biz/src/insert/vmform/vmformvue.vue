@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import lvfrom from "ak-lib-comp/complex/form.vue"
+import lvfrom from "ak-lib-comp/src/complex/form.vue"
 import  * as vmForm from "./vmform"
 export default {
       name:"vmform",

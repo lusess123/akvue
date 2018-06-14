@@ -1,9 +1,9 @@
 
 import Vue from "vue"
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
+import { BasePage } from "ak-lib-web/src/basepage";
 
-import lvForm from "ak-lib-comp/complex/form.vue";
+import lvForm from "ak-lib-comp/src/complex/form.vue";
 import reactvue from "ak-lib-react/reactvmmixin";
 import jsonForm from "react-jsonschema-form";
 

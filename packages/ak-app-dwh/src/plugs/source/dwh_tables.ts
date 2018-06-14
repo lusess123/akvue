@@ -1,9 +1,9 @@
-import {BaseSource} from "ak-lib-biz/source/basesource";
-import { ioc } from "ak-lib-sys";
+import {BaseSource} from "ak-lib-biz/src/source/basesource";
+import { ioc } from "ak-lib-sys/src";
 import {dwhBaseSource} from "./../../base/dwhbasesource";
 
 import * as dt from "./../../data/dwh_tables"; dt;
-import * as contractFile from "ak-lib-biz/contract/net";
+import * as contractFile from "ak-lib-biz/src/contract/net";
 
 @ioc.PlugIn({ BaseType: "ISource", RegName: "dwh_tabless_source", Author: "zhengyukun", Doc: "管理数据表的数据源插件" })
 export class dwh_tabless_source extends dwhBaseSource {

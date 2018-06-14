@@ -1,9 +1,9 @@
 import { BasePage } from "./basepage";
 import Vue from "vue";
-import { core, ioc, vue, util } from "ak-lib-sys";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
 //import * as codePage from "./sdk/CodePage"; codePage;
 import { IApp } from "./app/iapp";
-import { Ioc } from "ak-lib-sys/Ioc";
+import { Ioc } from "ak-lib-sys/src/Ioc";
 //import { IAPP } from "../../mock/management/app";
 //import { fail } from "assert";
 

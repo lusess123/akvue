@@ -1,5 +1,5 @@
-import {BaseSource} from "ak-lib-biz/source/BaseSource";
-import { ioc,net } from "ak-lib-sys";
+import {BaseSource} from "ak-lib-biz/src/source/BaseSource";
+import { ioc,net } from "ak-lib-sys/src";
 import {dwhBaseSource} from "./../../base/dwhbasesource";
 
 import {dwh_search_tables} from "./../../data/dwh_search_tables";dwh_search_tables;

@@ -1,11 +1,11 @@
 
 
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
-import { IApp } from "ak-lib-web/app/iapp";
-import { IMenu } from "ak-lib-web/app/imenu";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
+import { BasePage } from "ak-lib-web/src/basepage";
+import { IApp } from "ak-lib-web/src/app/iapp";
+import { IMenu } from "ak-lib-web/src/app/imenu";
 //import { IAPP } from "../../../../mock/management/app";
-import event from "ak-lib-sys/event";
+import event from "ak-lib-sys/src/event";
 import vuerouter from "vue-router"
 import Vue from "vue";
 import {ITreeNode} from './../lib/tree'

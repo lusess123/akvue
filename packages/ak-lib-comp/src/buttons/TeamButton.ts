@@ -1,7 +1,7 @@
 
 
-import { core, ioc, vue } from "ak-lib-sys";
-import { BaseCom, IBaseComConfig } from "ak-lib-sys/com/basecom";
+import { core, ioc, vue } from "ak-lib-sys/src";
+import { BaseCom, IBaseComConfig } from "ak-lib-sys/src/com/basecom";
 import Vue from "vue";
 
 export interface ITeamButtonComConfig extends IBaseComConfig {

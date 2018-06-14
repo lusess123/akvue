@@ -1,13 +1,13 @@
 
 
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
+import { BasePage } from "ak-lib-web/src/basepage";
 
-import eventBus, { fetchEvent } from "ak-lib-sys/event";
+import eventBus, { fetchEvent } from "ak-lib-sys/src/event";
 
-import { IEvent ,IEventInfo } from "ak-lib-sys/event/IEvent";
+import { IEvent ,IEventInfo } from "ak-lib-sys/src/event/IEvent";
 
-import  * as table from "ak-lib-comp/iview/table"
+import  * as table from "ak-lib-comp/src/iview/table"
 import { eventShowComFactory } from "./eventbuspage"
 
 export class TestVmBasePage extends BasePage {

@@ -33,7 +33,7 @@
 <script>
 import InputTag from './../inputtag/inputtag.vue'
 import radioSelector from './../multi/radioselector.vue'
-import { util } from "ak-lib-sys"
+import { util } from "ak-lib-sys/src"
 
 const _conDict = {
        configList:1 ,

@@ -1,5 +1,4 @@
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
 import { BizPage } from "../bizpage";
 import NaviVue from "./navi.vue";
 import * as vmform from "./vmform/vmform";

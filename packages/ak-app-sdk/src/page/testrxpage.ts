@@ -1,10 +1,10 @@
 
 
-import { core, ioc, vue, util } from "ak-lib-sys";
-import { BasePage } from "ak-lib-web/basepage";
+import { core, ioc, vue, util } from "ak-lib-sys/src";
+import { BasePage } from "ak-lib-web/src/basepage";
 import List from "./testrx/list.vue";
 //import JsonEditor from "vue-json-edit";
-import  event from "ak-lib-sys/event";
+import  event from "ak-lib-sys/src/event";
 
 import Vue from "vue"
 //Vue.use(JsonEditor)

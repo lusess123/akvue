@@ -4,7 +4,7 @@ import Vue from 'vue';
 
 import {
     core
-} from 'ak-lib-sys'
+} from 'ak-lib-sys/src'
 
 const _menuMap = (sMenu) => {
     return {

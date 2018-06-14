@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import {BasePage} from "ak-lib-web/basepage";
-import { ioc,core } from "ak-lib-sys";
+import { ioc,core } from "ak-lib-sys/src";
 import Vue from 'vue'
 
 

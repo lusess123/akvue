@@ -1,11 +1,11 @@
-import {core, ioc, vue, util} from "ak-lib-sys";
-import {BasePage} from "ak-lib-web/basepage";
+import {core, ioc, vue, util} from "ak-lib-sys/src";
+import {BasePage} from "ak-lib-web/src/basepage";
 
-import {IApp} from "ak-lib-web/app/iapp";
-import {IMenu} from "ak-lib-web/app/imenu";
+import {IApp} from "ak-lib-web/src/app/iapp";
+import {IMenu} from "ak-lib-web/src/app/imenu";
 import {ITreeNode} from './../lib/tree'
-import event from "ak-lib-sys/event";
-import getapps from "ak-lib-web/app/appget";
+import event from "ak-lib-sys/src/event";
+import getapps from "ak-lib-web/src/app/appget";
 @vue.com(`<div>
 <Card>
 <h3 slot="title">所有的菜单</h3>

@@ -1,5 +1,5 @@
 import {IApp} from "./iapp"
-import {ioc} from "ak-lib-sys"
+import {ioc} from "ak-lib-sys/src"
 
 let _apps : IApp[];
 

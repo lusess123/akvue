@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import   * as route from './route';
-import { setGlobRoute } from 'ak-lib-sys/vue'
-import { core} from 'ak-lib-sys'
+import { setGlobRoute } from 'ak-lib-sys/src/vue'
+
 
 Vue.use(VueRouter);
 console.log([route.MainRoutes , ...route.RootRoutes]);

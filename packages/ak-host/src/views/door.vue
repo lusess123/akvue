@@ -70,7 +70,7 @@
     import themeSwitch from './main-components/theme-switch/theme-switch.vue';
     import Cookies from 'js-cookie';
     import util from '@/libs/util.js';
-     import event from "ak-lib-sys/event";
+     import event from "ak-lib-sys/src/event";
     
     export default {
         components: {

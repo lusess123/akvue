@@ -1,9 +1,7 @@
 import Main from './../views/main.vue';
-import hull from 'ak-lib-web/hull.vue';
+import hull from 'ak-lib-web/src/hull.vue';
 
-
-import {ioc,core} from 'ak-lib-sys';
-import getapps from "ak-lib-web/app/appget";
+import getapps from "ak-lib-web/src/app/appget";
 
 const _getMainRoute = () => {
   
