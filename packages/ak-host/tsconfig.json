@@ -6,7 +6,7 @@
     "target": "es2015",
     "module": "esnext",
     "strict": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "moduleResolution": "node",
     "noImplicitAny":false,
     "allowSyntheticDefaultImports": true,

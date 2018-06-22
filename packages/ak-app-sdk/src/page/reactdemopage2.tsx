@@ -2,7 +2,7 @@
 
 import { core, ioc, vue, util } from "ak-lib-sys/src";
 import { BasePage } from "ak-lib-web/src/BasePage";
-import { BaseReactPage, BaseDomReact } from "ak-lib-react-web/basereactpage";
+import { BaseReactPage, BaseDomReact } from "ak-lib-react-web/src/basereactpage";
 import React, { Component } from "react";
 import 'antd/dist/antd.css'
 import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式

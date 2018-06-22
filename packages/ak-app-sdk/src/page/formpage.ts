@@ -1,11 +1,16 @@
+import { registAndGetVueComName } from './../../../ak-lib-sys/src/vue';
 
 import Vue from "vue"
 import { core, ioc, vue, util } from "ak-lib-sys/src";
 import { BasePage } from "ak-lib-web/src/basepage";
 
-import lvForm from "ak-lib-comp/src/complex/form.vue";
+import lvForm  from "ak-lib-comp/src/complex/form.vue";
+import * as lv  from "ak-lib-comp/src/complex/form.vue";
 import reactvue from "ak-lib-react/reactvmmixin";
 import jsonForm from "react-jsonschema-form";
+
+import itemform from 'ak-lib-comp/src/complex/itemfrom.vue'
+  (lv  as any ).registComponent("itemform",itemform);
 
 
 
@@ -14,13 +19,13 @@ import jsonForm from "react-jsonschema-form";
 //Vue.use(JsonEditor)
 @vue.com(`<div>
 <Row>
-<Col span="13">
+<Col span="23">
 <Card style="height:700px;overflow-y: auto;">
 <h2 slot="title">动态表单demo</h2>
 <lvForm :value="vm.DataRow"  :options="vm.FormOpt"  :action="vm.IsAction" ></lvForm>
 </Card>
 </Col>
-<Col span="11" style="height:900px;overflow-y: auto;">
+<Col span="1" style="height:900px;overflow-y: auto;">
 <h2>
 数据
 <Card>
@@ -154,7 +159,8 @@ const ColTypeDict = {
     users: ["users", ""],
     devices: ["devices", ""],
     label: ["label", ""],
-    TableData: ["TableData", ""]
+    TableData: ["TableData", ""],
+    itemform :["itemform","嵌套模版"]
 
 }
 
@@ -186,8 +192,6 @@ export interface Ioption {
     selectList?: ISelect[];
     radioList?: ISelect[];
     Options?: any;
-
-
 }
 export interface ISelect {
     label: string;

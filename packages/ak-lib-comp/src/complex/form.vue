@@ -1,7 +1,7 @@
 <template>
-  <Form :label-width="100" ref="$form" :model="value" :rules="rules">
-    <div :key="opt.key" v-for="opt in options">
-        <Form-item :label="opt.title" :prop="opt.key">
+  <Form :label-width="100" ref="$form" :model="value" :rules="rules" :inline="inline">
+    <template  v-for="opt in options">
+        <Form-item  :key="opt.key"  :class="{fullwidth:opt.fullwidth}"   :label="opt.title" :prop="opt.key">
             <div v-if="opt.type == 'select'">
                 <Select v-model="value[opt.key]" @on-change="handleChange(opt)" placeholder="请选择">
                     <Option :key="item.value" v-for="item in opt.selectList" :value="item.value">{{item.label}}</Option>
@@ -91,7 +91,7 @@
               </div>
             </div>
         </Form-item>
-    </div>
+    </template>
 
     <Form-item v-if="action">
         <Button type="primary" @click="handleSubmit('$form')" :loading="loading">提交</Button>
@@ -113,6 +113,7 @@ import Vue from 'vue';
 let  ComDict = {};
 export const registComponent = function(name,com)
 {
+  debugger;
     Vue.component('FormType'+name,com);
     ComDict['FormType'+name] = com ;
 }
@@ -148,7 +149,12 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    inline :{
+      type:Boolean,
+      default:false
     }
+
   },
   data () {
     return {
@@ -168,6 +174,7 @@ export default {
     
     
     isControl(name){
+      debugger;
       return ComDict["FormType"+name]?true :false ;
     },
 
@@ -219,6 +226,9 @@ export default {
 </script>
 
 <style scoped>
+.fullwidth {
+   width: 100%
+}
 .sub-form .ivu-form-item-error-tip {
   top: 24px;
   left: 20px;

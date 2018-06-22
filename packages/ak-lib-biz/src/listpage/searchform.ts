@@ -1,7 +1,7 @@
 import { BaseCom, IBaseComConfig } from "ak-lib-sys/src/com/basecom";
 import Vue from "vue";
 import { core, ioc, vue } from "ak-lib-sys/src";
-import cols from "ak-lib-comp/src/complex/col.vue";
+import cols from "ak-lib-comp/src/complex/colcontent.vue";
 import { IBasePageConfig } from "ak-lib-web/src/basepage";
 import * as data from "./../contract/pageview";
 
@@ -22,14 +22,20 @@ export interface ISearchFormConfig extends IBasePageConfig {
 @vue.com(`
 <div class="ivu-form ivu-form-label-right">
 <Card>
-  <template v-for=" item   in  vm.getSearchColList">
-    <Row  :gutter="16" :key="item.Name"  >
-       <cols :ColName="item.Name"  :ItemList="vm.getItemList(item)" :key="item.Name"  :onChange="(a,b)=>vm.colChange(a,b)"      :displayName="item.DisplayName"  :ControlType="item.ControlType"  ></cols>
-    </Row>
-  </template>
-  <div style="text-align: center;margin-top: 10px;">
-           <i-button type="primary" icon="ios-search" @click="vm.search()">搜索</i-button>
-  </div>
+
+<Form :label-width="100" inline >
+<template  v-for="item   in  vm.getSearchColList">
+    <Form-item  :key="item.Name" :label="item.DisplayName" >
+    <cols :ColName="item.Name"  :ItemList="vm.getItemList(item)" :key="item.Name"  :onChange="(a,b)=>vm.colChange(a,b)"      :displayName="item.DisplayName"  :ControlType="item.ControlType"  ></cols>
+    </Form-item>
+    
+
+    </template>
+    <Form-item key="__searchfrom_btn">
+    <i-button type="primary" icon="ios-search" @click="vm.search()">搜索</i-button>
+    </Form-item>
+    </Form>
+
  
 </Card>
 <template v-for=" item   in  vm.getNaviColList">
