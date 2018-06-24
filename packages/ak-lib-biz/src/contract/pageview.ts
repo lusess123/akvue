@@ -306,6 +306,8 @@
         Server?: string;
         Icon?: string;
         BtnCss?: string;
+        Url ?: string ;
+      
     }
 
     export interface IClient {

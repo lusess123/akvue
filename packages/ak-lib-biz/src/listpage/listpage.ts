@@ -25,10 +25,25 @@ ${vue.vm("SearchFormObj")}
 <div v-if="vm.IsLoad" >
 <div class="row" style="padding-bottom:1rem;text-align:right"><Button-group size="small"     shape="circle"  slot="extra"   >
     <i-button  type="primary"  icon="refresh" @click.prevent="vm.refreshBtnClick" >刷新</i-button>
-    <template v-for="item  in vm.PageButtons">
-    <i-button   type="primary"     :key="item.Name"  @click.prevent="vm.pageButtonClick(item)">{{item.Text}}</i-button>
+    <template v-for="(item,index ) in vm.PageButtons">
+    <i-button  v-if="index < 8"  type="primary"     :key="item.Name"  @click.prevent="vm.pageButtonClick(item)">{{item.Text}}</i-button>
     </template>
-</Button-group></div>
+</Button-group>
+<dropdown style="margin-left: 20px"  v-if="vm.PageButtons.length > 8">
+<i-button type="primary">
+    更多操作
+    <icon type="arrow-down-b"></icon>
+</i-button>
+<dropdown-menu slot="list"  >
+
+<template  v-for="(item,index ) in vm.PageButtons">
+    <dropdown-item :key="item.Name" v-if="index >= 8" @click.prevent="vm.pageButtonClick(item)">{{item.Text}}</dropdown-item>
+    </template>
+
+   
+</dropdown-menu>
+</dropdown>
+</div>
 <br/>
 ${vue.vm("ListFormObj")}
 </div>
@@ -92,10 +107,14 @@ export class ListPage extends BizPage {
         return "";
     }
 
-    public get PageButtons():IDataButton {
+    public get PageButtons():IDataButton[] {
         const _pages = this.Source.PageView.PageButtons;
         // core.alert(_pages);
-        return _pages;
+        const _res = [] ;
+        for(const n in _pages){
+            _res.push(_pages[n]);
+        } 
+        return _res;
     }
 
     public pageButtonClick(btn: IDataButton) {
@@ -108,6 +127,12 @@ export class ListPage extends BizPage {
                     });
                     break;
                 default:
+                if(btn.Url){
+                    event.GetAppEvent().emit("openurl", {
+                        path: btn.Url,
+                        nourl: false
+                    });
+                }
                     break;
             }
         }

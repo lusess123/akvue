@@ -80,7 +80,7 @@ export default {
 
     },
     beforeDestroy(){
-           event.GetAppEvent().removeAllListeners("openurl");
+           //event.GetAppEvent().removeAllListeners("openurl");
     },
     watch: {
         "$route"() {
