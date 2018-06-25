@@ -4,12 +4,14 @@ import * as akvue from "./.akvue";
 akvue;
 
 import Vue from 'vue';
-import iView from 'iview';
+
 import {router} from './router';
 import storeconfig from './store/config';
 import App from './app.vue';
 import '@/locale';
+import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+Vue.use(iView);
 import VueI18n from 'vue-i18n';
 //import  * as boot from "ak-lib-sys/bootstrap";
 import {core} from "ak-lib-sys/src";
@@ -25,7 +27,7 @@ import rxjs from 'rxjs';
 Vue.use(Vuex);
 
 Vue.use(VueI18n);
-Vue.use(iView);
+
 
 const _obj = {
     el: '#app',

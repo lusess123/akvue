@@ -26,12 +26,13 @@
     "axios": "^0.17.1",
     "iview": "^2.9.0",
     "vue-i18n":"^5.0.3",
+    "font-awesome": "^4.7.0",
     "ak-lib-sys":"*",
     "ak-lib-web":"*",
     "ak-lib-comp":"*",
     "ak-lib-col":"*",
-    "vue-class-component": "^6.1.2",
-    "font-awesome": "^4.7.0"
+    "vue-class-component": "^6.1.2"
+    
   },
   "devDependencies": {
     "ak-dev-node":"*",
