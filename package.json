@@ -15,7 +15,9 @@
 		"lerna": "lerna bootstrap"
 	},
 	"workspaces": [
-		"packages/*","packages/apps/*","packages/apps/arwen/*"
+		"packages/*",
+		"packages/apps/*",
+		"packages/apps/arwen/*"
 	],
 	"devDependencies": {
 		"lerna": "^2.9.0",
